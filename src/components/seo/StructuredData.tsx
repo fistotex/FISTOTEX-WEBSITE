@@ -58,7 +58,7 @@ export function StructuredData({ type, data = {} }: StructuredDataProps) {
       "@id": orgId,
       name: siteConfig.ownerName,
       url: base,
-      logo: { "@type": "ImageObject", url: `${base}/logo.png`, width: 512, height: 512 },
+      logo: { "@type": "ImageObject", url: `${base}/apple-icon`, width: 180, height: 180 },
       image: `${base}${siteConfig.ogImage}`,
       description: siteConfig.description,
       email: siteConfig.contactEmail,
