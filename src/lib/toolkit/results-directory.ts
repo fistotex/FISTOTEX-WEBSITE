@@ -79,4 +79,11 @@ export const RESULTS_ARCHIVE: ResultsArchiveEntry[] = [
   { company: "Tech Mahindra", sourceUrl: "https://www.techmahindra.com/en-in/investors/", sourceName: "techmahindra.com" },
   { company: "UltraTech Cement", sourceUrl: "https://www.ultratechcement.com/corporate/investors-/financials-", sourceName: "ultratechcement.com" },
   { company: "Zomato (Eternal)", sourceUrl: "https://www.zomato.com/investor-relations", sourceName: "zomato.com" },
+  { company: "Adani Enterprises", sourceUrl: "https://www.adanienterprises.com/investors", sourceName: "adanienterprises.com" },
+  { company: "Britannia Industries", sourceUrl: "https://www.britannia.co.in/investors", sourceName: "britannia.co.in" },
+  { company: "Coal India", sourceUrl: "https://www.coalindia.in/performance/financial-statements/", sourceName: "coalindia.in" },
+  { company: "DLF", sourceUrl: "https://www.dlf.in/investor", sourceName: "dlf.in" },
+  { company: "Hero MotoCorp", sourceUrl: "https://www.heromotocorp.com/en-in/investors.html", sourceName: "heromotocorp.com" },
+  { company: "Kotak Mahindra Bank", sourceUrl: "https://www.kotak.com/en/investor-relations.html", sourceName: "kotak.com" },
+  { company: "Lupin", sourceUrl: "https://www.lupin.com/investors/", sourceName: "lupin.com" },
 ];
