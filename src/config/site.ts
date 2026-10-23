@@ -8,7 +8,7 @@ export const siteConfig = {
   description:
     "Free SIP, EMI, FD, PPF, NPS and retirement calculators for India with every formula shown, plus live stock market news from India's leading publishers.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.fistotex.com",
-  ogImage: "/og-image.png",
+  ogImage: "/opengraph-image",
   contactEmail: process.env.CONTACT_EMAIL || "fistotex@gmail.com",
   ownerName: process.env.SITE_OWNER_NAME || "Fistotex",
   founder: { name: "Ishan Gupta", role: "Founder & CEO" },
