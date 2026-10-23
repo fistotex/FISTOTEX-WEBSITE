@@ -39,7 +39,7 @@ const toolkitItems = [
   {
     href: "/toolkit/results",
     label: "Results",
-    desc: "Nifty 50 quarterly results, QoQ & YoY",
+    desc: "Verified results dates & official sources",
     icon: TrendingUp,
     match: (p: string) => p.startsWith("/toolkit/results"),
   },
