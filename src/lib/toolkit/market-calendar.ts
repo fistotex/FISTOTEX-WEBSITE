@@ -114,7 +114,7 @@ export const SCHEDULED_EVENTS: MarketEvent[] = [
     title: "RBI MPC decision",
     kind: "rbi",
     volatile: true,
-    note: "Previous policy review; the following one is Dec 2-4.",
+    note: "Rate decision + Governor's briefing on the final day.",
   },
   {
     date: "2026-08-12",
