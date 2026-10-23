@@ -18,7 +18,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = pageMetadata({
   title: "Market Calendar - RBI Policy, F&O Expiry, Budget & Event Dates",
   description:
-    "Every date that moves the Indian stock market: RBI MPC decisions, F&O expiry days, Union Budget, CPI and GDP releases, Fed meetings, results seasons and trading holidays - with high-volatility days flagged.",
+    "Every date that moves the Indian stock market: RBI MPC decisions, F&O expiry days, Union Budget, CPI and GDP releases, Fed meetings, results seasons and trading holidays - the last three months and what's next, with high-volatility days flagged.",
   path: "/toolkit/market-calendar",
 });
 
@@ -57,21 +57,96 @@ function monthKey(iso: string): string {
   });
 }
 
-export default function MarketCalendarPage() {
-  const now = new Date();
-  const events = allEvents(now);
+function groupByMonth(events: MarketEvent[]): [string, MarketEvent[]][] {
   const byMonth = new Map<string, MarketEvent[]>();
   for (const e of events) {
     const k = monthKey(e.date);
     byMonth.set(k, [...(byMonth.get(k) ?? []), e]);
   }
+  return [...byMonth.entries()];
+}
+
+function MonthGroup({
+  month,
+  list,
+  now,
+  muted = false,
+}: {
+  month: string;
+  list: MarketEvent[];
+  now: Date;
+  muted?: boolean;
+}) {
+  return (
+    <div>
+      <h2 className="eyebrow mb-5">{month}</h2>
+      <ul
+        className={cn(
+          "divide-y divide-rule overflow-hidden rounded-sm border border-rule bg-card",
+          muted && "opacity-60"
+        )}
+      >
+        {list.map((e) => {
+          const du = daysUntil(e.date, now);
+          return (
+            <li
+              key={`${e.date}-${e.title}`}
+              className={cn(
+                "flex flex-col gap-2 px-4 py-4 sm:flex-row sm:items-center sm:gap-6",
+                e.volatile && "bg-accent-soft/40"
+              )}
+            >
+              <div className="w-28 shrink-0">
+                <div className="font-mono text-sm font-bold text-foreground">
+                  {eventDateLabel(e)}
+                </div>
+                <div className="font-mono text-xs text-muted-foreground">
+                  {e.span ? `decides ${weekday(e.date)}` : weekday(e.date)}
+                  {du >= 0 && du <= 7 && (
+                    <span className="text-accent"> &middot; {du === 0 ? "today" : `in ${du}d`}</span>
+                  )}
+                </div>
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-semibold text-foreground">{e.title}</span>
+                  <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+                    {KIND_LABEL[e.kind]}
+                  </span>
+                  {e.volatile && (
+                    <span className="inline-flex items-center gap-1 rounded-sm bg-accent px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-accent-foreground">
+                      <AlertTriangle className="h-3 w-3" aria-hidden="true" />
+                      Volatile
+                    </span>
+                  )}
+                </div>
+                {e.note && <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+export default function MarketCalendarPage() {
+  const now = new Date();
+  const events = allEvents(now);
+  const isPast = (e: MarketEvent): boolean => {
+    if (daysUntil(e.date, now) >= 0) return false;
+    if (e.spanEnd && daysUntil(e.spanEnd, now) >= 0) return false; // still underway
+    return true;
+  };
+  const past = events.filter(isPast);
+  const upcoming = events.filter((e) => !isPast(e));
 
   return (
     <>
       <PageHeader
         eyebrow="Toolkit / Market Calendar"
         title="The dates that move the market"
-        description="RBI policy decisions, F&O expiry days, the Union Budget, inflation and GDP prints, Fed meetings, results seasons and trading holidays. Days marked volatile are when indices historically swing the most - size your positions accordingly."
+        description="RBI policy decisions, F&O expiry days, the Union Budget, inflation and GDP prints, Fed meetings, results seasons and trading holidays - what's next, plus the last three months for context. Days marked volatile are when indices historically swing the most - size your positions accordingly."
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
@@ -79,57 +154,33 @@ export default function MarketCalendarPage() {
           <CalendarDays className="h-4 w-4 text-accent" aria-hidden="true" />
           <span>
             Dates verified against official sources on {CALENDAR_REVIEWED_ON} and re-checked monthly.
-            F&O expiry dates are computed from the exchange&rsquo;s Tuesday convention and rolled back over holidays.
+            Past dates are the actual officially published release dates. F&O expiry dates are
+            computed from the exchange&rsquo;s Tuesday convention and rolled back over holidays.
           </span>
         </div>
 
-        <div className="space-y-12">
-          {[...byMonth.entries()].map(([month, list]) => (
-            <div key={month}>
-              <h2 className="eyebrow mb-5">{month}</h2>
-              <ul className="divide-y divide-rule overflow-hidden rounded-sm border border-rule bg-card">
-                {list.map((e) => {
-                  const du = daysUntil(e.date, now);
-                  return (
-                    <li
-                      key={`${e.date}-${e.title}`}
-                      className={cn(
-                        "flex flex-col gap-2 px-4 py-4 sm:flex-row sm:items-center sm:gap-6",
-                        e.volatile && "bg-accent-soft/40"
-                      )}
-                    >
-                      <div className="w-28 shrink-0">
-                        <div className="font-mono text-sm font-bold text-foreground">
-                          {eventDateLabel(e)}
-                        </div>
-                        <div className="font-mono text-xs text-muted-foreground">
-                          {e.span ? `decides ${weekday(e.date)}` : weekday(e.date)}
-                          {du >= 0 && du <= 7 && (
-                            <span className="text-accent"> &middot; {du === 0 ? "today" : `in ${du}d`}</span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="font-semibold text-foreground">{e.title}</span>
-                          <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                            {KIND_LABEL[e.kind]}
-                          </span>
-                          {e.volatile && (
-                            <span className="inline-flex items-center gap-1 rounded-sm bg-accent px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-accent-foreground">
-                              <AlertTriangle className="h-3 w-3" aria-hidden="true" />
-                              Volatile
-                            </span>
-                          )}
-                        </div>
-                        {e.note && <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>}
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
+        {past.length > 0 && (
+          <div className="mb-14">
+            <h2 className="mb-6 font-display text-2xl font-normal text-foreground sm:text-3xl">
+              The last 3 months
+            </h2>
+            <div className="space-y-12">
+              {groupByMonth(past).map(([month, list]) => (
+                <MonthGroup key={month} month={month} list={list} now={now} muted />
+              ))}
             </div>
-          ))}
+          </div>
+        )}
+
+        <div>
+          <h2 className="mb-6 font-display text-2xl font-normal text-foreground sm:text-3xl">
+            Coming up
+          </h2>
+          <div className="space-y-12">
+            {groupByMonth(upcoming).map(([month, list]) => (
+              <MonthGroup key={month} month={month} list={list} now={now} />
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 rounded-sm border border-rule bg-muted/50 px-4 py-5 text-sm text-muted-foreground">

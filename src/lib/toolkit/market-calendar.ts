@@ -4,7 +4,8 @@
  * Data policy: every dated entry below comes from an official, publicly
  * published source (RBI press releases, NSE circulars, the US Federal
  * Reserve calendar, MoSPI's advance release calendar). Sources are listed
- * per group. The data is reviewed and re-verified against those sources on
+ * per group. Past entries use the actual officially published release dates.
+ * The data is reviewed and re-verified against those sources on
  * a monthly cadence; the "reviewedOn" stamp shows when that last happened.
  *
  * F&O expiry dates are COMPUTED from the exchange's current expiry-day
@@ -27,6 +28,8 @@ export interface MarketEvent {
   date: string;
   /** Optional span label, e.g. "Dec 2-4" for a 3-day meeting. */
   span?: string;
+  /** ISO end date when a span is still ongoing; keeps it out of the "past" group. */
+  spanEnd?: string;
   title: string;
   kind: EventKind;
   /** true = expect an outsized move that day; flagged in the UI. */
@@ -36,6 +39,9 @@ export interface MarketEvent {
 
 /** NSE/BSE trading holidays remaining in the current calendar year (NSE circular CMTR71775, Dec 12 2025). */
 export const TRADING_HOLIDAYS_2026: Record<string, string> = {
+  "2026-09-14": "Ganesh Chaturthi",
+  "2026-10-02": "Mahatma Gandhi Jayanti",
+  "2026-10-20": "Dussehra",
   "2026-11-10": "Diwali - Balipratipada",
   "2026-11-24": "Prakash Gurpurb (Sri Guru Nanak Dev Jayanti)",
   "2026-12-25": "Christmas",
@@ -64,15 +70,23 @@ function monthlyExpiry(year: number, monthIndex: number, weekday: number): Date 
   return d;
 }
 
-/** NSE monthly F&O expiry dates (Tuesday convention) for the next `months` months. */
-export function upcomingExpiries(fromISO: string, months = 4): MarketEvent[] {
+/** How far back the "last 3 months" section reaches. */
+export const PAST_WINDOW_DAYS = 92;
+
+/**
+ * NSE monthly F&O expiry dates (Tuesday convention) around `fromISO`:
+ * `futureMonths` ahead plus `pastMonths` back, the latter clipped to the past window.
+ */
+export function expiriesAround(fromISO: string, pastMonths = 3, futureMonths = 4): MarketEvent[] {
   const from = new Date(fromISO + "T00:00:00Z");
+  const windowStart = new Date(from);
+  windowStart.setUTCDate(windowStart.getUTCDate() - PAST_WINDOW_DAYS);
   const out: MarketEvent[] = [];
-  for (let i = 0; i < months; i++) {
+  for (let i = -pastMonths; i < futureMonths; i++) {
     const y = from.getUTCFullYear();
     const m = from.getUTCMonth() + i;
     const d = monthlyExpiry(y, m, 2); // 2 = Tuesday (NSE convention, 2025-26)
-    if (d < from) continue;
+    if (d < windowStart) continue;
     const label = d.toLocaleDateString("en-IN", { month: "short", timeZone: "UTC" });
     out.push({
       date: toISO(d),
@@ -87,6 +101,77 @@ export function upcomingExpiries(fromISO: string, months = 4): MarketEvent[] {
 
 /** Fixed, officially published events. Decision day is the date used for sorting. */
 export const SCHEDULED_EVENTS: MarketEvent[] = [
+  {
+    date: "2026-07-29",
+    span: "Jul 28-29",
+    title: "US Fed FOMC decision",
+    kind: "global-central-bank",
+    volatile: true,
+  },
+  {
+    date: "2026-08-05",
+    span: "Aug 3-5",
+    title: "RBI MPC decision",
+    kind: "rbi",
+    volatile: true,
+    note: "Previous policy review; the following one is Dec 2-4.",
+  },
+  {
+    date: "2026-08-12",
+    title: "CPI inflation (July print)",
+    kind: "macro-data",
+    volatile: true,
+  },
+  {
+    date: "2026-08-31",
+    title: "GDP Q1 FY27 (Apr-Jun)",
+    kind: "macro-data",
+    volatile: true,
+    note: "MoSPI quarterly estimates.",
+  },
+  {
+    date: "2026-09-14",
+    title: "CPI inflation (August print)",
+    kind: "macro-data",
+    volatile: true,
+    note: "MoSPI release; moved from the 12th (a Saturday).",
+  },
+  {
+    date: "2026-09-15",
+    title: "Advance tax Q2 installment",
+    kind: "macro-data",
+    volatile: false,
+    note: "45% of annual advance tax due; liquidity effect is modest.",
+  },
+  {
+    date: "2026-09-16",
+    span: "Sep 15-16",
+    title: "US Fed FOMC decision",
+    kind: "global-central-bank",
+    volatile: true,
+  },
+  {
+    date: "2026-10-07",
+    span: "Oct 5-7",
+    title: "RBI MPC decision",
+    kind: "rbi",
+    volatile: true,
+  },
+  {
+    date: "2026-10-08",
+    span: "Oct 8 - Nov 14",
+    spanEnd: "2026-11-14",
+    title: "Q2 FY27 results season",
+    kind: "results-season",
+    volatile: true,
+    note: "Underway. Companies must declare quarterly results within 45 days of quarter end (SEBI LODR); IT majors opened the season.",
+  },
+  {
+    date: "2026-10-12",
+    title: "CPI inflation (September print)",
+    kind: "macro-data",
+    volatile: true,
+  },
   {
     date: "2026-10-28",
     span: "Oct 27-28",
@@ -213,8 +298,11 @@ export function allEvents(now = new Date()): MarketEvent[] {
   const todayISO = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }))
     .toISOString()
     .slice(0, 10);
+  const windowStart = new Date(now);
+  windowStart.setUTCDate(windowStart.getUTCDate() - PAST_WINDOW_DAYS);
+  const windowStartISO = toISO(windowStart);
   const holidays: MarketEvent[] = Object.entries(HOLIDAYS)
-    .filter(([d]) => d >= todayISO)
+    .filter(([d]) => d >= windowStartISO)
     .map(([d, name]) => ({
       date: d,
       title: `Market holiday - ${name}`,
@@ -222,8 +310,8 @@ export function allEvents(now = new Date()): MarketEvent[] {
       volatile: false,
       note: "NSE & BSE closed.",
     }));
-  return [...SCHEDULED_EVENTS, ...upcomingExpiries(todayISO, 4), ...holidays]
-    .filter((e) => daysUntil(e.date, now) >= -1)
+  return [...SCHEDULED_EVENTS, ...expiriesAround(todayISO), ...holidays]
+    .filter((e) => daysUntil(e.date, now) >= -PAST_WINDOW_DAYS)
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 
