@@ -3,21 +3,34 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 /**
- * Masthead mark: a solid ink tile struck with a rupee, the way a gazette
- * prints its colophon. Square, not rounded — this is letterpress, not an app.
+ * Masthead mark: the Newsreader "F" whose top bar becomes a rising market
+ * arrow, struck on a night-ink tile - the gazette's colophon stamp.
+ * The F outline is extracted from Newsreader 700, the site's display face.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <span
+    <svg
       aria-hidden="true"
-      className={cn(
-        "flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-foreground bg-foreground text-xl font-bold leading-none text-background",
-        "font-display",
-        className
-      )}
+      viewBox="0 0 64 64"
+      className={cn("h-9 w-9 shrink-0 rounded-sm", className)}
     >
-      ₹
-    </span>
+      <rect width="64" height="64" rx="6" fill="#12151A" stroke="#2A3038" strokeWidth="1.5" />
+      <g transform="translate(1.88,51.2) scale(0.058)">
+        <path
+          d="M434.50-463.50L489-463.50L489-200L434.50-200L424-298L276-298L276-57L351.50-28.50L351.50 0L36.50 0L36.50-28.50L112-57L112-619L36.50-647.50L36.50-676L507-676L503-606.50L276-606.50L276-365.50L424-365.50L434.50-463.50Z"
+          fill="#EDE8DF"
+        />
+      </g>
+      <path
+        d="M31.5 14 L38.5 21.5 L44 12.5 L50 19 L56 8.6"
+        fill="none"
+        stroke="#4FBF8B"
+        strokeWidth="4.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M60.2 3.9 L61.6 11.9 L53.4 7.3 Z" fill="#4FBF8B" />
+    </svg>
   );
 }
 
@@ -38,7 +51,7 @@ export function Logo({
       className={cn("group flex shrink-0 items-center gap-2.5", className)}
       aria-label={`${siteConfig.name} home`}
     >
-      <LogoMark className={compact ? "h-6 w-6 text-sm" : undefined} />
+      <LogoMark className={compact ? "h-6 w-6" : undefined} />
       <span className="block">
         <span
           className={cn(
