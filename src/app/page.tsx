@@ -122,7 +122,7 @@ export default async function Home() {
         {/* Sub-masthead slug line */}
         <div className="rule-heavy-b mb-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pb-3 font-mono text-xs uppercase tracking-wider">
           <div className="flex flex-wrap items-center gap-2 font-bold text-foreground">
-            <span className="bg-foreground px-1.5 py-0.5 text-[10px] text-background">{today}</span>
+            <span className="bg-foreground px-1.5 py-0.5 text-[11px] text-background">{today}</span>
             <span className="hidden sm:inline">
               Household finance, tax discipline &amp; compounding
             </span>
@@ -294,7 +294,7 @@ export default async function Home() {
                         <Icon className="h-[18px] w-[18px]" />
                       </span>
                       <div>
-                        <p className="tint-text font-mono text-[10px] font-bold uppercase tracking-wider">
+                        <p className="tint-text font-mono text-xs font-bold uppercase tracking-wider">
                           {pillar.no}. {pillar.kicker}
                         </p>
                         <h3 className="font-display text-lg font-bold text-foreground">
@@ -303,7 +303,7 @@ export default async function Home() {
                       </div>
                     </div>
                     <p className="text-xs leading-relaxed text-ink-2">{pillar.body}</p>
-                    <p className="mt-3 flex items-center gap-1 border-t border-border pt-2 font-mono text-[11px] text-muted-foreground">
+                    <p className="mt-3 flex items-center gap-1 border-t border-border pt-2 font-mono text-xs text-muted-foreground">
                       <CheckCircle2 className="tint-text h-[13px] w-[13px]" />
                       {pillar.proof}
                     </p>
@@ -354,7 +354,7 @@ export default async function Home() {
             </div>
 
             {/* Statutory notice */}
-            <p className="mt-6 rounded-sm border border-rule bg-muted p-4 font-mono text-[11px] leading-relaxed text-ink-2">
+            <p className="mt-6 rounded-sm border border-rule bg-muted p-4 font-mono text-xs leading-relaxed text-ink-2">
               <strong className="uppercase text-foreground">Statutory editorial notice:</strong>{" "}
               {siteConfig.name} is an independent informational reference platform. All figures,
               growth rates and EMI tables are mathematical simulations based on the inputs you
