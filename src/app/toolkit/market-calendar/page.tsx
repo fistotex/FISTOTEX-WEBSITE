@@ -150,9 +150,9 @@ export default function MarketCalendarPage() {
             ))}
           </ul>
           <p className="mt-3">
-            Track company numbers on the{" "}
+            See verified results dates and official sources on the{" "}
             <Link href="/toolkit/results" className="text-accent hover:underline">
-              results tracker
+              results page
             </Link>
             .
           </p>
@@ -160,4 +160,4 @@ export default function MarketCalendarPage() {
       </section>
     </>
   );
-}
+          }
