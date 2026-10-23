@@ -7,7 +7,7 @@ import { ShieldCheck } from "lucide-react";
 export function Dateline() {
   return (
     <aside className="border-b border-border bg-muted/60">
-      <div className="container mx-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-1.5 text-[11px] text-muted-foreground">
+      <div className="container mx-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-1.5 text-xs text-muted-foreground">
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5 font-semibold tracking-tight text-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
