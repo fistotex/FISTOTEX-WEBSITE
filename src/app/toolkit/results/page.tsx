@@ -6,6 +6,8 @@ import { pageMetadata } from "@/lib/seo";
 import {
   RESULTS_DIRECTORY,
   RESULTS_DIRECTORY_REVIEWED_ON,
+  RESULTS_ARCHIVE,
+  RESULTS_ARCHIVE_REVIEWED_ON,
 } from "@/lib/toolkit/results-directory";
 
 export const metadata: Metadata = pageMetadata({
@@ -80,16 +82,67 @@ export default function ResultsPage() {
         </div>
 
         <p className="mt-4 font-mono text-xs text-muted-foreground">
-          List verified {RESULTS_DIRECTORY_REVIEWED_ON}. We check each company&rsquo;s terms
-          before linking; some companies stay out until their terms allow it.
+          {RESULTS_DIRECTORY.length} dated results verified {RESULTS_DIRECTORY_REVIEWED_ON}. We
+          check each company&rsquo;s terms before linking; some companies stay out until their
+          terms allow it.
         </p>
+
+        <div className="mt-14">
+          <h2 className="font-display text-2xl font-normal text-foreground sm:text-3xl">
+            Official results pages
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+            Direct links to each company&rsquo;s own results or investor-relations page. We have
+            verified that every page exists, is official, and that the company&rsquo;s terms allow
+            linking - but we have not separately confirmed the latest quarter on each one, so check
+            the linked page for the newest results.
+          </p>
+
+          <div className="mt-6 overflow-x-auto rounded-sm border border-rule bg-card">
+            <table className="w-full min-w-[560px] text-sm">
+              <thead>
+                <tr className="border-b border-rule text-left font-mono text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3">Company</th>
+                  <th className="px-4 py-3">Official page</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-rule">
+                {RESULTS_ARCHIVE.map((entry) => (
+                  <tr key={entry.company} className="hover:bg-muted/40">
+                    <td className="px-4 py-3 font-semibold text-foreground">{entry.company}</td>
+                    <td className="px-4 py-3">
+                      <a
+                        href={entry.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-semibold text-accent hover:underline"
+                      >
+                        Results &amp; reports
+                        <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                      </a>
+                      <span className="block font-mono text-xs text-muted-foreground">
+                        {entry.sourceName}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-4 font-mono text-xs text-muted-foreground">
+            {RESULTS_ARCHIVE.length} official pages checked {RESULTS_ARCHIVE_REVIEWED_ON}. More
+            companies are added in batches as each one is verified.
+          </p>
+        </div>
 
         <div className="mt-8 rounded-sm border border-rule bg-muted/50 px-4 py-5 text-sm text-muted-foreground">
           <p className="mb-1 font-semibold text-foreground">How this list works</p>
           <p>
-            Every entry is verified by hand against the company&rsquo;s official investor-relations
-            page or press release before it is listed. We link out to those pages instead of
-            copying figures or reports, so the numbers always live with their source. See also
+            The dated table above is verified by hand against each company&rsquo;s official
+            announcement. The directory below it links to official results pages that we have
+            fetched and terms-checked, without copying figures or reports, so the numbers always
+            live with their source. Companies whose terms restrict linking are excluded. See also
             the{" "}
             <Link href="/toolkit/market-calendar" className="text-accent hover:underline">
               market calendar
