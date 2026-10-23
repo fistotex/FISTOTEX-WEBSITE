@@ -59,7 +59,7 @@ export function HeroCalculator() {
           <span className="h-2.5 w-2.5 rounded-full bg-accent" />
           Physical SIP Blotter
         </span>
-        <span className="rounded-sm border border-accent/20 bg-accent-soft px-2 py-0.5 font-mono text-[11px] font-bold text-accent">
+        <span className="rounded-sm border border-accent/20 bg-accent-soft px-2 py-0.5 font-mono text-xs font-bold text-accent">
           {RETURN_RATE.toFixed(1)}% P.A. COMPOUND
         </span>
       </div>
@@ -68,7 +68,7 @@ export function HeroCalculator() {
       <div className="ledger my-5 p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="font-mono text-[11px] uppercase tracking-wider text-panel-accent">
+            <p className="font-mono text-xs uppercase tracking-wider text-panel-accent">
               Projected maturity corpus ({years} {years === 1 ? "yr" : "yrs"})
             </p>
             <p
@@ -83,7 +83,7 @@ export function HeroCalculator() {
 
         {/* Compounding ladder */}
         <div className="mt-4 border-t border-panel-rule pt-3">
-          <div className="mb-1.5 flex flex-wrap justify-between gap-x-3 gap-y-1 font-mono text-[11px] text-white/70">
+          <div className="mb-1.5 flex flex-wrap justify-between gap-x-3 gap-y-1 font-mono text-xs text-white/70">
             <span>
               Capital:{" "}
               <strong className="tnum font-semibold text-white">
@@ -110,7 +110,7 @@ export function HeroCalculator() {
             />
           </div>
 
-          <div className="mt-1 flex justify-between font-mono text-[10px] text-white/55">
+          <div className="mt-1 flex justify-between font-mono text-[11px] text-white/55">
             <span className="inline-flex items-center gap-1">
               <span aria-hidden="true" className="inline-block h-2 w-2 bg-amber-warm" />
               Principal invested
@@ -141,7 +141,7 @@ export function HeroCalculator() {
             className="range"
             style={{ "--pct": `${pctMonthly}%` } as React.CSSProperties}
           />
-          <div className="mt-1 flex justify-between font-mono text-[10px] text-muted-foreground">
+          <div className="mt-1 flex justify-between font-mono text-[11px] text-muted-foreground">
             <span>₹1,000</span>
             <span>₹50,000</span>
             <span>₹1,00,000</span>
@@ -166,7 +166,7 @@ export function HeroCalculator() {
             className="range"
             style={{ "--pct": `${pctYears}%` } as React.CSSProperties}
           />
-          <div className="mt-1 flex justify-between font-mono text-[10px] text-muted-foreground">
+          <div className="mt-1 flex justify-between font-mono text-[11px] text-muted-foreground">
             <span>1 Year</span>
             <span>15 Years</span>
             <span>30 Years</span>
