@@ -93,9 +93,10 @@ export default function ResultsPage() {
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
             Direct links to each company&rsquo;s own results or investor-relations page. We have
-            verified that every page exists, is official, and that the company&rsquo;s terms allow
-            linking - but we have not separately confirmed the latest quarter on each one, so check
-            the linked page for the newest results.
+            verified that every page exists and is official, and we reviewed the company&rsquo;s
+            published terms and found no restriction on linking - but we have not separately
+            confirmed the latest quarter on each one, so check the linked page for the newest
+            results.
           </p>
 
           <div className="mt-6 overflow-x-auto rounded-sm border border-rule bg-card">
@@ -141,7 +142,8 @@ export default function ResultsPage() {
           <p>
             The dated table above is verified by hand against each company&rsquo;s official
             announcement. The directory below it links to official results pages that we have
-            fetched and terms-checked, without copying figures or reports, so the numbers always
+            fetched and reviewed against the companies&rsquo; published terms, without
+            copying figures or reports, so the numbers always
             live with their source. Companies whose terms restrict linking are excluded. See also
             the{" "}
             <Link href="/toolkit/market-calendar" className="text-accent hover:underline">
