@@ -70,22 +70,17 @@ function MonthGroup({
   month,
   list,
   now,
-  muted = false,
+  past = false,
 }: {
   month: string;
   list: MarketEvent[];
   now: Date;
-  muted?: boolean;
+  past?: boolean;
 }) {
   return (
     <div>
       <h2 className="eyebrow mb-5">{month}</h2>
-      <ul
-        className={cn(
-          "divide-y divide-rule overflow-hidden rounded-sm border border-rule bg-card",
-          muted && "opacity-60"
-        )}
-      >
+      <ul className="divide-y divide-rule overflow-hidden rounded-sm border border-rule bg-card">
         {list.map((e) => {
           const du = daysUntil(e.date, now);
           return (
@@ -113,6 +108,11 @@ function MonthGroup({
                   <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                     {KIND_LABEL[e.kind]}
                   </span>
+                  {past && (
+                    <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+                      Past
+                    </span>
+                  )}
                   {e.volatile && (
                     <span className="inline-flex items-center gap-1 rounded-sm bg-accent px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-accent-foreground">
                       <AlertTriangle className="h-3 w-3" aria-hidden="true" />
@@ -166,7 +166,7 @@ export default function MarketCalendarPage() {
             </h2>
             <div className="space-y-12">
               {groupByMonth(past).map(([month, list]) => (
-                <MonthGroup key={month} month={month} list={list} now={now} muted />
+                <MonthGroup key={month} month={month} list={list} now={now} past />
               ))}
             </div>
           </div>
