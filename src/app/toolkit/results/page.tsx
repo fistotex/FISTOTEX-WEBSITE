@@ -70,7 +70,7 @@ export default async function ResultsPage() {
         <div className="overflow-x-auto rounded-sm border border-rule bg-card">
           <table className="w-full min-w-[760px] text-sm">
             <thead>
-              <tr className="border-b border-rule text-left font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+              <tr className="border-b border-rule text-left font-mono text-xs font-bold uppercase tracking-wide text-muted-foreground">
                 <th className="px-4 py-3">Company</th>
                 <th className="px-4 py-3">Quarter</th>
                 <th className="px-4 py-3 text-right">Revenue</th>
@@ -95,7 +95,7 @@ export default async function ResultsPage() {
                       {r.name}
                       <ExternalLink className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
                     </a>
-                    <div className="font-mono text-[11px] text-muted-foreground">
+                    <div className="font-mono text-xs text-muted-foreground">
                       {r.symbol.replace(".NS", "")}
                     </div>
                   </td>
