@@ -99,7 +99,7 @@ function Entry({ calc }: { calc: CalculatorDef }) {
         <p className="mt-1 text-xs leading-relaxed text-ink-2">{calc.tagline}</p>
       </div>
 
-      <p className="tint-text mt-3 border-t border-border pt-2 font-mono text-[11px] font-semibold">
+      <p className="tint-text mt-3 border-t border-border pt-2 font-mono text-xs font-semibold">
         Calculate {shortName(calc.name)} →
       </p>
     </Link>
@@ -124,7 +124,7 @@ export function GazetteIndex() {
             <div className="gazette-head">
               <div className="flex items-center justify-between gap-2">
                 <span className="tint-text font-mono text-xs font-bold">[{desk.no}]</span>
-                <span className="font-mono text-[11px] uppercase text-muted-foreground">
+                <span className="font-mono text-xs uppercase text-muted-foreground">
                   {entries.length} {desk.unit}
                 </span>
               </div>
