@@ -10,8 +10,6 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Home", match: (p: string) => p === "/" },
-  { href: "/calculators", label: "Calculators", match: (p: string) => p.startsWith("/calculators") },
-  { href: "/news", label: "News", live: true, match: (p: string) => p.startsWith("/news") },
   { href: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
   { href: "/contact", label: "Contact", match: (p: string) => p.startsWith("/contact") },
 ];
@@ -127,11 +125,6 @@ export function Header() {
                   )}
                 >
                   {item.label}
-                  {item.live && (
-                    <span className="rounded-sm bg-accent-soft px-1.5 py-px font-mono text-[10px] font-bold text-accent">
-                      LIVE
-                    </span>
-                  )}
                 </Link>
               );
             })}
