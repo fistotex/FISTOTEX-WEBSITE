@@ -64,7 +64,7 @@ export function DispatchCard({ article, lead = false, className }: DispatchCardP
           <p
             className={cn(
               "leading-relaxed text-ink-2",
-              lead ? "mb-6 max-w-4xl text-sm sm:text-base" : "mb-4 line-clamp-4 text-xs sm:text-sm"
+              lead ? "mb-6 max-w-4xl text-[15px] sm:text-base" : "mb-4 line-clamp-4 text-sm sm:text-[15px]"
             )}
           >
             {article.summary}
@@ -72,7 +72,7 @@ export function DispatchCard({ article, lead = false, className }: DispatchCardP
         )}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 font-mono text-[11px] text-muted-foreground">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 font-mono text-xs text-muted-foreground">
         <span className="uppercase">Dispatch · syndicated, unedited</span>
         <span className="tint-text inline-flex items-center gap-1 font-bold group-hover:underline">
           {lead ? `Read original on ${article.source}` : article.source}
