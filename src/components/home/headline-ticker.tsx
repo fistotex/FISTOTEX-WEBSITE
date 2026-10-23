@@ -25,7 +25,7 @@ export function HeadlineTicker({ articles }: { articles: NewsArticle[] }) {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
-          <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-foreground">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground">
             Wire <span className="hidden sm:inline">Dispatch</span>
           </span>
         </div>

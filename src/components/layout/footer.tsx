@@ -49,7 +49,7 @@ export function Footer() {
               compounding mathematics and syndicated business news for disciplined household
               investors.
             </p>
-            <div className="space-y-1 pt-2 font-mono text-[11px] text-foreground">
+            <div className="space-y-1 pt-2 font-mono text-xs text-foreground">
               {siteConfig.businessAddress && <p>Editorial office: {siteConfig.businessAddress}</p>}
               <p>
                 Inquiries:{" "}
@@ -65,7 +65,7 @@ export function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h2 className="mb-3 font-mono text-[11px] font-bold uppercase tracking-wider text-foreground">
+              <h2 className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-foreground">
                 {col.title}
               </h2>
               <ul className="space-y-2 font-medium">
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
 
         {/* Footnote */}
-        <div className="flex flex-col items-center justify-between gap-3 pt-6 text-center font-mono text-[11px] text-muted-foreground sm:flex-row sm:text-left">
+        <div className="flex flex-col items-center justify-between gap-3 pt-6 text-center font-mono text-xs text-muted-foreground sm:flex-row sm:text-left">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All computations executed locally on
             your own hardware.

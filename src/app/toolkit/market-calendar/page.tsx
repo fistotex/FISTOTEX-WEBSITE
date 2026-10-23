@@ -112,11 +112,11 @@ export default function MarketCalendarPage() {
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="font-semibold text-foreground">{e.title}</span>
-                          <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+                          <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                             {KIND_LABEL[e.kind]}
                           </span>
                           {e.volatile && (
-                            <span className="inline-flex items-center gap-1 rounded-sm bg-accent px-1.5 py-px font-mono text-[10px] font-bold uppercase tracking-wide text-accent-foreground">
+                            <span className="inline-flex items-center gap-1 rounded-sm bg-accent px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-accent-foreground">
                               <AlertTriangle className="h-3 w-3" aria-hidden="true" />
                               Volatile
                             </span>

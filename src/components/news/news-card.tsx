@@ -60,7 +60,7 @@ export function NewsCard({ article, featured = false, className }: NewsCardProps
             <Newspaper className="tint-text h-10 w-10 opacity-40" style={{ "--tint": tint } as React.CSSProperties} />
           </div>
         )}
-        <span className="absolute left-3 top-3 inline-flex items-center rounded bg-black/75 px-2 py-0.5 text-[11px] font-semibold text-white">
+        <span className="absolute left-3 top-3 inline-flex items-center rounded bg-black/75 px-2 py-0.5 text-xs font-semibold text-white">
           {article.source}
         </span>
       </div>
@@ -68,7 +68,7 @@ export function NewsCard({ article, featured = false, className }: NewsCardProps
       <div className={cn("flex flex-1 flex-col gap-3 p-5", featured && "md:p-7")}>
         {article.category && (
           <span
-            className="tint-text inline-flex w-fit items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider"
+            className="tint-text inline-flex w-fit items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
             style={{ "--tint": tint } as React.CSSProperties}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-current" />
@@ -95,7 +95,7 @@ export function NewsCard({ article, featured = false, className }: NewsCardProps
         {article.summary && (
           <p
             className={cn(
-              "flex-1 text-sm leading-relaxed text-muted-foreground",
+              "flex-1 text-[15px] leading-relaxed text-muted-foreground",
               featured ? "line-clamp-4" : "line-clamp-3"
             )}
           >

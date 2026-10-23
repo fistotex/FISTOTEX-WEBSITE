@@ -421,7 +421,7 @@ function FieldControl({
       <div className="mt-2 flex items-start justify-between gap-3">
         {field.help ? <p className="text-xs leading-relaxed text-muted-foreground">{field.help}</p> : <span />}
         {hasRange && (
-          <span className="tnum shrink-0 text-[11px] text-muted-foreground">
+          <span className="tnum shrink-0 text-xs text-muted-foreground">
             {formatBound(field.min as number, field.kind)} – {formatBound(field.max as number, field.kind)}
           </span>
         )}

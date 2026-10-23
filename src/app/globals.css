@@ -209,18 +209,21 @@ body {
   /* Masthead / lead headline — lighter weight, larger optical size */
   .font-masthead {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.025em;
     line-height: 1.08;
+  }
+  @media (min-width: 640px) {
+    .font-masthead { font-weight: 400; }
   }
 
   /* Small caps monospace used for datelines, slugs and section kickers */
   .slug {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
   }
 
   /* ── Rules ─────────────────────────────────────────────────── */
@@ -270,8 +273,8 @@ body {
     gap: 0.5rem;
     font-family: var(--font-mono);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--brand-2);
   }
