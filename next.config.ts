@@ -60,6 +60,14 @@ const nextConfig: NextConfig = {
       swallow them.
     */
     return [
+      // Apex host -> www, one hop, path and query preserved. www is the
+      // canonical host (canonicals and sitemap already use it).
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "fistotex.com" }],
+        destination: "https://www.fistotex.com/:path*",
+        permanent: true,
+      },
       // 2026-09 restructure: the calculators moved up from /toolkit/finance-calculator.
       {
         source: "/toolkit/finance-calculator/:id",
@@ -88,3 +96,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
