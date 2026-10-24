@@ -165,10 +165,10 @@ export function FeedbackWidget() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Close feedback panel" : "Give feedback"}
-        className="btn-brand fixed bottom-4 right-4 z-40 h-10 gap-1.5 px-3.5 font-mono text-xs font-bold uppercase tracking-wide shadow-[0_4px_16px_rgb(0_0_0/0.2)]"
+        className="btn-brand fixed bottom-4 right-4 z-40 h-10 gap-1.5 px-3.5 max-sm:w-10 max-sm:px-0 font-mono text-xs font-bold uppercase tracking-wide shadow-[0_4px_16px_rgb(0_0_0/0.2)]"
       >
         <MessageSquarePlus className="h-4 w-4" />
-        Feedback
+        <span className="max-sm:sr-only">Feedback</span>
       </button>
     </>
   );
