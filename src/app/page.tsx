@@ -136,7 +136,7 @@ export default async function Home() {
             <HeroCalculator />
             <Link
               href="/calculators"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline lg:hidden"
+              className="mt-2 inline-flex min-h-[44px] items-center gap-2 py-2 text-sm font-semibold text-accent underline-offset-4 hover:underline lg:hidden"
             >
               Browse all {calculators.length} calculators
               <ArrowRight className="h-4 w-4" />
