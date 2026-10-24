@@ -24,7 +24,7 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  display: "swap",
+  display: "optional",
 });
 
 // Datelines, slugs and statutory stamps are set in monospace, the way a
