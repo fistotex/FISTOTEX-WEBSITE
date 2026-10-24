@@ -25,8 +25,9 @@ export const calculatorSeo: Record<string, CalculatorSeo> = {
       "Use it to set a realistic monthly target for a goal such as a house down payment, a child's education or retirement, and to see how much of the final value comes from compounding rather than your own contributions.",
     ],
     faqs: [
-      { q: "What return should I assume for an equity SIP?", a: "There is no fixed answer. Diversified Indian equity funds have delivered widely different returns across periods. Many planners use a conservative 10–12% for long horizons and test lower rates to see the downside." },
-      { q: "Can I start a SIP with ₹500?", a: "Yes. Most mutual fund schemes accept SIPs from ₹500 a month, and some from ₹100. The calculator's minimum is ₹500." },
+      { q: "What return should I assume for an equity SIP?", a: "There is no fixed answer, and a higher assumed return produces a bigger number without making it more likely. Try several rates, including low ones, to see a range instead of one figure. Check the actual fund's published returns and costs for the period you care about." },
+      { q: "What is the smallest SIP I can model?", a: "This calculator accepts ₹500 to ₹2,00,000 a month. The minimum SIP for a real scheme depends on the fund house and platform, so check it with them." },
+      { q: "Why might a fund's own projection differ from this one?", a: "This calculator assumes a constant return compounded monthly, with each instalment invested at the start of the month. Real funds move up and down, and costs, taxes and exit loads are not included here. Treat the result as an illustration, not a forecast." },
     ],
   },
   lumpsum: {
@@ -152,11 +153,11 @@ export const calculatorSeo: Record<string, CalculatorSeo> = {
       "Estimate your National Pension System (NPS) corpus, lump sum and monthly pension at retirement. Free NPS calculator for India with annuity assumptions.",
     intro: [
       "An NPS calculator estimates the corpus your National Pension System account could build by retirement, and splits it into the lump sum you can withdraw and the part used to buy an annuity for a monthly pension.",
-      "Adjust the expected return to match your asset mix. A higher equity allocation has higher expected returns and more volatility.",
+      "This calculator models a normal exit at age 60 or later only. Premature exits and corpus-size exceptions are not modelled. Adjust the expected return to match your asset mix: a higher equity allocation has a higher expected return and more volatility, and the return is your assumption, not a promise.",
     ],
     faqs: [
       { q: "What return does NPS give?", a: "It depends on the mix of equity, corporate bonds and government securities you choose and on market performance. Past returns of NPS schemes are published by PFRDA." },
-      { q: "Can I withdraw NPS before 60?", a: "Partial withdrawals are allowed for specific purposes after a minimum period, and premature exit is subject to stricter annuity rules. Check current PFRDA rules before planning an early exit." },
+      { q: "Can I withdraw NPS before 60?", a: "Early exits and partial withdrawals follow different PFRDA rules from a normal exit, and they are not modelled by this calculator. Check the current PFRDA rules before planning one." },
     ],
   },
   retirement: {
