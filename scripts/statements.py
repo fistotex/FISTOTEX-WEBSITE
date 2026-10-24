@@ -68,8 +68,17 @@ def parse_article(a):
     per = re.search(r"in Rs\. Cr\.\s*\n+((?:[A-Z][a-z]{2}'\d\d\s*\n+){1,3})", body)
     ns = re.search(r"Net Sales/Income from operations\s*\n((?:[-\d,\.]+\s*\n+){1,3})", body)
     if not (lab and per and ns): return None
+    periods = per.group(1).split()
+    lines = [x.strip() for x in body[body.index(per.group(0)) + len(per.group(0)):].split("\n") if x.strip()]
+    rows, i = {}, 0
+    while i < len(lines):
+        if re.fullmatch(r"-?[\d,\.]+|--", lines[i]): i += 1; continue
+        label = lines[i].replace("&amp;amp;", "&").replace("&amp;", "&"); vals = []; j = i + 1
+        while j < len(lines) and len(vals) < len(periods) and re.fullmatch(r"-?[\d,\.]+|--", lines[j]): vals.append(lines[j]); j += 1
+        if len(vals) == len(periods): rows[label] = vals
+        i = j if vals else i + 1
     return {"basis": mm.group(2), "unit_label": lab.group(2).strip() if lab.group(1) == mm.group(2) else None,
-            "periods": per.group(1).split(), "netsales": ns.group(1).split(), "headline": h}
+            "periods": periods, "netsales": ns.group(1).split(), "rows": rows, "headline": h}
 
 
 def quarterly_unit_check(q, arts):
@@ -81,8 +90,17 @@ def quarterly_unit_check(q, arts):
     for a in arts:
         if a["basis"] != q["basis"] or a["unit_label"] != "in Rs. Cr.": continue
         pairs = [(p, v) for p, v in zip(a["periods"], a["netsales"]) if p in fmap and num(v) is not None and num(fmap[p]) is not None]
-        if pairs and all(abs(num(v) - num(fmap[p])) < 0.005 for p, v in pairs):
-            return {"article": a["headline"], "label": "in Rs. Cr.", "periods_matched": [p for p, _ in pairs]}
+        if not (pairs and all(abs(num(v) - num(fmap[p])) < 0.005 for p, v in pairs)): continue
+        # other rows of the same table must agree too (same company, basis, periods)
+        other_ok = other_n = 0
+        for label, avals in (a.get("rows") or {}).items():
+            if label == "Net Sales/Income from operations" or label not in q["rows"]: continue
+            fv = {p.replace(" ", ""): v for p, v in zip(q["periods"], q["rows"][label])}
+            for p, v in zip(a["periods"], avals):
+                if p in fv and num(v) is not None and num(fv[p]) is not None:
+                    other_n += 1; other_ok += abs(num(v) - num(fv[p])) < 0.005
+        if other_n >= 2 and other_ok == other_n:
+            return {"article": a["headline"], "label": "in Rs. Cr.", "periods_matched": [p for p, _ in pairs], "rows_matched": other_n + len(pairs)}
     return None
 
 
