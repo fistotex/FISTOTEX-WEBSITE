@@ -26,14 +26,34 @@ type Row = {
 const rows = rawRows as Row[];
 const REFRESHED_ON = "October 24, 2026";
 
-// Source lists the latest date first; reverse so the calendar reads in
-// chronological order (today first). Row order within a date is the source's.
-const byDate: [string, Row[]][] = [];
-for (const row of rows) {
-  const last = byDate[byDate.length - 1];
-  if (last && last[0] === row.date) last[1].push(row);
-  else byDate.push([row.date, [row]]);
+// Source order is not chronological (month blocks are listed separately), so
+// parse the "24 Oct"-style labels into real dates and sort ascending. The year
+// is resolved to the nearest occurrence, which keeps the season window right
+// across the December/January boundary.
+const MONTH_INDEX: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+const NOW_MS = Date.now();
+const HALF_YEAR_MS = 180 * 86400000;
+function parseDayLabel(label: string): number {
+  const [dayStr, monStr] = label.split(" ");
+  const day = parseInt(dayStr, 10);
+  const month = MONTH_INDEX[monStr] ?? 0;
+  const year = NOW_MS - new Date(new Date().getFullYear(), month, day).getTime() > HALF_YEAR_MS
+    ? new Date().getFullYear() + 1
+    : new Date().getFullYear();
+  return new Date(year, month, day).getTime();
 }
+const groups = new Map<string, Row[]>();
+for (const row of rows) {
+  const list = groups.get(row.date);
+  if (list) list.push(row);
+  else groups.set(row.date, [row]);
+}
+const byDate: [string, Row[]][] = [...groups.entries()].sort(
+  (a, b) => parseDayLabel(a[0]) - parseDayLabel(b[0])
+);
 
 export default function ResultsCalendarPage() {
   return (
@@ -66,7 +86,7 @@ export default function ResultsCalendarPage() {
           </Link>
         </div>
 
-        {[...byDate].reverse().map(([date, dayRows]) => (
+        {byDate.map(([date, dayRows]) => (
           <div key={date} className="mt-10 first:mt-0">
             <h2 className="font-display text-2xl font-normal text-foreground sm:text-3xl">
               {date}
