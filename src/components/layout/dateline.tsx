@@ -28,7 +28,7 @@ export function Dateline() {
           </span>
           <span className="inline-flex items-center gap-1 font-semibold text-accent">
             <ShieldCheck className="h-3.5 w-3.5" />
-            INPUTS STAY ON-DEVICE
+            NO ACCOUNT NEEDED
           </span>
         </div>
       </div>
