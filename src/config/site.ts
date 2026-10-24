@@ -37,6 +37,8 @@ export const siteConfig = {
       "/privacy-policy",
       "/terms-and-conditions",
       "/disclaimer",
+      "/toolkit/companies",
+      "/toolkit/results-calendar",
     ],
     /** Slot IDs from AdSense → Ads → By ad unit. Empty = not yet created. */
     slots: {

@@ -149,6 +149,14 @@ export default function ResultsPage() {
             <Link href="/toolkit/market-calendar" className="text-accent hover:underline">
               market calendar
             </Link>
+            , the{" "}
+            <Link href="/toolkit/results-calendar" className="text-accent hover:underline">
+              upcoming results calendar
+            </Link>{" "}
+            and the{" "}
+            <Link href="/toolkit/companies" className="text-accent hover:underline">
+              all-company directory
+            </Link>
             .
           </p>
         </div>
