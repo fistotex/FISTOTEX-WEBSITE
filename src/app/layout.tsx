@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { Plus_Jakarta_Sans, Newsreader, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
@@ -115,11 +116,20 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Route-aware ad gating: middleware stamps the request path on x-pathname.
+  // On excluded paths the AdSense loader script is not served at all, so no
+  // ad code (including Auto Ads) runs on those routes on a fresh page load.
+  // The google-adsense-account meta tag stays on every page for site
+  // verification; it loads nothing.
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const adsPathExcluded = siteConfig.adsense.excludedPaths.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`)
+  );
   return (
     <html
       lang="en-IN"
@@ -151,7 +161,7 @@ export default function RootLayout({
           reviewer's fetch would not see it. `async` keeps it off the critical
           path so it costs nothing in Core Web Vitals.
         */}
-        {siteConfig.adsense.enabled && siteConfig.adsense.clientId && (
+        {siteConfig.adsense.enabled && siteConfig.adsense.clientId && !adsPathExcluded && (
           <>
             <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
             <script
