@@ -29,6 +29,21 @@ function valuesFromSearch(search: string, fields: CalcField[], defaults: Values)
   return out;
 }
 
+/** Inputs in a shared link that fall outside the supported range (they get adjusted, so say so). */
+function adjustedFromSearch(search: string, fields: CalcField[]): string[] {
+  const params = new URLSearchParams(search);
+  const notes: string[] = [];
+  for (const f of fields) {
+    const raw = params.get(f.key);
+    if (raw === null || f.kind === "select") continue;
+    const n = Number(raw);
+    if (!Number.isFinite(n)) continue;
+    const c = clampToField(n, f);
+    if (c !== n) notes.push(`${f.label}: ${n} is outside the supported range, so ${c} is used instead`);
+  }
+  return notes;
+}
+
 function clampToField(n: number, f: CalcField) {
   let v = n;
   if (f.min !== undefined) v = Math.max(f.min, v);
@@ -50,6 +65,11 @@ export function CalculatorRunner({ id }: { id: string }) {
 
   const values = React.useMemo<Values>(
     () => edits ?? (def ? (search ? valuesFromSearch(search, def.fields, def.defaults) : def.defaults) : {}),
+    [edits, search, def]
+  );
+
+  const adjusted = React.useMemo(
+    () => (edits === null && def && search ? adjustedFromSearch(search, def.fields) : []),
     [edits, search, def]
   );
 
@@ -164,6 +184,19 @@ export function CalculatorRunner({ id }: { id: string }) {
 
       {/* ── Results ── */}
       <div className="space-y-6" aria-live="polite">
+        {adjusted.length > 0 && (
+          <div className="surface flex items-start gap-3 border-amber-500/40 bg-amber-500/10 p-4">
+            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
+            <div>
+              <p className="font-semibold text-foreground">This link was adjusted</p>
+              <ul className="mt-1 list-disc pl-5 text-sm text-muted-foreground">
+                {adjusted.map((a) => (
+                  <li key={a}>{a}.</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
         {validation ? (
           <div className="surface flex items-start gap-3 border-amber-500/40 bg-amber-500/10 p-6">
             <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
