@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/layout/section";
 import { pageMetadata } from "@/lib/seo";
 import rawRows from "@/data/upcoming-results.json";
+import refreshMeta from "@/data/refresh-meta.json";
 import { ResultsCalendar, type CalendarRow } from "./calendar-client";
 
 export const metadata: Metadata = pageMetadata({
@@ -13,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const rows = rawRows as CalendarRow[];
-const REFRESHED_ON = "October 24, 2026";
+const REFRESHED_ON = (refreshMeta as { resultsCalendar?: string }).resultsCalendar ?? "recently";
 
 export default function ResultsCalendarPage() {
   return (
