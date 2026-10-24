@@ -180,7 +180,9 @@ export function CompanySearch() {
                   {isOpen && (
                     <tr className="bg-muted/20">
                       <td colSpan={4} className="px-4 py-4">
-                        <FigureDetails loading={shard === undefined} fin={fin} progress={progress} />
+                        <div className="sticky left-0 w-[calc(100vw-4.5rem)] max-w-[44rem]">
+                          <FigureDetails loading={shard === undefined} fin={fin} progress={progress} />
+                        </div>
                       </td>
                     </tr>
                   )}
