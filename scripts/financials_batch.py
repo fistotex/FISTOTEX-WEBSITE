@@ -10,6 +10,7 @@ Usage: financials_batch.py BUDGET_SECONDS   |   financials_batch.py publish
 import json, os, sys, time
 sys.path.insert(0, os.path.dirname(__file__))
 import mc_scrape as m
+import statements as st
 
 STATE = "fin-state/financials.jsonl"
 INDEX = "public/data/companies-index.json"
@@ -34,7 +35,7 @@ def load_done():
                 attempts[sid] = attempts.get(sid, 0) + 1
                 if attempts[sid] >= MAX_ATTEMPTS:
                     done[sid] = d
-            else:
+            elif d.get("v") == 2:
                 done[sid] = d
     return done
 
@@ -45,7 +46,6 @@ def batch(budget):
     if os.path.exists("fin-state/BLOCKED"):
         print("Previously blocked by the source (403/429). Not retrying until fin-state/BLOCKED is removed by a person.")
         sys.exit(0)
-    if os.path.exists("fin-state/CONTINUE"): os.remove("fin-state/CONTINUE")
     done = load_done(); t0 = time.time(); n = 0
     pending, streak = [], 0
     with open(STATE, "a") as f:
@@ -53,7 +53,7 @@ def batch(budget):
             if c["i"] in done: continue
             if time.time() - t0 > budget: break
             try:
-                d = m.financials(c["i"], c["c"])
+                d = st.collect(c["i"], c["c"])
             except SystemExit:
                 open("fin-state/BLOCKED", "w").write(time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()) + " HTTP 403/429\n")
                 print("BLOCKED (403/429) - stopping, no bypass"); sys.exit(0)
@@ -75,22 +75,21 @@ def batch(budget):
     total = len(done)
     print(f"batch {n}, total {total} of {len(comps)}")
     open("fin-state/progress.txt", "w").write(f"{total} {len(comps)}\n")
-    # Ask for a follow-up run only if this run made progress and the source did not stop us.
-    if n > 0 and total < len(comps) and not os.path.exists("fin-state/BLOCKED"):
-        open("fin-state/CONTINUE", "w").write("1\n")
 
 
 def publish():
     comps = json.load(open(INDEX)); done = load_done()
     shards = {}
     for d in done.values():
-        if d.get("error") or not (d.get("pl_annual") or d.get("q_overview")): continue
-        rec = {k: d.get(k) for k in ("pl_type", "pl_periods", "pl_annual", "ttm", "q_overview", "earnings_dates")}
+        if d.get("error") or not (d.get("annual") or d.get("quarterly")): continue
+        rec = {k: d.get(k) for k in ("stockType", "ttm", "annual", "quarterly", "unit")}
         shards.setdefault(d["scId"][0].upper(), {})[d["scId"]] = rec
     os.makedirs("public/data/financials", exist_ok=True)
+    for fn in os.listdir("public/data/financials"):
+        if fn.endswith(".json"): os.remove(os.path.join("public/data/financials", fn))
     for k, v in shards.items():
         json.dump(v, open(f"public/data/financials/{k}.json", "w"), separators=(",", ":"))
-    json.dump({"collected": len(done), "total": len(comps), "complete": len(done) >= len(comps)},
+    json.dump({"v": 2, "collected": len(done), "total": len(comps), "complete": len(done) >= len(comps)},
               open("public/data/financials/progress.json", "w"))
     print("published shards", len(shards), "companies with figures", sum(len(v) for v in shards.values()))
 
