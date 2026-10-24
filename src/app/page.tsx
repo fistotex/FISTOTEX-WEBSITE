@@ -60,7 +60,7 @@ const pillars = [
     title: "Standard Indian math",
     icon: BookOpen,
     tint: "#C26100",
-    body: "We follow RBI reducing-balance guidelines, post office and bank quarterly compounding conventions, and the PFRDA 40% annuity threshold. Every formula is printed on the page it powers.",
+    body: "We follow RBI reducing-balance guidelines, post office and bank quarterly compounding conventions, and the PFRDA annuity rules for NPS exits. Every formula is printed on the page it powers.",
     proof: "RBI / SEBI / PFRDA aligned",
   },
   {
