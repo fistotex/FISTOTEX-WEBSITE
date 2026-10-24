@@ -34,6 +34,9 @@ const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  // Decorative small text only: not preloaded, so the headline font and CSS
+  // are not competing with four extra font files on slow connections.
+  preload: false,
 });
 
 export const metadata: Metadata = {
