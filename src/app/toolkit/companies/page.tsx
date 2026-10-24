@@ -5,9 +5,9 @@ import { pageMetadata } from "@/lib/seo";
 import { CompanySearch } from "./company-search";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Every Listed Company - Searchable Directory",
+  title: "Company Directory - Search 11,427 Companies",
   description:
-    "Search 11,000+ Indian listed companies by name and jump to each company's stock page. The full directory, searchable in your browser - nothing is tracked or sent anywhere.",
+    "Search Moneycontrol's directory of 11,427 companies by name and open each company's Moneycontrol page. The search runs entirely in your browser - nothing is tracked or sent anywhere.",
   path: "/toolkit/companies",
 });
 
@@ -16,8 +16,8 @@ export default function CompaniesPage() {
     <>
       <PageHeader
         eyebrow="Toolkit / Companies"
-        title="Every listed company, one search box"
-        description="The complete directory of Indian listed companies, searchable instantly in your browser. Type a name to filter; each entry links to the company's stock page for prices, results and filings. The search runs entirely on your device."
+        title="The company directory, one search box"
+        description="Moneycontrol's directory of 11,427 companies - wider than the actively trading NSE/BSE list, so it includes BSE-only, SME and inactive entries - searchable instantly in your browser. Type a name to filter; each entry links to the company's Moneycontrol page for prices, results and filings. The search runs entirely on your device."
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
