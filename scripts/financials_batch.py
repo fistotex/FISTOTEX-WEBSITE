@@ -45,6 +45,7 @@ def batch(budget):
     if os.path.exists("fin-state/BLOCKED"):
         print("Previously blocked by the source (403/429). Not retrying until fin-state/BLOCKED is removed by a person.")
         sys.exit(0)
+    if os.path.exists("fin-state/CONTINUE"): os.remove("fin-state/CONTINUE")
     done = load_done(); t0 = time.time(); n = 0
     pending, streak = [], 0
     with open(STATE, "a") as f:
@@ -74,6 +75,9 @@ def batch(budget):
     total = len(done)
     print(f"batch {n}, total {total} of {len(comps)}")
     open("fin-state/progress.txt", "w").write(f"{total} {len(comps)}\n")
+    # Ask for a follow-up run only if this run made progress and the source did not stop us.
+    if n > 0 and total < len(comps) and not os.path.exists("fin-state/BLOCKED"):
+        open("fin-state/CONTINUE", "w").write("1\n")
 
 
 def publish():
