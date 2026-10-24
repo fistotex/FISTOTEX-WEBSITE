@@ -15,7 +15,6 @@ import {
   calculatorsPath,
 } from "@/lib/calculators/registry";
 import { categorySeo } from "@/lib/calculators/seo-content";
-import { siteConfig } from "@/config/site";
 
 export function generateStaticParams() {
   return categoryIds.map((category) => ({ category }));
@@ -62,11 +61,6 @@ export default async function CategoryRoute({
 
   const seo = categorySeo[cat.id];
   const others = categories.filter((c) => c.id !== cat.id && calculatorsByCategory(c.id).length > 0);
-  const reviewed = new Date(siteConfig.contentReviewed).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
 
   return (
     <div className="flex flex-col">
@@ -76,7 +70,6 @@ export default async function CategoryRoute({
           title: seo?.title ?? `${cat.name} Calculators`,
           description: seo?.description ?? cat.blurb,
           url: absoluteUrl(categoryPath(cat.id)),
-          dateModified: siteConfig.contentReviewed,
         }}
       />
       <StructuredData
@@ -101,8 +94,7 @@ export default async function CategoryRoute({
         crumbs={[{ name: "Calculators", href: calculatorsPath }, { name: cat.name }]}
       >
         <p className="text-sm text-muted-foreground">
-          Free · No sign-up · Last reviewed{" "}
-          <time dateTime={siteConfig.contentReviewed}>{reviewed}</time>
+          Free · No sign-up · Runs in your browser
         </p>
       </PageHeader>
 
