@@ -22,13 +22,13 @@ export function Dateline() {
         </div>
 
         <div className="flex items-center gap-3 font-mono">
-          <span className="hidden text-ink-2 sm:inline">ZERO-TELEMETRY BROWSER ENGINE</span>
+          <span className="hidden text-ink-2 sm:inline">CALCULATIONS RUN IN YOUR BROWSER</span>
           <span aria-hidden="true" className="hidden text-rule sm:inline">
             |
           </span>
           <span className="inline-flex items-center gap-1 font-semibold text-accent">
             <ShieldCheck className="h-3.5 w-3.5" />
-            100% CLIENT-SIDE
+            INPUTS STAY ON-DEVICE
           </span>
         </div>
       </div>
