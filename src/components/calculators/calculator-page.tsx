@@ -26,8 +26,6 @@ export function CalculatorPage({ id }: { id: string }) {
   const category = categories.find((c) => c.id === def.category);
   const seo = calculatorSeo[def.id];
   const faqs = [...def.faqs, ...(seo?.faqs ?? [])];
-  const reviewed = new Date(siteConfig.contentReviewed);
-  const reviewedLabel = reviewed.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
   // Worked example from the default inputs: static, crawlable numbers that
   // search engines and AI answers can quote.
@@ -62,7 +60,6 @@ export function CalculatorPage({ id }: { id: string }) {
           title: def.name,
           description: def.tagline,
           url: pageUrl,
-          dateModified: siteConfig.contentReviewed,
         }}
       />
       <StructuredData
@@ -71,7 +68,6 @@ export function CalculatorPage({ id }: { id: string }) {
           title: def.name,
           description: seo?.description ?? def.tagline,
           url: pageUrl,
-          dateModified: siteConfig.contentReviewed,
         }}
       />
       <StructuredData type="BreadcrumbList" data={{ items: crumbs }} />
@@ -100,9 +96,6 @@ export function CalculatorPage({ id }: { id: string }) {
           <span className="inline-flex items-center gap-1.5">
             <BadgeCheck className="h-4 w-4 text-accent" />
             Formula and assumptions shown below
-          </span>
-          <span>
-            Last updated <time dateTime={siteConfig.contentReviewed}>{reviewedLabel}</time>
           </span>
           <span>Free · No sign-up · Runs in your browser</span>
         </p>
