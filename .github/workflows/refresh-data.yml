@@ -32,7 +32,12 @@ jobs:
             git config user.email "bot@fistotex.com"
             git add src/data/upcoming-results.json
             git commit -m "data: refresh upcoming results calendar ($(date -u +%Y-%m-%d))"
-            git push
+            # main may have moved while the job ran (site deploys commit
+            # directly); rebase onto the latest main and retry the push.
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep 10
+            done
           else
             echo "no change"
           fi
@@ -54,7 +59,10 @@ jobs:
             git config user.email "bot@fistotex.com"
             git add public/data/companies-index.json
             git commit -m "data: refresh company directory ($(date -u +%Y-%m-%d))"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep 10
+            done
           else
             echo "no change"
           fi
