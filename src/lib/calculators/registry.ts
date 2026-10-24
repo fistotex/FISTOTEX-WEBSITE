@@ -703,7 +703,7 @@ const nps: CalculatorDef = {
     { key: "retirementAge", label: "Retirement age", kind: "age", min: 40, max: 75, step: 1 },
     { key: "monthlyContribution", label: "Monthly contribution", kind: "currency", min: 500, max: 200000, step: 500 },
     { key: "expectedReturn", label: "Expected return", kind: "percent", min: 1, max: 20, step: 0.5 },
-    { key: "annuityPercentage", label: "Annuity allocation", kind: "percent", min: 40, max: 100, step: 5, help: "At least 40% of the corpus must buy an annuity." },
+    { key: "annuityPercentage", label: "Annuity allocation", kind: "percent", min: 20, max: 100, step: 5, help: "Minimum annuity share at exit: 20% for non-government subscribers (PFRDA, Dec 2025), 40% for government subscribers. The default of 40% suits both." },
     { key: "expectedAnnuityRate", label: "Annuity rate", kind: "percent", min: 1, max: 12, step: 0.5 },
   ],
   defaults: { currentAge: 30, retirementAge: 60, monthlyContribution: 10000, expectedReturn: 10, annuityPercentage: 40, expectedAnnuityRate: 6 },
@@ -743,7 +743,7 @@ const nps: CalculatorDef = {
     "A higher annuity allocation means a safer but usually smaller income.",
   ],
   faqs: [
-    { q: "How much must go into an annuity?", a: "At least 40% of the corpus at retirement. The remaining 60% can be withdrawn as a lump sum." },
+    { q: "How much must go into an annuity?", a: "Since PFRDA's December 2025 amendment, non-government subscribers must put at least 20% of the corpus into an annuity and can withdraw up to 80% as a lump sum. Government subscribers still use the 40% annuity, 60% lump sum split. Check the current PFRDA exit regulations for your category." },
     { q: "Is NPS tax-efficient?", a: "Contributions may qualify for deduction under Section 80CCD, subject to the applicable limits for your regime." },
   ],
 };
