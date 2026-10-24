@@ -44,14 +44,25 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh cache list --key fin- --limit 100 --json key --jq '.[].key' | grep -v "^$KEY$" | while read k; do gh cache delete "$k" || true; done
-      - name: Publish when complete
+      - name: Hourly recoverable checkpoint (artifact, 30 days)
+        if: ${{ github.run_number % 12 == 0 }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: financials-checkpoint
+          path: fin-state/financials.jsonl
+          retention-days: 30
+          overwrite: true
+      - name: Publish figures (partial every ~6h, final when complete)
         run: |
           read done total < fin-state/progress.txt
-          if [ "$done" -ge "$total" ] && [ ! -f public/data/financials/A.json ]; then
+          complete=false; [ "$done" -ge "$total" ] && complete=true
+          already=false; grep -q '"complete": true' public/data/financials/progress.json 2>/dev/null && already=true
+          if { [ "$complete" = true ] && [ "$already" = false ]; } || [ $(( ${{ github.run_number }} % 72 )) -eq 0 ]; then
             python3 scripts/financials_batch.py publish
             git config user.name "fistotex-bot"
             git config user.email "bot@fistotex.com"
             git add public/data/financials
-            git commit -m "data: reported financial figures (all companies collected)"
+            git diff --cached --quiet && exit 0
+            git commit -m "data: reported financial figures ($done of $total companies collected)"
             for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 10; done
           fi
