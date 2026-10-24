@@ -374,7 +374,7 @@ function StatementTables({
   unit: Fin2["unit"];
 }) {
   const qOk = !!unit?.quarterly && !!quarterly?.rows && Object.keys(quarterly.rows).length > 0;
-  const aOk = !!annual && !!unit?.annual?.[annual.basis] && Object.keys(annual.block.rows ?? {}).length > 0;
+  const aOk = false; // annual statement amounts stay withheld: no annual source unit label
   const haveAny = !!quarterly || !!annual;
   return (
     <div className="space-y-5">
@@ -397,14 +397,14 @@ function StatementTables({
         <p className="text-xs text-muted-foreground">
           Unit check for this company: Moneycontrol&apos;s own results article for it headlines the same
           quarterly sales figures in Rs. crore and labels its table &quot;in Rs. Cr.&quot;
-          {aOk ? " The four quarters of the latest financial year also match the annual revenue line, so the annual table uses the same unit." : ""}
         </p>
       )}
-      {haveAny && !(qOk && aOk) && (
+      {haveAny && (
         <p className="rounded-sm border border-rule bg-card px-3 py-2 text-xs text-muted-foreground">
-          {qOk || aOk ? "Some statement amounts" : "Statement amounts"} for this company are not shown: Moneycontrol does not state
-          their unit in a way we could match to this company&apos;s own figures, so they stay withheld
-          rather than guessed. Use the Moneycontrol link for them.
+          {qOk
+            ? "Annual statement amounts are not shown: Moneycontrol's annual statement does not state its unit, so they stay withheld rather than guessed."
+            : "Statement amounts for this company are not shown: Moneycontrol does not state a unit that we could match to this company's own figures, so they stay withheld rather than guessed."}{" "}
+          Use the Moneycontrol link for them.
         </p>
       )}
     </div>
