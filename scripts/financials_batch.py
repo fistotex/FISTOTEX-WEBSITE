@@ -46,6 +46,7 @@ def batch(budget):
         print("Previously blocked by the source (403/429). Not retrying until fin-state/BLOCKED is removed by a person.")
         sys.exit(0)
     done = load_done(); t0 = time.time(); n = 0
+    pending, streak = [], 0
     with open(STATE, "a") as f:
         for c in comps:
             if c["i"] in done: continue
@@ -53,10 +54,21 @@ def batch(budget):
             try:
                 d = m.financials(c["i"], c["c"])
             except SystemExit:
-                open("fin-state/BLOCKED", "w").write(time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()) + "\n")
+                open("fin-state/BLOCKED", "w").write(time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()) + " HTTP 403/429\n")
                 print("BLOCKED (403/429) - stopping, no bypass"); sys.exit(0)
             except Exception as e:
                 d = {"scId": c["i"], "company_slug": c["c"], "error": str(e)[:100]}
+            if d.get("error"):
+                streak += 1; pending.append(d)
+                print("error:", c["i"], d["error"])
+                if streak >= 8:
+                    open("fin-state/BLOCKED", "w").write(time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()) + " 8 consecutive unreadable responses\n")
+                    print("8 consecutive unreadable responses - treating as a block, stopping, not saving them as done")
+                    break
+                continue
+            streak = 0
+            for e_ in pending: f.write(json.dumps(e_) + "\n")
+            pending = []
             f.write(json.dumps(d) + "\n"); f.flush(); n += 1
     done = load_done()
     total = len(done)
