@@ -61,7 +61,7 @@ export function CompanySearch() {
   if (!entries) {
     return (
       <p className="rounded-sm border border-rule bg-card px-4 py-6 text-sm text-muted-foreground">
-        Loading the full directory&hellip;
+        Loading the company directory&hellip;
       </p>
     );
   }
@@ -112,7 +112,7 @@ export function CompanySearch() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-semibold text-accent hover:underline"
                   >
-                    Company page
+                    Moneycontrol
                     <ExternalLink className="h-3 w-3" aria-hidden="true" />
                   </a>
                 </td>
