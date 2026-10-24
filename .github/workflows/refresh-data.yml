@@ -27,10 +27,10 @@ jobs:
       - run: python3 scripts/refresh_data.py calendar
       - name: Commit if changed
         run: |
-          if [ -n "$(git status --porcelain src/data/upcoming-results.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/upcoming-results.json src/data/refresh-meta.json)" ]; then
             git config user.name "fistotex-bot"
             git config user.email "bot@fistotex.com"
-            git add src/data/upcoming-results.json
+            git add src/data/upcoming-results.json src/data/refresh-meta.json
             git commit -m "data: refresh upcoming results calendar ($(date -u +%Y-%m-%d))"
             # main may have moved while the job ran (site deploys commit
             # directly); rebase onto the latest main and retry the push.
@@ -54,10 +54,10 @@ jobs:
       - run: python3 scripts/refresh_data.py directory
       - name: Commit if changed
         run: |
-          if [ -n "$(git status --porcelain public/data/companies-index.json)" ]; then
+          if [ -n "$(git status --porcelain public/data/companies-index.json src/data/refresh-meta.json)" ]; then
             git config user.name "fistotex-bot"
             git config user.email "bot@fistotex.com"
-            git add public/data/companies-index.json
+            git add public/data/companies-index.json src/data/refresh-meta.json
             git commit -m "data: refresh company directory ($(date -u +%Y-%m-%d))"
             for i in 1 2 3; do
               git pull --rebase origin main && git push && break
