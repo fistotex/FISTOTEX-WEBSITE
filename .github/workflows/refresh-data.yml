@@ -1,0 +1,60 @@
+# Refreshes Fistotex's public data files on a schedule using the site's own
+# low-rate Python scripts (see scripts/refresh_data.py for what it does and
+# does not do). Commits land on main only when the data actually changed.
+name: Refresh public data
+
+on:
+  schedule:
+    # 04:15 UTC = 09:45 IST, daily: upcoming-results calendar
+    - cron: "15 4 * * *"
+    # 05:00 UTC Sundays = 10:30 IST, weekly: full company directory
+    - cron: "0 5 * * 0"
+  workflow_dispatch: # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+jobs:
+  calendar:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 4 * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python3 scripts/refresh_data.py calendar
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain src/data/upcoming-results.json)" ]; then
+            git config user.name "fistotex-bot"
+            git config user.email "bot@fistotex.com"
+            git add src/data/upcoming-results.json
+            git commit -m "data: refresh upcoming results calendar ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "no change"
+          fi
+
+  directory:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 5 * * 0'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python3 scripts/refresh_data.py directory
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain public/data/companies-index.json)" ]; then
+            git config user.name "fistotex-bot"
+            git config user.email "bot@fistotex.com"
+            git add public/data/companies-index.json
+            git commit -m "data: refresh company directory ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "no change"
+          fi
