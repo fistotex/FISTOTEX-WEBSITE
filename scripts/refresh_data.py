@@ -38,6 +38,24 @@ def get(url, referer="https://www.moneycontrol.com/"):
     return r
 
 
+def stamp(key):
+    """Records when each dataset was last refreshed (IST), so pages can show
+    an honest "Refreshed on" date instead of a hardcoded one."""
+    from datetime import datetime, timezone, timedelta
+
+    ist = timezone(timedelta(hours=5, minutes=30))
+    today = datetime.now(ist).strftime("%B %-d, %Y")
+    meta = {}
+    try:
+        with open("src/data/refresh-meta.json") as f:
+            meta = json.load(f)
+    except FileNotFoundError:
+        pass
+    meta[key] = today
+    with open("src/data/refresh-meta.json", "w") as f:
+        json.dump(meta, f)
+
+
 def calendar():
     """Upcoming results for roughly the next two and a half weeks."""
     from datetime import date, timedelta
@@ -80,6 +98,7 @@ def calendar():
         raise SystemExit("aborting: calendar came back empty, keeping old file")
     with open("src/data/upcoming-results.json", "w") as f:
         json.dump(rows, f, indent=1)
+    stamp("resultsCalendar")
     print(f"calendar: {len(rows)} rows written")
 
 
@@ -100,6 +119,7 @@ def directory():
         raise SystemExit(f"aborting: only {len(rows)} companies found, keeping old file")
     with open("public/data/companies-index.json", "w") as f:
         json.dump(rows, f, separators=(",", ":"))
+    stamp("companyDirectory")
     print(f"directory: {len(rows)} companies written")
 
 
