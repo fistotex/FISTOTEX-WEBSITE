@@ -1,0 +1,57 @@
+# Collects each listed company's reported figures from Moneycontrol in small,
+# resumable low-rate batches. Progress is kept in the Actions cache (so the site
+# is not redeployed every run); when every company is done, the figures are
+# committed once to public/data/financials/. Stops on any 403/429, no bypass.
+name: Collect reported financials
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: financials
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - uses: actions/cache/restore@v4
+        with:
+          path: fin-state
+          key: fin-none
+          restore-keys: fin-
+      - run: python3 scripts/financials_batch.py 270
+      - name: Save progress
+        run: echo "KEY=fin-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_ENV"
+      - uses: actions/cache/save@v4
+        with:
+          path: fin-state
+          key: ${{ env.KEY }}
+      - name: Drop older progress caches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh cache list --key fin- --limit 100 --json key --jq '.[].key' | grep -v "^$KEY$" | while read k; do gh cache delete "$k" || true; done
+      - name: Publish when complete
+        run: |
+          read done total < fin-state/progress.txt
+          if [ "$done" -ge "$total" ] && [ ! -f public/data/financials/A.json ]; then
+            python3 scripts/financials_batch.py publish
+            git config user.name "fistotex-bot"
+            git config user.email "bot@fistotex.com"
+            git add public/data/financials
+            git commit -m "data: reported financial figures (all companies collected)"
+            for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 10; done
+          fi
