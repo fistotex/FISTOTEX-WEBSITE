@@ -26,7 +26,8 @@ type Row = {
 const rows = rawRows as Row[];
 const REFRESHED_ON = "October 24, 2026";
 
-// Preserve first-seen order of dates (source lists latest first).
+// Source lists the latest date first; reverse so the calendar reads in
+// chronological order (today first). Row order within a date is the source's.
 const byDate: [string, Row[]][] = [];
 for (const row of rows) {
   const last = byDate[byDate.length - 1];
@@ -65,7 +66,7 @@ export default function ResultsCalendarPage() {
           </Link>
         </div>
 
-        {byDate.map(([date, dayRows]) => (
+        {[...byDate].reverse().map(([date, dayRows]) => (
           <div key={date} className="mt-10 first:mt-0">
             <h2 className="font-display text-2xl font-normal text-foreground sm:text-3xl">
               {date}
@@ -106,7 +107,7 @@ export default function ResultsCalendarPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 font-semibold text-accent hover:underline"
                         >
-                          Company page
+                          Moneycontrol
                           <ExternalLink className="h-3 w-3" aria-hidden="true" />
                         </a>
                       </td>
