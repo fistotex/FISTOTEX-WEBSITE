@@ -5,8 +5,7 @@
 name: Collect reported financials
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  # schedule trigger removed while collection is stopped (restore: schedule + cron "*/5 * * * *")
   workflow_dispatch:
     inputs:
       clear_block:
