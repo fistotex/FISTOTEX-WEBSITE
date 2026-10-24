@@ -140,7 +140,7 @@ export default async function Home() {
           <div className="order-2 space-y-6 lg:col-span-7">
             <span className="inline-flex items-center gap-2 rounded-sm border border-brand-2/25 bg-brand-2-soft px-2.5 py-1 font-mono text-xs font-semibold text-brand-2">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-2" />
-              Indian statutory assumptions (FY 2025–26)
+              Standard Indian formulas · assumptions stated per calculator
             </span>
 
             <h1 className="font-masthead text-4xl text-foreground sm:text-5xl lg:text-6xl">
@@ -204,7 +204,7 @@ export default async function Home() {
           </div>
           <p className="flex shrink-0 items-center gap-2 font-mono text-xs text-muted-foreground">
             <span className="h-2 w-2 rounded-full bg-accent" />
-            {calculators.length} of {calculators.length} active · FY 2025–26
+            {calculators.length} of {calculators.length} calculators available
           </p>
         </div>
 
