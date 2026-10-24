@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      clear_block:
+        description: "Only a person sets this: remove the stop marker after a block or unreadable-response stop"
+        required: false
+        default: "false"
 
 concurrency:
   group: financials
@@ -32,6 +37,9 @@ jobs:
           path: fin-state
           key: fin-none
           restore-keys: fin-
+      - name: Clear stop marker (only when a person asks)
+        if: ${{ github.event.inputs.clear_block == 'true' }}
+        run: rm -f fin-state/BLOCKED
       - run: python3 scripts/financials_batch.py 270
       - name: Save progress
         run: echo "KEY=fin-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_ENV"
