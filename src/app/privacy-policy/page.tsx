@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/layout/section";
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description:
-    "How Fistotex handles your data: calculators run in your browser, we store no inputs, and analytics are limited to anonymous usage. Read the full privacy policy.",
+    "How Fistotex handles your data: calculations run in your browser, shareable links contain your inputs in the page address, and analytics are set up to leave those values out. Read the full privacy policy.",
   path: "/privacy-policy",
 });
 
@@ -44,7 +44,7 @@ const sections = [
       <h3>2.2 Information Collected Automatically</h3>
       <ul>
         <li><strong>Analytics Data:</strong> We use Google Analytics 4 (GA4) to collect anonymous usage data including pages visited, time on page, device type, browser, country (based on IP), and referral source. This data does not personally identify you.</li>
-        <li><strong>Calculator Usage:</strong> Our financial calculators run entirely in your browser. <strong>We do not collect, store, or transmit any data you enter into calculators.</strong> All calculations happen locally on your device.</li>
+        <li><strong>Calculator Usage:</strong> Calculator inputs and results are computed in your browser. For shareable links, your inputs are also written into the page address (URL). Our analytics events are set up to leave those values out. If you open or reload a page whose address contains your numbers, that address can be seen by our hosting provider and by the advertising scripts on the page. Do not share links containing numbers you want kept private.</li>
         <li><strong>Technical Data:</strong> IP address, browser type, operating system, referring URLs, and access times for security and performance monitoring.</li>
       </ul>
 
@@ -88,7 +88,7 @@ const sections = [
         <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred.</li>
         <li><strong>With Your Consent:</strong> When you explicitly agree to share information.</li>
       </ul>
-      <p>We do not share calculator inputs or results with any third party - these never leave your browser.</p>
+      <p>We do not sell calculator inputs. Our analytics events are set up to leave them out. Calculations run in your browser, but if a page address contains your inputs, that address can be seen by our hosting provider and by the advertising scripts on the page (see the calculator usage section above).</p>
     `,
   },
   {
@@ -120,7 +120,7 @@ const sections = [
       <h3>5.4 What advertising does not touch</h3>
       <ul>
         <li>We do not share your name, email address or contact-form messages with advertisers.</li>
-        <li><strong>Calculator inputs are never shared with advertisers.</strong> Calculations run entirely in your browser and the figures you enter are never transmitted anywhere, including to Google.</li>
+        <li><strong>Calculator inputs and advertising:</strong> We do not pass calculator inputs to advertisers on purpose. However, if you open a page whose address contains your inputs (for example a shared link), advertising scripts on that page can see that address. Do not share links containing numbers you want kept private.</li>
         <li>We do not place ads on pages aggregating third-party news content.</li>
       </ul>
     `,
@@ -246,7 +246,7 @@ export default function PrivacyPolicyPage() {
             <div className="mt-12 surface p-6 border-brand/30 bg-brand/5">
               <h3 className="font-semibold text-foreground mb-3">Summary</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex gap-2"><span className="text-accent">✓</span> Calculator data never leaves your browser (your light/dark theme choice is saved in your browser only)</li>
+                <li className="flex gap-2"><span className="text-accent">✓</span> Calculations run in your browser; shared links contain your inputs in the page address (your light/dark theme choice is saved in your browser only)</li>
                 <li className="flex gap-2"><span className="text-accent">✓</span> Only contact form data and anonymous analytics collected</li>
                 <li className="flex gap-2"><span className="text-accent">✓</span> No selling of personal information</li>
                 <li className="flex gap-2"><span className="text-accent">✓</span> Google Analytics 4 for anonymous usage stats</li>
