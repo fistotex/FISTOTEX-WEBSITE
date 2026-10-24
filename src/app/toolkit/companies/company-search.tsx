@@ -17,6 +17,14 @@ type Fin = {
     upcoming_ear?: { date?: string; quater?: string };
   } | string;
 };
+type Block = { periods?: (string | null)[]; months?: (string | null)[]; basis?: string; rows?: Record<string, (string | null)[]> };
+type Fin2 = {
+  stockType?: string;
+  ttm?: Record<string, string>;
+  annual?: Record<string, Block>;
+  quarterly?: Block | null;
+  unit?: { quarterly?: { article?: string; label?: string } | null; annual?: Record<string, boolean> };
+};
 type Progress = { collected: number; total: number; complete: boolean };
 
 const DATA_URL = "/data/companies-index.json";
@@ -35,7 +43,7 @@ export function CompanySearch() {
   const [query, setQuery] = useState("");
   const [shown, setShown] = useState(PAGE_SIZE);
   const [open, setOpen] = useState<string | null>(null);
-  const [shards, setShards] = useState<Record<string, Record<string, Fin> | "none">>({});
+  const [shards, setShards] = useState<Record<string, Record<string, Fin & Fin2> | "none">>({});
   const [progress, setProgress] = useState<Progress | null>(null);
 
   useEffect(() => {
@@ -56,7 +64,7 @@ export function CompanySearch() {
       fetch(`/data/financials/${letter}.json`)
         .then((r) => (r.ok ? r.json() : "none"))
         .catch(() => "none")
-        .then((d) => setShards((prev) => ({ ...prev, [letter]: d as Record<string, Fin> | "none" })));
+        .then((d) => setShards((prev) => ({ ...prev, [letter]: d as Record<string, Fin & Fin2> | "none" })));
     }
   }
 
@@ -225,7 +233,7 @@ function FigureDetails({
   progress,
 }: {
   loading: boolean;
-  fin: Fin | undefined;
+  fin: (Fin & Fin2) | undefined;
   progress: Progress | null;
 }) {
   if (loading) return <p className="text-sm text-muted-foreground">Loading reported figures&hellip;</p>;
@@ -238,12 +246,21 @@ function FigureDetails({
       </p>
     );
   }
-  const annual = fin.pl_annual && Object.keys(fin.pl_annual).length > 0 ? fin.pl_annual : null;
+  const isV2 = fin.annual !== undefined || fin.quarterly !== undefined;
+  const annualV2 = fin.annual ? Object.entries(fin.annual)[0] : undefined;
+  const annual = !isV2 && fin.pl_annual && Object.keys(fin.pl_annual).length > 0 ? fin.pl_annual : null;
   const q = fin.q_overview && typeof fin.q_overview === "object" ? fin.q_overview : null;
   const ed = fin.earnings_dates && typeof fin.earnings_dates === "object" ? fin.earnings_dates : null;
   const ttm = fin.ttm ? TTM_LABELS.filter(([k]) => fin.ttm?.[k] && fin.ttm[k] !== "--") : [];
   return (
     <div className="space-y-5 text-sm">
+      {isV2 && (
+        <StatementTables
+          quarterly={fin.quarterly ?? null}
+          annual={annualV2 ? { basis: annualV2[0], block: annualV2[1] } : null}
+          unit={fin.unit}
+        />
+      )}
       {annual && (
         <p className="rounded-sm border border-rule bg-card px-3 py-2 text-xs text-muted-foreground">
           Annual and quarterly amounts (sales, profit and similar) are collected but not shown yet:
@@ -300,12 +317,96 @@ function FigureDetails({
       )}
       <p className="text-xs text-muted-foreground">
         Figures are copied as published by Moneycontrol and are not calculated or adjusted by
-        Fistotex. Statement basis (standalone or consolidated) is not shown here; check the
-        Moneycontrol page. Not investment advice.
+        Fistotex. Statement tables show the basis (standalone or consolidated) that Moneycontrol
+        labels them with; always check the Moneycontrol page. Not investment advice.
         {progress && !progress.complete
           ? ` Collection is in progress: ${progress.collected.toLocaleString("en-IN")} of ${progress.total.toLocaleString("en-IN")} companies so far.`
           : ""}
       </p>
+    </div>
+  );
+}
+
+const Q_SKIP = /^(Basic|Diluted) EPS/;
+
+function cell(v: string | null | undefined) {
+  return v === undefined || v === null || v === "" || v === "--" ? "Not reported" : v;
+}
+
+function Table({ title, periods, rows, skipEps }: { title: string; periods: (string | null)[]; rows: Record<string, (string | null)[]>; skipEps?: boolean }) {
+  const labels = Object.keys(rows).filter((l) => !(skipEps && Q_SKIP.test(l)));
+  return (
+    <div>
+      <p className="font-mono text-xs font-bold uppercase tracking-wide text-muted-foreground">{title}</p>
+      <div className="mt-2 overflow-x-auto rounded-sm border border-rule bg-card">
+        <table className="w-full min-w-[420px] text-xs">
+          <thead>
+            <tr className="border-b border-rule text-left font-mono text-muted-foreground">
+              <th className="px-2 py-1.5">As labelled by Moneycontrol</th>
+              {periods.map((p, i) => (
+                <th key={i} className="px-2 py-1.5 text-right">{p ?? ""}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-rule">
+            {labels.map((l) => (
+              <tr key={l}>
+                <td className="px-2 py-1.5 font-semibold">{l}</td>
+                {periods.map((_, i) => (
+                  <td key={i} className="px-2 py-1.5 text-right font-mono">{cell(rows[l][i])}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function StatementTables({
+  quarterly,
+  annual,
+  unit,
+}: {
+  quarterly: Block | null;
+  annual: { basis: string; block: Block } | null;
+  unit: Fin2["unit"];
+}) {
+  const qOk = !!unit?.quarterly && !!quarterly?.rows && Object.keys(quarterly.rows).length > 0;
+  const aOk = !!annual && !!unit?.annual?.[annual.basis] && Object.keys(annual.block.rows ?? {}).length > 0;
+  const haveAny = !!quarterly || !!annual;
+  return (
+    <div className="space-y-5">
+      {qOk && quarterly && (
+        <Table
+          title={`Quarterly results - ${quarterly.basis} - Rs. crore`}
+          periods={quarterly.periods ?? []}
+          rows={quarterly.rows ?? {}}
+          skipEps
+        />
+      )}
+      {aOk && annual && (
+        <Table
+          title={`Annual - ${annual.basis} - Rs. crore (per-share rows in Rs.)`}
+          periods={annual.block.periods ?? []}
+          rows={annual.block.rows ?? {}}
+        />
+      )}
+      {(qOk || aOk) && (
+        <p className="text-xs text-muted-foreground">
+          Unit check for this company: Moneycontrol&apos;s own results article for it headlines the same
+          quarterly sales figures in Rs. crore and labels its table &quot;in Rs. Cr.&quot;
+          {aOk ? " The four quarters of the latest financial year also match the annual revenue line, so the annual table uses the same unit." : ""}
+        </p>
+      )}
+      {haveAny && !(qOk && aOk) && (
+        <p className="rounded-sm border border-rule bg-card px-3 py-2 text-xs text-muted-foreground">
+          {qOk || aOk ? "Some statement amounts" : "Statement amounts"} for this company are not shown: Moneycontrol does not state
+          their unit in a way we could match to this company&apos;s own figures, so they stay withheld
+          rather than guessed. Use the Moneycontrol link for them.
+        </p>
+      )}
     </div>
   );
 }
