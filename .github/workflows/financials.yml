@@ -44,8 +44,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh cache list --key fin- --limit 100 --json key --jq '.[].key' | grep -v "^$KEY$" | while read k; do gh cache delete "$k" || true; done
+      - name: Decide checkpoint
+        id: cp
+        run: |
+          if [ $(( ${{ github.run_number }} % 12 )) -eq 0 ]; then echo "do=true" >> "$GITHUB_OUTPUT"; fi
       - name: Hourly recoverable checkpoint (artifact, 30 days)
-        if: ${{ github.run_number % 12 == 0 }}
+        if: steps.cp.outputs.do == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: financials-checkpoint
