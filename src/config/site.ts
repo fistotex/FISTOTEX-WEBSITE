@@ -11,11 +11,9 @@ export const siteConfig = {
   ogImage: "/opengraph-image",
   contactEmail: process.env.CONTACT_EMAIL || "fistotex@gmail.com",
   ownerName: process.env.SITE_OWNER_NAME || "Fistotex",
-  founder: { name: "Ishan Gupta", role: "Founder & CEO" },
-  partner: { name: "Naman", role: "Partner" },
   businessAddress: process.env.BUSINESS_ADDRESS || "",
 
-  // Date the calculator formulas and guide copy were last checked (YYYY-MM-DD)
+  // Used only for sitemap lastmod. Not a formula-review date; do not present it as one.
   contentReviewed: "2026-09-27",
 
   // Google AdSense
