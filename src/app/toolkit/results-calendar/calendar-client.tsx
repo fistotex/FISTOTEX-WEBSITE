@@ -58,9 +58,17 @@ export function ResultsCalendar({ rows }: { rows: CalendarRow[] }) {
   // midnight rollovers without a redeploy.
   const [mounted, setMounted] = useState(false);
   const [mode, setMode] = useState<Mode>("today");
+  const [todayLabel, setTodayLabel] = useState("");
 
   useEffect(() => {
     setMounted(true);
+    setTodayLabel(todayLabelIST());
+    // Re-anchor "today" for tabs held open across IST midnight.
+    const timer = setInterval(() => {
+      const label = todayLabelIST();
+      setTodayLabel((prev) => (prev === label ? prev : label));
+    }, 60000);
+    return () => clearInterval(timer);
   }, []);
 
   const groups = useMemo(() => {
@@ -73,9 +81,8 @@ export function ResultsCalendar({ rows }: { rows: CalendarRow[] }) {
     const asc = [...map.entries()].sort(
       (a, b) => parseDayLabel(a[0]) - parseDayLabel(b[0])
     );
-    if (!mounted || mode === "chrono") return { ordered: asc, todayLabel: "" };
+    if (!mounted || mode === "chrono" || !todayLabel) return { ordered: asc, todayLabel: "" };
 
-    const todayLabel = todayLabelIST();
     const todayMs = parseDayLabel(todayLabel);
     const today = asc.filter(([, list]) => parseDayLabel(list[0].date) === todayMs);
     const future = asc.filter(([, list]) => parseDayLabel(list[0].date) > todayMs);
@@ -83,7 +90,7 @@ export function ResultsCalendar({ rows }: { rows: CalendarRow[] }) {
       .filter(([, list]) => parseDayLabel(list[0].date) < todayMs)
       .reverse();
     return { ordered: [...today, ...future, ...past], todayLabel };
-  }, [rows, mounted, mode]);
+  }, [rows, mounted, mode, todayLabel]);
 
   return (
     <div>
