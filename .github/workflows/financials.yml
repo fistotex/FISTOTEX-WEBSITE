@@ -56,12 +56,12 @@ jobs:
           path: fin-state/financials.jsonl
           retention-days: 30
           overwrite: true
-      - name: Publish figures (partial every ~6h, final when complete)
+      - name: Publish figures (partial about every 3h, final when complete)
         run: |
           read done total < fin-state/progress.txt
           complete=false; [ "$done" -ge "$total" ] && complete=true
           already=false; grep -q '"complete": true' public/data/financials/progress.json 2>/dev/null && already=true
-          if { [ "$complete" = true ] && [ "$already" = false ]; } || [ ! -f public/data/financials/progress.json ] || [ $(( ${{ github.run_number }} % 72 )) -eq 0 ]; then
+          if { [ "$complete" = true ] && [ "$already" = false ]; } || { [ "$done" -ge 150 ] && ! grep -q '"v": 2' public/data/financials/progress.json 2>/dev/null; } || [ $(( ${{ github.run_number }} % 36 )) -eq 0 ]; then
             python3 scripts/financials_batch.py publish
             git config user.name "fistotex-bot"
             git config user.email "bot@fistotex.com"
