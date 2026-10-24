@@ -43,7 +43,7 @@ const sections = [
 
       <h3>2.2 Information Collected Automatically</h3>
       <ul>
-        <li><strong>Analytics Data:</strong> We use Google Analytics 4 (GA4) to collect usage data including pages visited, time on page, device type, browser, country (based on IP), and referral source. Google may process identifiers such as your IP address and cookie identifiers to provide this service; we do not use GA4 to collect your name or contact details.</li>
+        <li><strong>Analytics Data:</strong> We use Google Analytics 4 (GA4) to collect usage data including pages visited, time on page, device type, browser, country (based on IP), and referral source. GA4 uses cookie identifiers to tell visits apart and derives approximate location from your IP address; see Google's Analytics documentation for how it handles IP addresses. We do not use GA4 to collect your name or contact details.</li>
         <li><strong>Calculator Usage:</strong> Calculator inputs and results are computed in your browser. For shareable links, your inputs are also written into the page address (URL). Our analytics events are set up to leave those values out. If you open or reload a page whose address contains your numbers, that address can be seen by our hosting provider and by the advertising scripts on the page. Do not share links containing numbers you want kept private.</li>
         <li><strong>Technical Data:</strong> IP address, browser type, operating system, referring URLs, and access times for security and performance monitoring.</li>
       </ul>
