@@ -89,7 +89,7 @@ const homepageFaqs = [
   },
   {
     q: "Where are my inputs stored when I bookmark a calculation?",
-    a: "Scenarios are encoded into the browser URL itself, for example ?monthlyInvestment=10000&years=15. Nothing is stored on a server, so you can safely bookmark a link or send it to family.",
+    a: "Scenarios are encoded into the page address itself, for example ?monthlyInvestment=10000&years=15, so you can bookmark a link or send it to family. We do not save calculations to an account. Because the values sit in the address, they may also be visible to our hosting provider and to analytics or ad services loaded on the page, so avoid sharing a link whose numbers you want private.",
   },
 ];
 
@@ -134,6 +134,13 @@ export default async function Home() {
           {/* Blotter spine */}
           <div className="order-1 lg:col-span-5">
             <HeroCalculator />
+            <Link
+              href="/calculators"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline lg:hidden"
+            >
+              Browse all {calculators.length} calculators
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
           {/* Lead manifesto */}
