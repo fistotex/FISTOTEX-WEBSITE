@@ -54,7 +54,7 @@ ${categoryLines}
 
 - [All finance calculators](${baseUrl}${calculatorsPath}): Index of every calculator grouped by goal.
 - [Latest financial news](${baseUrl}/news): Live Indian market and personal-finance headlines with source attribution.
-- [About](${baseUrl}/about): Who runs ${siteConfig.name} and how the calculators are checked.
+- [About](${baseUrl}/about): About ${siteConfig.name} and what it is not (not investment advice).
 - [Disclaimer](${baseUrl}/disclaimer): Limits of the estimates and the educational nature of the site.
 - [Contact](${baseUrl}/contact): ${siteConfig.contactEmail}
 `;
