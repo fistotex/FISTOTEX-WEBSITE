@@ -70,3 +70,13 @@ jobs:
             git commit -m "data: reported financial figures ($done of $total companies collected)"
             for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 10; done
           fi
+      - name: Continue (bounded self-dispatch)
+        if: ${{ always() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Only when this run made progress and the source has not stopped us
+          # (no fin-state/BLOCKED). Same request rate; no progress or a stop means no follow-up run.
+          if [ -f fin-state/CONTINUE ] && [ ! -f fin-state/BLOCKED ]; then
+            gh workflow run financials.yml --repo "$GITHUB_REPOSITORY" --ref main
+          fi
