@@ -1,0 +1,36 @@
+# Backs up the collected financial figures state (from the Actions cache) as a
+# downloadable artifact. Makes no request to any data source. Manual only.
+name: Back up financials state
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: financials
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: fin-state
+          key: fin-none
+          restore-keys: fin-
+      - name: Summarise what is being saved
+        run: |
+          ls -la fin-state
+          wc -l fin-state/financials.jsonl
+          cat fin-state/BLOCKED 2>/dev/null || echo "no BLOCKED marker"
+          cat fin-state/progress.txt 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: financials-state-backup
+          path: fin-state
+          retention-days: 90
+          overwrite: true
