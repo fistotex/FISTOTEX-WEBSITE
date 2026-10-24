@@ -38,7 +38,7 @@ export const revalidate = 600;
 /** The four seals printed under the lead — what the reader is promised. */
 const seals = [
   { icon: BadgeCheck, label: "No account needed" },
-  { icon: KeyRound, label: "Inputs stay in your browser" },
+  { icon: KeyRound, label: "Calculated in your browser" },
   { icon: Sigma, label: "Formulas disclosed" },
   { icon: IndianRupee, label: "Lakhs & crores math" },
 ];
@@ -52,7 +52,7 @@ const pillars = [
     icon: Lock,
     tint: "#0A5C36",
     body: "Every loan amount, monthly SIP commitment or retirement assumption you enter stays inside your device's memory; calculator inputs are not sent to our servers. There is no user database and no sales outreach. Site analytics and ads are described in the privacy policy.",
-    proof: "Calculator inputs never leave your browser",
+    proof: "Calculations run in your browser",
   },
   {
     no: "02",
@@ -377,7 +377,7 @@ export default async function Home() {
               Your household money, in numbers you can independently verify.
             </h2>
             <p className="max-w-xl text-xs text-white/70 sm:text-sm">
-              No advertising trackers on your inputs, no phone-number gate. Plan a home purchase,
+              No sign-up, no phone-number gate. Plan a home purchase,
               evaluate SIP compounding and read the wire unfiltered.
             </p>
           </div>
