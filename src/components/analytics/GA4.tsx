@@ -27,7 +27,10 @@ export function GA4() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gaId}', { send_page_view: false });
+            var p = new URLSearchParams(location.search), k = new URLSearchParams();
+            p.forEach(function (v, n) { if (n.indexOf('utm_') === 0) k.set(n, v); });
+            var q = k.toString();
+            gtag('config', '${gaId}', { send_page_view: false, page_location: location.origin + location.pathname + (q ? '?' + q : '') });
           `,
         }}
       />
@@ -54,7 +57,14 @@ export function GA4PageView() {
     const gaId = siteConfig.gaId;
     if (!gaId) return;
 
-    const url = pathname + (window.location.search || "");
+    // Calculator inputs are mirrored into the address bar (for share links), so only
+    // campaign (utm_) parameters are ever passed on to analytics, never the other query values.
+    const keep = new URLSearchParams();
+    new URLSearchParams(window.location.search).forEach((v, n) => {
+      if (n.startsWith("utm_")) keep.set(n, v);
+    });
+    const kq = keep.toString();
+    const url = pathname + (kq ? `?${kq}` : "");
     if (lastPath.current === url) return;
     lastPath.current = url;
 
@@ -62,10 +72,11 @@ export function GA4PageView() {
     let attempts = 0;
     const send = () => {
       if (typeof window.gtag === "function") {
+        window.gtag("set", { page_location: window.location.origin + url });
         window.gtag("event", "page_view", {
           page_path: url,
           page_title: document.title,
-          page_location: window.location.href,
+          page_location: window.location.origin + url,
         });
         return;
       }
