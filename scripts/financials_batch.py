@@ -84,6 +84,8 @@ def publish():
         if d.get("error") or not (d.get("annual") or d.get("quarterly")): continue
         rec = {k: d.get(k) for k in ("stockType", "ttm", "annual", "quarterly", "unit")}
         shards.setdefault(d["scId"][0].upper(), {})[d["scId"]] = rec
+    if not shards:
+        print("no v2 records yet - leaving the published files untouched"); return
     os.makedirs("public/data/financials", exist_ok=True)
     for fn in os.listdir("public/data/financials"):
         if fn.endswith(".json"): os.remove(os.path.join("public/data/financials", fn))
