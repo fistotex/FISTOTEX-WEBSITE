@@ -738,8 +738,8 @@ const nps: CalculatorDef = {
     });
     return [
       { label: "Total contributed", value: r.totalContribution, kind: "currency", split: "base" },
-      { label: "Lump sum available", value: r.lumpSumWithdrawal, kind: "currency" },
-      { label: "Annuity corpus", value: r.annuityCorpus, kind: "currency" },
+      { label: "Lump sum (at your annuity split)", value: r.lumpSumWithdrawal, kind: "currency" },
+      { label: "Annuity corpus (at your annuity split)", value: r.annuityCorpus, kind: "currency" },
       { label: "Estimated monthly pension", value: r.estimatedMonthlyPension, kind: "currency", emphasis: true },
     ];
   },
@@ -757,7 +757,7 @@ const nps: CalculatorDef = {
   steps: [
     "Assumes you contribute every month from your current age until the retirement age you enter, at a constant return. It does not know your existing NPS balance or when you joined.",
     "Models a normal exit at age 60 or later. Premature exits (at least 80% annuity for non-government and government) are not modelled.",
-    "For corpus up to ₹8 lakh (both categories) the regulations also allow 100% lump sum or SLW/SUR, and for ₹8-12 lakh up to ₹6 lakh lump sum with SUR or annuity for the balance. These options are not modelled; this calculator shows the standard split only.",
+    "For corpus up to ₹8 lakh (both categories) the regulations also allow 100% lump sum or SLW/SUR, and for ₹8-12 lakh up to ₹6 lakh lump sum with SUR or annuity for the balance. These options are not modelled. The annuity share here is your chosen split (at or above the category minimum), not a statement that an annuity is mandatory for small corpuses.",
     "Tax on the lump sum and on annuity income depends on current Income Tax rules and your regime; verify before planning.",
     "A higher annuity allocation means a safer but usually smaller income.",
   ],
