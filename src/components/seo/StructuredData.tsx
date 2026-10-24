@@ -62,20 +62,6 @@ export function StructuredData({ type, data = {} }: StructuredDataProps) {
       image: `${base}${siteConfig.ogImage}`,
       description: siteConfig.description,
       email: siteConfig.contactEmail,
-      founder: {
-        "@type": "Person",
-        "@id": `${base}/about#founder`,
-        name: siteConfig.founder.name,
-        jobTitle: siteConfig.founder.role,
-        url: `${base}/about#founder`,
-      },
-      member: {
-        "@type": "Person",
-        "@id": `${base}/about#partner`,
-        name: siteConfig.partner.name,
-        jobTitle: siteConfig.partner.role,
-        url: `${base}/about#partner`,
-      },
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
