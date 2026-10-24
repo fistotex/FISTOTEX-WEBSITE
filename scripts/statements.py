@@ -129,7 +129,10 @@ def collect(scid, slug):
     out = {"v": 2, "scId": scid, "company_slug": slug}
     r = m.get(f"https://www.moneycontrol.com/financials/{slug}/profit-lossVI/{scid}")
     nd = m.next_data(r.text)
-    if not nd: out["error"] = f"page status {r.status_code}"; return out
+    if not nd:
+        t = re.search(r"<title[^>]*>(.*?)</title>", r.text or "", re.S | re.I)
+        out["error"] = f"page status {r.status_code} len {len(r.text or '')} type {r.headers.get('content-type','')[:30]} title {re.sub(chr(32)+'+', ' ', (t.group(1) if t else '-'))[:60]}"
+        return out
     data = nd["props"]["pageProps"]["data"]
     mm = re.search(r"-([A-Za-z0-9]+)/?$", data.get("slug") or "")
     if not mm: out["error"] = "no canonical id"; return out
