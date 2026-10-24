@@ -205,16 +205,11 @@ export function CompanySearch() {
 }
 
 const TTM_LABELS: [string, string][] = [
-  ["ttmEps", "EPS (TTM)"],
+  ["marketCap", "Market cap (Rs. crore)"],
   ["ttmPe", "P/E (TTM)"],
-  ["bvps", "Book value per share"],
   ["pb", "P/B"],
   ["divYeild", "Dividend yield (%)"],
-  ["marketCap", "Market cap"],
-  ["faceValue", "Face value"],
   ["industryPE", "Industry P/E"],
-  ["52WeekHigh", "52-week high"],
-  ["52WeekLow", "52-week low"],
 ];
 const Q_LABELS: Record<string, string> = {
   revenue: "Revenue",
@@ -248,42 +243,16 @@ function FigureDetails({
   return (
     <div className="space-y-5 text-sm">
       {annual && (
-        <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-wide text-muted-foreground">
-            Annual profit &amp; loss{fin.pl_type ? ` (${fin.pl_type})` : ""}
-          </p>
-          <div className="mt-2 overflow-x-auto">
-            <table className="w-full min-w-[420px] text-xs">
-              <thead>
-                <tr className="text-left text-muted-foreground">
-                  <th className="py-1 pr-3">Item</th>
-                  {(fin.pl_periods ?? []).map((p) => (
-                    <th key={p} className="py-1 pr-3 text-right font-mono">
-                      {p}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(annual).map(([label, vals]) => (
-                  <tr key={label} className="border-t border-rule">
-                    <td className="py-1 pr-3 font-semibold">{label}</td>
-                    {vals.map((v, i) => (
-                      <td key={i} className="py-1 pr-3 text-right font-mono">
-                        {v === "" || v === "--" ? "Not reported" : v}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <p className="rounded-sm border border-rule bg-card px-3 py-2 text-xs text-muted-foreground">
+          Annual and quarterly amounts (sales, profit and similar) are collected but not shown yet:
+          Moneycontrol&apos;s data feed does not state their unit, so they are withheld until the
+          unit is confirmed. Use the Moneycontrol link for the amounts.
+        </p>
       )}
       {q && Object.keys(q).length > 0 && (
         <div>
           <p className="font-mono text-xs font-bold uppercase tracking-wide text-muted-foreground">
-            Latest quarter headline
+            Latest quarter - change vs earlier periods
             {ed?.last_ear?.quater ? ` - ${ed.last_ear.quater}` : ""}
             {ed?.last_ear?.date ? ` (reported ${ed.last_ear.date})` : ""}
           </p>
@@ -291,9 +260,16 @@ function FigureDetails({
             {Object.entries(q).map(([k, v]) => (
               <li key={k}>
                 <span className="font-semibold">{Q_LABELS[k] ?? k}:</span>{" "}
-                <span className="font-mono">{v.value || "Not reported"}</span>
-                {v.qoq ? <span className="text-muted-foreground"> | QoQ {v.qoq}% (per Moneycontrol)</span> : null}
-                {v.yoy ? <span className="text-muted-foreground"> | YoY {v.yoy}% (per Moneycontrol)</span> : null}
+                {v.qoq || v.yoy ? (
+                  <span className="font-mono">
+                    {v.qoq ? `QoQ ${v.qoq}%` : ""}
+                    {v.qoq && v.yoy ? " | " : ""}
+                    {v.yoy ? `YoY ${v.yoy}%` : ""}
+                  </span>
+                ) : (
+                  <span className="font-mono">Not reported</span>
+                )}
+                <span className="text-muted-foreground"> (change figures as published by Moneycontrol)</span>
               </li>
             ))}
           </ul>
@@ -321,9 +297,9 @@ function FigureDetails({
         </div>
       )}
       <p className="text-xs text-muted-foreground">
-        Figures are copied as reported by Moneycontrol and are not calculated or adjusted by
-        Fistotex. Units and periods follow Moneycontrol (normally ₹ crore for Indian companies; the
-        data feed does not state the unit, so check the Moneycontrol page). Not investment advice.
+        Figures are copied as published by Moneycontrol and are not calculated or adjusted by
+        Fistotex. Statement basis (standalone or consolidated) is not shown here; check the
+        Moneycontrol page. Not investment advice.
         {progress && !progress.complete
           ? ` Collection is in progress: ${progress.collected.toLocaleString("en-IN")} of ${progress.total.toLocaleString("en-IN")} companies so far.`
           : ""}
