@@ -43,7 +43,7 @@ const sections = [
 
       <h3>2.2 Information Collected Automatically</h3>
       <ul>
-        <li><strong>Analytics Data:</strong> We use Google Analytics 4 (GA4) to collect anonymous usage data including pages visited, time on page, device type, browser, country (based on IP), and referral source. This data does not personally identify you.</li>
+        <li><strong>Analytics Data:</strong> We use Google Analytics 4 (GA4) to collect usage data including pages visited, time on page, device type, browser, country (based on IP), and referral source. Google may process identifiers such as your IP address and cookie identifiers to provide this service; we do not use GA4 to collect your name or contact details.</li>
         <li><strong>Calculator Usage:</strong> Calculator inputs and results are computed in your browser. For shareable links, your inputs are also written into the page address (URL). Our analytics events are set up to leave those values out. If you open or reload a page whose address contains your numbers, that address can be seen by our hosting provider and by the advertising scripts on the page. Do not share links containing numbers you want kept private.</li>
         <li><strong>Technical Data:</strong> IP address, browser type, operating system, referring URLs, and access times for security and performance monitoring.</li>
       </ul>
@@ -247,9 +247,9 @@ export default function PrivacyPolicyPage() {
               <h3 className="font-semibold text-foreground mb-3">Summary</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2"><span className="text-accent">✓</span> Calculations run in your browser; shared links contain your inputs in the page address (your light/dark theme choice is saved in your browser only)</li>
-                <li className="flex gap-2"><span className="text-accent">✓</span> Only contact form data and anonymous analytics collected</li>
+                <li className="flex gap-2"><span className="text-accent">✓</span> Only contact form data and Google Analytics usage data collected</li>
                 <li className="flex gap-2"><span className="text-accent">✓</span> No selling of personal information</li>
-                <li className="flex gap-2"><span className="text-accent">✓</span> Google Analytics 4 for anonymous usage stats</li>
+                <li className="flex gap-2"><span className="text-accent">✓</span> Google Analytics 4 for aggregate usage statistics</li>
                 <li className="flex gap-2"><span className="text-accent">✓</span> Google AdSense ads on some pages — never on aggregated news, and never using your calculator inputs</li>
                 <li className="flex gap-2"><span className="text-accent">✓</span> You can request data deletion anytime</li>
               </ul>
