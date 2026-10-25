@@ -132,6 +132,26 @@ export default async function ArticlePage({ params }: { params: Params }) {
           ))}
         </div>
 
+        {article.sources && article.sources.length > 0 && (
+          <section className="mt-12 border-t border-rule pt-6">
+            <h2 className="eyebrow eyebrow-plain text-xs">Sources</h2>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              {article.sources.map((source) => (
+                <li key={source.url}>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    {source.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <nav
           aria-label="Article"
           className="mt-14 flex items-center justify-between border-t border-rule pt-6"
