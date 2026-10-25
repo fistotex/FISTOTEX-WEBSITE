@@ -14,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const dateFmt = new Intl.DateTimeFormat("en-IN", {
+  timeZone: "Asia/Kolkata",
   day: "numeric",
   month: "long",
   year: "numeric",
