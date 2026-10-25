@@ -1,3 +1,4 @@
+import { articlePath, publishedArticles } from "@/lib/blog/articles";
 import { siteConfig } from "@/config/site";
 import { baseUrl } from "@/lib/seo";
 import {
@@ -36,6 +37,10 @@ export function GET() {
     })
     .join("\n");
 
+  const articleLines = publishedArticles()
+    .map((a) => `- [${a.title}](${baseUrl}${articlePath(a.slug)}): ${a.description}`)
+    .join("\n");
+
   const body = `# ${siteConfig.name}
 
 > ${siteConfig.description}
@@ -54,6 +59,7 @@ ${categoryLines}
 
 - [All finance calculators](${baseUrl}${calculatorsPath}): Index of every calculator grouped by goal.
 - [Latest financial news](${baseUrl}/news): Live Indian market and personal-finance headlines with source attribution.
+- [Blog](${baseUrl}/blog): Original money guides and explainers published by ${siteConfig.name}.${articleLines ? `\n\n## Guides\n\n${articleLines}` : ""}
 - [About](${baseUrl}/about): About ${siteConfig.name} and what it is not (not investment advice).
 - [Disclaimer](${baseUrl}/disclaimer): Limits of the estimates and the educational nature of the site.
 - [Contact](${baseUrl}/contact): ${siteConfig.contactEmail}

@@ -28,6 +28,7 @@ const columns = [
     title: "Methodology",
     links: [
       { href: "/about", label: "Formulas & method" },
+      { href: "/blog", label: "Blog & guides" },
       { href: "/news", label: "Syndicated wire" },
       { href: "/privacy-policy", label: "Privacy by design" },
       { href: "/disclaimer", label: "Statutory disclaimers" },

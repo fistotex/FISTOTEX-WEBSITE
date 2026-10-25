@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, Calculator, ChevronDown, Newspaper, CalendarDays, TrendingUp } from "lucide-react";
+import { Menu, X, ArrowRight, BookOpen, Calculator, ChevronDown, Newspaper, CalendarDays, TrendingUp } from "lucide-react";
 import { Logo } from "@/components/layout/logo";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,13 @@ const navItems = [
 ];
 
 const toolkitItems = [
+  {
+    href: "/blog",
+    label: "Blog",
+    desc: "Original money guides and explainers",
+    icon: BookOpen,
+    match: (p: string) => p.startsWith("/blog"),
+  },
   {
     href: "/news",
     label: "News",
