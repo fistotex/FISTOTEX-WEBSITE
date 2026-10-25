@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { baseUrl } from "@/lib/seo";
+import { articlePath, blogPath, publishedArticles } from "@/lib/blog/articles";
 import {
   calculatorIds,
   categoryIds,
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, lastModified: reviewed, changeFrequency: "daily", priority: 1.0 },
     { url: `${baseUrl}${calculatorsPath}`, lastModified: reviewed, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: "hourly", priority: 0.8 },
+    { url: `${baseUrl}${blogPath}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/toolkit/market-calendar`, lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/toolkit/results`, lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/about`, lastModified: reviewed, changeFrequency: "monthly", priority: 0.6 },
@@ -44,5 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...categoryUrls, ...calculatorUrls];
+  const articleUrls: MetadataRoute.Sitemap = publishedArticles().map((a) => ({
+    url: `${baseUrl}${articlePath(a.slug)}`,
+    lastModified: new Date(a.dateUpdated ?? a.datePublished),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...categoryUrls, ...calculatorUrls, ...articleUrls];
 }
