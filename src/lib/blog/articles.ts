@@ -114,8 +114,8 @@ export const articles: Article[] = [
     sections: [
       {
         paragraphs: [
-          "Indian equity markets have fallen sharply in the second half of October 2026. In the week ending 23 October, the Nifty 50 fell 2.36% to close at 22,600 - about 14% below its 2026 peak. Roughly ₹16 lakh crore of market value was wiped out in that single week, and midcap stocks posted their steepest fall in two years. 748 stocks on the NSE hit fresh 52-week lows against just 102 new highs, and the volatility index (India VIX) rose to 16.86, its highest since May.",
-          "The immediate driver is crude oil: Brent surged past $114 a barrel during the week as the West Asia conflict re-escalated, feeding inflation and interest-rate worries. The rupee traded near ₹94.93 per US dollar, and the 10-year government bond yield rose to 7.52%, its highest in a year.",
+          "Indian equity markets have fallen sharply in the second half of October 2026. In the week ending 23 October, the Nifty 50 fell 2.36% to close at 22,600 - about 14% below its 2026 peak. Roughly ₹16 lakh crore of market value was wiped out in that single week, and midcap stocks lost 5.6%, their worst week in 20 months. 748 stocks on the NSE hit fresh 52-week lows against just 102 new highs, and the volatility index (India VIX) rose to 16.86, its highest since May.",
+          "The immediate driver is crude oil: Brent surged to about $114 a barrel during the week as the West Asia conflict re-escalated, feeding inflation and interest-rate worries. The rupee traded near ₹94.93 per US dollar, and the 10-year government bond yield rose to 7.52%, its highest in a year.",
         ],
       },
       {
