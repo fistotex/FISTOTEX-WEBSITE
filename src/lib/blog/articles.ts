@@ -47,6 +47,127 @@ export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
   {
+    slug: "fii-dii-flows-october-2026-explained",
+    title:
+      "Foreign investors pull ₹48,056 crore from Indian stocks in October 2026: what FII-DII flows mean",
+    description:
+      "Foreign portfolio investors have withdrawn ₹48,056 crore from Indian equities so far in October 2026, while domestic institutions kept buying. Who FIIs and DIIs are, why their flows diverge, and what the numbers can and cannot tell you.",
+    category: "Investing basics",
+    tags: ["FII", "DII", "FPI flows", "stock market", "mutual funds"],
+    datePublished: "2026-10-26",
+    status: "published",
+    sections: [
+      {
+        paragraphs: [
+          "Foreign portfolio investors (FPIs) have withdrawn ₹48,056 crore from Indian equities so far in October 2026, according to depository data reported by PTI on 25 October. That takes total FPI selling in 2026 to ₹3.08 lakh crore, already well above the ₹1.66 lakh crore withdrawn in all of 2025. The October selling follows net withdrawals of ₹35,861 crore in September; in July and August, by contrast, FPIs had invested ₹20,200 crore and ₹29,631 crore.",
+          "Domestic money is moving the other way. On Monday, 26 October, foreign institutional investors (FIIs) were net sellers of ₹1,462 crore while domestic institutional investors (DIIs) were net buyers of ₹2,610 crore, provisional exchange data showed. The Sensex still closed 483 points higher at 73,607 and the Nifty gained 153 points to end at 22,753. Across the previous week's four trading sessions, FIIs net sold ₹2,697 crore while DIIs net bought ₹10,942 crore.",
+        ],
+      },
+      {
+        heading: "Who is who in this data",
+        paragraphs: [
+          "FIIs, also reported as FPIs, are foreign funds: overseas asset managers, pension funds and hedge funds investing in Indian markets. DIIs are Indian institutions: mutual funds, insurance companies, banks and domestic pension funds. A large share of DII buying comes through mutual funds, which collect money from retail savers, including via systematic investment plans (SIPs).",
+          "Because exchanges publish this data every trading day, headlines often quote who bought or sold on a given day. The daily figure is a net number: on 26 October, FIIs bought equities worth ₹9,324.90 crore and sold ₹10,787.39 crore, and the widely quoted ₹1,462 crore is simply the difference.",
+        ],
+      },
+      {
+        heading: "Why foreign investors are selling",
+        paragraphs: [
+          "Analysts quoted by PTI point to several pressures at once: Brent crude surged to around $114 a barrel amid the West Asia conflict, feeding inflation and corporate-earnings worries; elevated US interest rates have kept American assets attractive; and the ₹30,213-crore Jio Platforms IPO temporarily absorbed market liquidity.",
+          "There are also signs the pressure is easing. In the week ended 23 October, FPIs significantly reduced their selling and turned net buyers on two trading days. Geojit Investments' chief investment strategist V.K. Vijayakumar attributed the moderation to US 10-year bond yields easing from 5.36% to around 5%, the rupee firming to about 94.94 per dollar, and more attractive valuations, particularly in large-cap stocks.",
+        ],
+      },
+      {
+        heading: "What flow data can and cannot tell you",
+        paragraphs: [
+          "Flow figures are backward-looking tallies. They record who transacted, not why any single fund moved, and they say nothing about what happens next. Domestic buying cushioning foreign selling in October does not guarantee that markets must rise; it describes what has happened so far.",
+          "Some analysts also caution against reading the outflows as a verdict on India. Trackk co-founder Vedant Gupte noted that foreign ownership of Indian equities was already at multi-year lows and that foreign money entering through IPOs suggests rotation between holdings rather than a broad exit. These are interpretations of the data, not forecasts.",
+          "Decisions about your own investments depend on your goals, horizon and cash needs - not on a single day's or month's flow headline.",
+        ],
+      },
+      {
+        heading: "If you invest through a SIP",
+        paragraphs: [
+          "If you invest monthly through a SIP, your instalments form part of the domestic flow described above. The Fistotex SIP calculator shows the arithmetic of a fixed monthly instalment under different assumed returns, including lower and negative ones.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Market and flow figures are as reported on 25 and 26 October 2026. This article is educational, is not investment, tax or legal advice, and does not recommend buying, selling or holding any security or fund.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "The Hindu (PTI), 25 October 2026: FPIs withdraw ₹48,056 crore in October; 2026 outflows reach ₹3.08 lakh crore",
+        url: "https://www.thehindu.com/business/markets/fpis-withdraw-48056-cr-from-equities-in-october-so-far-amid-elevated-crude-oil-prices/article71622798.ece",
+      },
+      {
+        label: "CNBC-TV18, 26 October 2026: FIIs net sell ₹1,462 crore, DIIs net buy ₹2,610 crore; Sensex 73,607, Nifty 22,753",
+        url: "https://www.cnbctv18.com/market/fiis-sell-rs1462-crore-diis-buy-rs2610-crore-as-market-ends-higher-20019660.htm",
+      },
+    ],
+  },
+  {
+    slug: "gold-price-rise-october-2026-rupee-explained",
+    title:
+      "Gold costs ₹1,46,300 per 10 grams: why Indian gold prices rise even when global prices stall",
+    description:
+      "Gold in Delhi was priced at ₹1,46,300 per 10 grams on 26 October 2026 while international prices hovered near a three-month low. How the rupee's record low, import costs and US rate expectations combine to set the price you pay in India.",
+    category: "Money basics",
+    tags: ["gold price", "gold rate", "rupee", "US dollar", "inflation"],
+    datePublished: "2026-10-26",
+    status: "published",
+    sections: [
+      {
+        paragraphs: [
+          "Gold prices in India rose again on Monday, 26 October 2026. In Delhi, 99.9% pure gold was priced at ₹1,46,300 per 10 grams, up ₹200 from Friday's ₹1,46,100, according to local traders quoted by PTI. Silver was unchanged at ₹2,02,000 per kilogram after three consecutive sessions of losses.",
+          "The international picture looks different. Spot gold traded around $4,013 an ounce on Monday, up 0.44% on the day, yet it has been hovering close to a more than three-month low. If the world price is near a three-month low, why is the Indian buyer still paying more?",
+        ],
+      },
+      {
+        heading: "How the price you pay in India is built",
+        paragraphs: [
+          "The gold rate quoted in India starts from the international dollar price. That price is converted into rupees at the current exchange rate, and import duty, taxes such as GST and local premiums are added on top. Quoted rates then differ slightly by city: on 26 October, one city-wise compilation showed 24-carat gold at ₹13,844 per gram in Delhi and ₹13,739 per gram in Chennai, before any jeweller's making charges.",
+          "So two separate things can move your local price: the world price of gold and the rupee-dollar exchange rate. Even when the world price is flat, a weaker rupee makes every imported gram costlier.",
+        ],
+      },
+      {
+        heading: "The rupee's record low is doing the lifting right now",
+        paragraphs: [
+          "On 26 October the rupee settled at a record low of 95.22 against the US dollar, down 29 paise in its third consecutive session of losses. Because India imports most of its gold, a weaker rupee raises the landed cost of gold and supports domestic prices even when the international market is quiet.",
+        ],
+      },
+      {
+        heading: "What global markets are watching this week",
+        paragraphs: [
+          "Traders quoted by PTI and ET Now point to the US Federal Reserve's interest-rate decision later this week and US inflation data due on Thursday as the next drivers for bullion. Expectations of further US rate hikes generally pressure gold, because higher yields raise the cost of holding a metal that pays no interest. Diplomatic moves around the US-Iran conflict are also shifting sentiment from day to day.",
+        ],
+      },
+      {
+        heading: "If you are planning to buy gold",
+        paragraphs: [
+          "Whatever direction prices take, the quoted rate is not the full cost. Jewellery carries making charges and GST, and the gap between buying and selling rates means you rarely resell at the quoted price. Comparing the total cost of coins, bars and jewellery - not the headline rate alone - gives a clearer picture of what a purchase actually costs.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Prices are as reported on 26 October 2026 and vary by city, purity and seller. This article is educational, is not investment, tax or legal advice, and does not recommend buying, selling or holding gold or any other asset.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "ET Now (PTI), 26 October 2026: gold rises ₹200 to ₹1,46,300 per 10 grams in Delhi; rupee at record low of 95.22",
+        url: "https://www.etnownews.com/markets/gold-prices-rise-rs-200-per-10-grams-on-global-recovery-fed-policy-in-focus-article-156409659",
+      },
+      {
+        label: "The Hindu BusinessLine, 26 October 2026: city-wise 22 and 24 carat gold rates",
+        url: "https://www.thehindubusinessline.com/gold-rate-today/gold-price-today-in-delhi-mumbai-kolkata-chennai-bengaluru-hyderabad-pune-gold-rates-metro-cities-october-26-2026/article71626053.ece",
+      },
+    ],
+  },
+  {
     slug: "rbi-repo-rate-hike-october-2026-emi",
     title: "RBI raises repo rate to 5.50%: what the October 2026 hike means for your loan EMI",
     description:
