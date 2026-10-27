@@ -69,7 +69,7 @@ export const articles: Article[] = [
     sections: [
       {
         paragraphs: [
-          "The US Federal Reserve's rate-setting body, the Federal Open Market Committee (FOMC), meets on 27 and 28 October 2026. Fed statements are released at 2 pm US Eastern Time, which for this meeting works out to about 11:30 pm in India on 28 October. The committee holds eight scheduled meetings a year; after this one, the next is on 8-9 December 2026.",
+          "The US Federal Reserve's rate-setting body, the Federal Open Market Committee (FOMC), meets on 27 and 28 October 2026. The Fed's own calendar lists the statement at 2 pm US Eastern Time on 28 October - about 11:30 pm in India - followed by the Chair's press conference at 2:30 pm. The committee holds eight scheduled meetings a year; after this one, the next is on 8-9 December 2026.",
           "At its previous meeting on 16 September 2026, the FOMC voted 12-0 to raise the target range for the federal funds rate by a quarter point to 3.75-4.00%. That statement said inflation \"remains elevated\" and that the committee \"will deliver price stability\" - wording traders will compare against this week's text line by line.",
         ],
       },
@@ -119,7 +119,7 @@ export const articles: Article[] = [
         list: [
           "The decision itself: a hike, a hold or a cut, and whether the vote stays unanimous.",
           "The inflation language: September's statement said inflation \"remains elevated\" and that the committee \"will deliver price stability\". Softening or hardening of that wording is read as a signal about the next meeting.",
-          "The press conference: the Chair takes questions after the statement, and unscripted answers sometimes move markets more than the statement itself.",
+          "The press conference at 2:30 pm ET: the Chair takes questions after the statement, and unscripted answers sometimes move markets more than the statement itself.",
           "The minutes: a fuller record of the debate arrives about three weeks later. The December meeting also brings updated economic projections.",
         ],
       },
@@ -139,6 +139,10 @@ export const articles: Article[] = [
       {
         label: "Federal Reserve: 2026 FOMC meeting calendar (27-28 October meeting, 2 pm ET releases, minutes after three weeks)",
         url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      },
+      {
+        label: "Federal Reserve: October 2026 calendar (statement 2:00 pm ET and press conference 2:30 pm ET on 28 October)",
+        url: "https://www.federalreserve.gov/newsevents/2026-october.htm",
       },
       {
         label: "Federal Reserve: FOMC statement, 16 September 2026 (target range raised to 3.75-4.00%, 12-0 vote)",
