@@ -162,6 +162,9 @@ export default async function ArticlePage({ params }: { params: Params }) {
                       ))}
                     </tbody>
                   </table>
+                  <p className="mt-2 text-xs text-muted-foreground md:hidden" aria-hidden="true">
+                    Swipe sideways to see all columns
+                  </p>
                 </figure>
               )}
             </section>
