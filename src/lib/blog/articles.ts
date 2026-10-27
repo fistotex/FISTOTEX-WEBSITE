@@ -20,6 +20,16 @@ export interface ArticleSection {
   heading?: string;
   paragraphs?: string[];
   list?: string[];
+  table?: ArticleTable;
+}
+
+export interface ArticleTable {
+  /** Optional caption shown above the table. */
+  caption?: string;
+  /** Column headings, left to right. */
+  columns: string[];
+  /** Each row must have the same number of cells as columns. */
+  rows: string[][];
 }
 
 export interface ArticleSource {
@@ -46,6 +56,112 @@ export const blogPath = "/blog";
 export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
+  {
+    slug: "us-fed-fomc-october-2026-india",
+    title:
+      "US Fed's FOMC meets 27-28 October 2026: what the rate decision means for India",
+    description:
+      "The US Federal Reserve's FOMC meets on 27-28 October 2026, with its rate decision due at about 11:30 pm India time on 28 October. What the federal funds rate is, and the four channels through which the Fed reaches Indian markets.",
+    category: "Investing basics",
+    tags: ["US Fed", "FOMC", "federal funds rate", "interest rates", "Indian markets"],
+    datePublished: "2026-10-27",
+    status: "published",
+    sections: [
+      {
+        paragraphs: [
+          "The US Federal Reserve's rate-setting body, the Federal Open Market Committee (FOMC), meets on 27 and 28 October 2026. Fed statements are released at 2 pm US Eastern Time, which for this meeting works out to about 11:30 pm in India on 28 October. The committee holds eight scheduled meetings a year; after this one, the next is on 8-9 December 2026.",
+          "At its previous meeting on 16 September 2026, the FOMC voted 12-0 to raise the target range for the federal funds rate by a quarter point to 3.75-4.00%. That statement said inflation \"remains elevated\" and that the committee \"will deliver price stability\" - wording traders will compare against this week's text line by line.",
+        ],
+      },
+      {
+        heading: "What the federal funds rate actually is",
+        paragraphs: [
+          "The federal funds rate is the interest rate at which US banks lend reserve balances to each other overnight. It anchors borrowing costs across the US economy and, because the dollar is the world's main funding and reserve currency, it influences financial conditions far beyond the United States. The FOMC does not set your loan or deposit rate directly; it sets this overnight target, and the effect travels outward from there.",
+        ],
+      },
+      {
+        heading: "Four channels from the Fed to India",
+        paragraphs: [
+          "None of these channels switches on overnight, and none guarantees a particular market reaction. They are the plumbing through which US rate decisions have reached Indian markets - and each has been visible in recent weeks.",
+        ],
+        table: {
+          caption: "How a US Fed decision reaches India, with recent dated examples",
+          columns: ["Channel", "How it works", "Seen lately"],
+          rows: [
+            [
+              "Foreign investment flows",
+              "Higher US yields can make American assets relatively more attractive, so some foreign investors reduce emerging-market exposure.",
+              "FPIs have withdrawn ₹48,056 crore from Indian equities so far in October 2026 (PTI, 25 October); analysts named elevated US rates as one driver.",
+            ],
+            [
+              "The rupee",
+              "A firm dollar and foreign outflows pressure the rupee; a weaker rupee raises the cost of imports such as crude oil and gold.",
+              "The rupee settled at a record low of 95.22 per US dollar on 26 October 2026.",
+            ],
+            [
+              "The RBI's room to move",
+              "A wider US-India rate gap can add to rupee pressure, limiting how freely the RBI can cut or reinforcing the case to hold or hike.",
+              "The RBI raised the repo rate by 25 basis points to 5.50% on 7 October 2026 and adopted a \"calibrated tightening\" stance.",
+            ],
+            [
+              "Borrowing costs and yields",
+              "Global rate expectations feed into bond yields, which sit underneath lending and borrowing costs across the economy.",
+              "India's 10-year government bond yield touched 7.52% in the week ended 23 October 2026, its highest in a year.",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "What to watch in the 28 October decision",
+        paragraphs: [
+          "None of this predicts what the committee will do. It tells you where the information will appear, and in what order:",
+        ],
+        list: [
+          "The decision itself: a hike, a hold or a cut, and whether the vote stays unanimous.",
+          "The inflation language: September's statement said inflation \"remains elevated\" and that the committee \"will deliver price stability\". Softening or hardening of that wording is read as a signal about the next meeting.",
+          "The press conference: the Chair takes questions after the statement, and unscripted answers sometimes move markets more than the statement itself.",
+          "The minutes: a fuller record of the debate arrives about three weeks later. The December meeting also brings updated economic projections.",
+        ],
+      },
+      {
+        heading: "What this does not change for you on 29 October",
+        paragraphs: [
+          "A Fed announcement does not change your EMI, your SIP or your deposit rate by itself. Indian loan rates respond to the RBI's repo rate and to each bank's own pricing, and domestic institutional buying can offset foreign flows - as it did on 26 October, when Indian indices closed higher even as foreign investors were net sellers. The channels above work over weeks and months, not overnight.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Dates and figures are as reported by the sources below, checked on 27 October 2026. This article is educational, is not investment, tax or legal advice, and does not recommend buying, selling or holding any security, fund or currency.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Federal Reserve: 2026 FOMC meeting calendar (27-28 October meeting, 2 pm ET releases, minutes after three weeks)",
+        url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      },
+      {
+        label: "Federal Reserve: FOMC statement, 16 September 2026 (target range raised to 3.75-4.00%, 12-0 vote)",
+        url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      },
+      {
+        label: "The Hindu (PTI), 25 October 2026: FPI October outflows and the US-rate driver",
+        url: "https://www.thehindu.com/business/markets/fpis-withdraw-48056-cr-from-equities-in-october-so-far-amid-elevated-crude-oil-prices/article71622798.ece",
+      },
+      {
+        label: "ET Now (PTI), 26 October 2026: rupee settles at record low of 95.22 per US dollar",
+        url: "https://www.etnownews.com/markets/gold-prices-rise-rs-200-per-10-grams-on-global-recovery-fed-policy-in-focus-article-156409659",
+      },
+      {
+        label: "RBI press release, 7 October 2026: repo rate raised 25 bps to 5.50%, calibrated tightening",
+        url: "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63742",
+      },
+      {
+        label: "Zerodha Aftermarket Report, week ending 25 October 2026: 10-year yield at 7.52%, highest in a year",
+        url: "https://aftermarketreport.zerodha.com/p/surging-oil-prices-drag-nifty-to",
+      },
+    ],
+  },
   {
     slug: "fii-dii-flows-october-2026-explained",
     title:
