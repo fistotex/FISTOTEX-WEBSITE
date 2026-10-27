@@ -129,6 +129,41 @@ export default async function ArticlePage({ params }: { params: Params }) {
                   ))}
                 </ul>
               )}
+              {section.table && (
+                <figure className="mt-2 overflow-x-auto">
+                  {section.table.caption && (
+                    <figcaption className="eyebrow eyebrow-plain mb-2 text-xs">
+                      {section.table.caption}
+                    </figcaption>
+                  )}
+                  <table className="w-full min-w-[28rem] border-collapse text-sm leading-relaxed">
+                    <thead>
+                      <tr>
+                        {section.table.columns.map((column, j) => (
+                          <th
+                            key={j}
+                            scope="col"
+                            className="border-b-2 border-rule px-3 py-2 text-left font-semibold text-foreground"
+                          >
+                            {column}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row, j) => (
+                        <tr key={j} className="border-b border-rule last:border-b-0">
+                          {row.map((cell, k) => (
+                            <td key={k} className="px-3 py-2 align-top text-foreground/90">
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </figure>
+              )}
             </section>
           ))}
         </div>
