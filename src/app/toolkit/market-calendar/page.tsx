@@ -6,11 +6,16 @@ import { pageMetadata } from "@/lib/seo";
 import {
   allEvents,
   daysUntil,
+  daysUntilInstant,
+  istDateLabel,
+  istTimeLabel,
+  istWeekday,
   CALENDAR_SOURCES,
   CALENDAR_REVIEWED_ON,
   type EventKind,
   type MarketEvent,
 } from "@/lib/toolkit/market-calendar";
+import { NextEventCountdown, type CountdownEvent } from "@/components/toolkit/next-event-countdown";
 import { cn } from "@/lib/utils";
 
 export const revalidate = 3600;
@@ -24,7 +29,7 @@ export const metadata: Metadata = pageMetadata({
 
 const KIND_LABEL: Record<EventKind, string> = {
   rbi: "RBI policy",
-  "global-central-bank": "US Fed",
+  "global-central-bank": "Central bank",
   expiry: "F&O expiry",
   budget: "Budget",
   "macro-data": "Macro data",
@@ -82,7 +87,7 @@ function MonthGroup({
       <h2 className="eyebrow mb-5">{month}</h2>
       <ul className="divide-y divide-rule overflow-hidden rounded-sm border border-rule bg-card">
         {list.map((e) => {
-          const du = daysUntil(e.date, now);
+          const du = e.instantUTC ? daysUntilInstant(e.instantUTC, now) : daysUntil(e.date, now);
           return (
             <li
               key={`${e.date}-${e.title}`}
@@ -93,10 +98,14 @@ function MonthGroup({
             >
               <div className="w-28 shrink-0">
                 <div className="font-mono text-sm font-bold text-foreground">
-                  {eventDateLabel(e)}
+                  {e.instantUTC ? istDateLabel(e.instantUTC) : eventDateLabel(e)}
                 </div>
                 <div className="font-mono text-xs text-muted-foreground">
-                  {e.span ? `decides ${weekday(e.date)}` : weekday(e.date)}
+                  {e.instantUTC
+                    ? `${istTimeLabel(e.instantUTC)} IST${e.timeApprox ? "*" : ""} · ${istWeekday(e.instantUTC)}`
+                    : e.span
+                      ? `decides ${weekday(e.date)}`
+                      : weekday(e.date)}
                   {du >= 0 && du <= 7 && (
                     <span className="text-accent"> &middot; {du === 0 ? "today" : `in ${du}d`}</span>
                   )}
@@ -105,6 +114,11 @@ function MonthGroup({
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="font-semibold text-foreground">{e.title}</span>
+                  {e.currency && (
+                    <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+                      {e.currency}
+                    </span>
+                  )}
                   <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                     {KIND_LABEL[e.kind]}
                   </span>
@@ -121,6 +135,22 @@ function MonthGroup({
                   )}
                 </div>
                 {e.note && <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>}
+                {e.previous && (
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <span className="font-semibold text-ink-2">Previous:</span> {e.previous}
+                  </p>
+                )}
+                {e.source && (
+                  <a
+                    href={e.source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-flex items-center gap-1 text-sm text-accent hover:underline"
+                  >
+                    Source: {e.source.label}
+                    <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </li>
           );
@@ -140,6 +170,15 @@ export default function MarketCalendarPage() {
   };
   const past = events.filter(isPast);
   const upcoming = events.filter((e) => !isPast(e));
+  const timedEvents: CountdownEvent[] = events
+    .filter((e): e is MarketEvent & { instantUTC: string } => Boolean(e.instantUTC))
+    .map((e) => ({
+      title: e.title,
+      instantUTC: e.instantUTC,
+      timeApprox: e.timeApprox,
+      timeLabelIST: istTimeLabel(e.instantUTC),
+      dateLabelIST: istDateLabel(e.instantUTC),
+    }));
 
   return (
     <>
@@ -156,8 +195,13 @@ export default function MarketCalendarPage() {
             Dates verified against official sources on {CALENDAR_REVIEWED_ON} and re-checked monthly.
             Past dates are the actual officially published release dates. F&O expiry dates are
             computed from the exchange&rsquo;s Tuesday convention and rolled back over holidays.
+            Timed entries show the organiser&rsquo;s official release time converted to IST; an
+            asterisk marks a time the source itself lists as approximate. Previous figures are the
+            last officially published values - forecasts are not shown.
           </span>
         </div>
+
+        <NextEventCountdown events={timedEvents} serverNow={now.getTime()} />
 
         {past.length > 0 && (
           <div className="mb-14">
