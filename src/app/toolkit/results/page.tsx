@@ -44,7 +44,7 @@ export default function ResultsPage() {
             it is not a complete market universe.
           </p>
 
-          <div className="mt-6 grid gap-6">
+          <div className="mt-6 space-y-6">
             {RESULTS_FIGURES.map((entry) => (
               <article
                 key={entry.company}
@@ -90,6 +90,9 @@ export default function ResultsPage() {
                     </tbody>
                   </table>
                 </div>
+                <p className="mt-2 text-xs text-muted-foreground md:hidden" aria-hidden="true">
+                  Swipe sideways to see all columns
+                </p>
                 {entry.caveats.length > 0 && (
                   <ul className="mt-3 list-disc space-y-1 pl-5 text-xs text-muted-foreground">
                     {entry.caveats.map((caveat) => (
