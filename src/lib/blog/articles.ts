@@ -57,6 +57,75 @@ export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
   {
+    slug: "vedanta-q2-fy27-results-profit-loss-explained",
+    title:
+      "Vedanta Q2 FY27: record profit or a ₹170 crore loss? Reading one filing three ways",
+    description:
+      "Vedanta's 28 October 2026 results produced three headline numbers: ₹6,202 crore of record profit, ₹3,650 crore attributable to shareholders, and a ₹170 crore standalone loss. All three come from the same filing, on different bases, after the group's May 2026 demerger. Here is how to read them.",
+    category: "Investing basics",
+    tags: ["Q2 results", "Vedanta", "earnings", "demerger", "metals"],
+    datePublished: "2026-10-28",
+    status: "published",
+    sections: [
+      {
+        paragraphs: [
+          "Vedanta Limited declared its results for the second quarter of FY27 (the three months ended 30 September 2026) on Wednesday, 28 October 2026. The board meeting ran from 1:00 pm to 2:00 pm IST, and the unaudited consolidated and standalone results were filed with the exchanges the same afternoon.",
+          "Coverage of the numbers looked contradictory: some outlets reported a record quarterly profit, others a sharp sequential fall, and at least one headline reported a loss of ₹170 crore. Every one of those figures is in the same exchange filing. They differ because each describes a different measure: group profit from the businesses Vedanta still owns, the share of group profit that belongs to Vedanta's own shareholders, and the parent company on its own.",
+        ],
+        table: {
+          caption: "Vedanta Q2 FY27: the headline numbers, each on its stated basis",
+          columns: ["Number", "What it actually is", "Where it appears in the filing"],
+          rows: [
+            ["₹25,812 crore", "Consolidated revenue for Q2 FY27, up 57% from ₹16,445 crore a year earlier", "Consolidated results, line 1a"],
+            ["₹9,938 crore", "Consolidated EBITDA, up 106% YoY; the filing itself labels EBITDA a non-GAAP measure", "Consolidated segment note"],
+            ["₹6,202 crore", "Consolidated net profit from continuing operations, up 151% YoY and 17% QoQ; Vedanta calls it a record quarter", "Consolidated results, line 10"],
+            ["₹3,650 crore", "Profit attributable to Vedanta's own shareholders, after ₹2,552 crore went to non-controlling interests; up 103% YoY, down about a third from Q1", "Consolidated results, line 19"],
+            ["-₹170 crore", "Standalone net loss of the parent company, Vedanta Limited on its own", "Standalone results, line 13"],
+            ["₹5 per share", "First interim dividend for FY27, approved by the board on 8 October 2026", "Standalone results, note 2"],
+          ],
+        },
+      },
+      {
+        heading: "Why one company has so many profit numbers this quarter",
+        paragraphs: [
+          "Vedanta completed a major demerger with effect from 1 May 2026. The oil and gas business moved into Vedanta Oil & Gas Limited, and the aluminium, iron ore and power undertakings were separated under the NCLT-approved scheme. In the filing, those businesses appear as discontinued operations for the periods they were still inside the group. Q2 FY27 is the first quarter in which the consolidated numbers cover only the continuing businesses: zinc, lead and silver (largely Hindustan Zinc), Zinc International, copper, and a few smaller operations.",
+          "That change of perimeter breaks simple quarter-on-quarter comparisons. Q1 FY27 still included the demerged businesses as discontinued operations, so its attributable profit of ₹5,473 crore is not like-for-like against Q2's ₹3,650 crore: part of the Q1 figure came from businesses Vedanta no longer owns. On a like-for-like basis, continuing-operations profit actually rose 17% quarter on quarter, and compared with a year ago attributable profit is up 103% from ₹1,798 crore.",
+          "One more basis worth knowing: the 60% EBITDA margin in Vedanta's press release excludes the copper business, as the company's own footnote states.",
+        ],
+      },
+      {
+        heading: "So where does a ₹170 crore loss come from?",
+        paragraphs: [
+          "The standalone statement covers the parent company alone. After the demerger, its continuing business is mainly copper. This quarter the parent's revenue from operations was ₹8,750 crore while the cost of materials consumed was ₹8,273 crore; after other expenses, finance costs and a small tax credit, the standalone books closed at a net loss of ₹170 crore.",
+          "Copper's thin economics are visible at group level too: the consolidated copper segment earned ₹80 crore of EBITDA on ₹9,280 crore of revenue this quarter. The group's profit engine is zinc and silver: the zinc, lead and silver segment contributed ₹9,243 crore of the ₹9,938 crore total segment EBITDA from continuing operations.",
+          "Standalone results also swing with dividends received from subsidiaries. Note 5 to the standalone results shows dividend income from subsidiaries of nil in Q2 FY27, against ₹2,822 crore in Q1 FY27 - a large reason the parent showed a standalone profit of ₹2,538 crore last quarter and a loss this quarter. A standalone loss does not mean the group lost money.",
+        ],
+      },
+      {
+        heading: "Which number should a reader use?",
+        paragraphs: [
+          "For the performance of the group as a whole, the cleanest measure is the consolidated profit from continuing operations: ₹6,202 crore. For what actually belongs to Vedanta's shareholders, use the attributable figure of ₹3,650 crore, because subsidiaries such as Hindustan Zinc have large outside shareholdings - non-controlling interests absorbed ₹2,552 crore of this quarter's profit. On a per-share basis, the filing reports basic earnings of ₹9.35 from continuing operations.",
+          "The standalone loss matters mainly for the parent company's own accounts, not as a read on the group. One balance-sheet line also stood out this quarter: net debt fell by ₹4,624 crore to ₹3,675 crore, and the company states its net debt to EBITDA ratio improved to 0.1 times, its own basis of calculation.",
+        ],
+      },
+      {
+        paragraphs: [
+          "All figures above are from Vedanta's exchange filings dated 28 October 2026, listed in the sources below. This article is educational, is not investment, tax or legal advice, and does not recommend buying, selling or holding any security.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Vedanta Limited: unaudited consolidated and standalone financial results for the quarter and half year ended 30 September 2026, with limited review report, filed with the exchanges on 28 October 2026",
+        url: "https://www.bseindia.com/xml-data/corpfiling/AttachLive/afd6cd7a-6049-4bce-9471-d3c394fcfeb7.pdf",
+      },
+      {
+        label: "Vedanta Limited: press release and investor presentation on Q2 FY27 results, filed with the exchanges on 28 October 2026 (record-quarter claims, net debt reduction, EBITDA margin basis footnotes)",
+        url: "https://nsearchives.nseindia.com/corporate/VEDL_28102026141343_2VEDLSEIntimationOutcomeOfBMPressReleaseAndIRPPTfinalsigned.pdf",
+      },
+    ],
+  },
+  {
     slug: "jio-platforms-ipo-listing-day-october-2026",
     title:
       "Jio Platforms lists on the stock market today: how an IPO listing day actually works",
