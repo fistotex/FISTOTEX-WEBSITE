@@ -7,6 +7,9 @@
  * per group. Past entries use the actual officially published release dates.
  * The data is reviewed and re-verified against those sources on
  * a monthly cadence; the "reviewedOn" stamp shows when that last happened.
+ * Timed entries carry the organiser's official release time as a UTC instant
+ * and are displayed in IST; an asterisk marks times the source itself lists
+ * as approximate. Only official previous figures are shown, never forecasts.
  *
  * F&O expiry dates are COMPUTED from the exchange's current expiry-day
  * convention (NSE: Tuesday; BSE: Thursday), shifted back to the previous
@@ -35,6 +38,16 @@ export interface MarketEvent {
   /** true = expect an outsized move that day; flagged in the UI. */
   volatile: boolean;
   note?: string;
+  /** UTC instant of the event start, when the organiser publishes an exact time; drives the IST time display and the countdown. */
+  instantUTC?: string;
+  /** true when the source itself lists the time as approximate. */
+  timeApprox?: boolean;
+  /** Currency the event primarily moves, e.g. "USD". */
+  currency?: string;
+  /** The previous officially published figure, with its basis. Forecasts are never shown. */
+  previous?: string;
+  /** The organiser's own page for this specific event. */
+  source?: { label: string; href: string };
 }
 
 /** NSE/BSE trading holidays remaining in the current calendar year (NSE circular CMTR71775, Dec 12 2025). */
@@ -174,11 +187,56 @@ export const SCHEDULED_EVENTS: MarketEvent[] = [
   },
   {
     date: "2026-10-28",
+    title: "UK Annual Budget statement",
+    kind: "budget",
+    volatile: true,
+    instantUTC: "2026-10-28T12:30:00Z",
+    timeApprox: true,
+    currency: "GBP",
+    note: "Approximate time: about 12:30 pm in London, straight after Prime Minister's Questions.",
+    source: { label: "UK Parliament", href: "https://www.parliament.uk/business/news/2026/october-2026/budget-statement-wednesday-28-october/" },
+  },
+  {
+    date: "2026-10-28",
+    title: "Bank of Canada rate decision + Monetary Policy Report",
+    kind: "global-central-bank",
+    volatile: true,
+    instantUTC: "2026-10-28T13:45:00Z",
+    currency: "CAD",
+    previous: "2.25% (held since December 2025)",
+    source: { label: "Bank of Canada", href: "https://www.bankofcanada.ca/press/upcoming-events/" },
+  },
+  {
+    date: "2026-10-28",
+    title: "Bank of Canada press conference",
+    kind: "global-central-bank",
+    volatile: false,
+    instantUTC: "2026-10-28T14:30:00Z",
+    timeApprox: true,
+    currency: "CAD",
+    source: { label: "Bank of Canada", href: "https://www.bankofcanada.ca/2026/10/fad-announcement-release-mpr-2026-10-28/" },
+  },
+  {
+    date: "2026-10-28",
     span: "Oct 27-28",
     title: "US Fed FOMC decision",
     kind: "global-central-bank",
     volatile: true,
     note: "Global risk sentiment driver for FII flows into India.",
+    instantUTC: "2026-10-28T18:00:00Z",
+    currency: "USD",
+    previous: "3.75-4.00% target range (September statement)",
+    source: { label: "Federal Reserve", href: "https://www.federalreserve.gov/newsevents/2026-october.htm" },
+  },
+  {
+    date: "2026-10-28",
+    title: "US Fed press conference",
+    kind: "global-central-bank",
+    volatile: false,
+    instantUTC: "2026-10-28T18:30:00Z",
+    currency: "USD",
+    note: "Chair's press conference follows the FOMC statement.",
+    source: { label: "Federal Reserve", href: "https://www.federalreserve.gov/newsevents/2026-october.htm" },
   },
   {
     date: "2026-11-08",
@@ -215,6 +273,15 @@ export const SCHEDULED_EVENTS: MarketEvent[] = [
     title: "US Fed FOMC decision",
     kind: "global-central-bank",
     volatile: true,
+  },
+  {
+    date: "2026-12-09",
+    title: "Bank of Canada rate decision",
+    kind: "global-central-bank",
+    volatile: true,
+    instantUTC: "2026-12-09T14:45:00Z",
+    currency: "CAD",
+    source: { label: "Bank of Canada", href: "https://www.bankofcanada.ca/press/upcoming-events/" },
   },
   {
     date: "2026-12-12",
@@ -294,6 +361,32 @@ export function daysUntil(iso: string, now = new Date()): number {
   return Math.round((Date.UTC(y, m - 1, d) - today) / 86400000);
 }
 
+const IST_TZ = "Asia/Kolkata";
+
+/** "29 Oct" for an instant, in IST. */
+export function istDateLabel(instantUTC: string): string {
+  return new Date(instantUTC).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: IST_TZ });
+}
+
+/** "Thu" for an instant, in IST. */
+export function istWeekday(instantUTC: string): string {
+  return new Date(instantUTC).toLocaleDateString("en-IN", { weekday: "short", timeZone: IST_TZ });
+}
+
+/** "00:00" 24h clock for an instant, in IST. */
+export function istTimeLabel(instantUTC: string): string {
+  return new Date(instantUTC).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", hourCycle: "h23", timeZone: IST_TZ });
+}
+
+/** Day count from today (Asia/Kolkata) to the IST day containing the instant. */
+export function daysUntilInstant(instantUTC: string, now = new Date()): number {
+  const istDay = (d: Date): number => {
+    const p = new Date(d.toLocaleString("en-US", { timeZone: IST_TZ }));
+    return Date.UTC(p.getFullYear(), p.getMonth(), p.getDate());
+  };
+  return Math.round((istDay(new Date(instantUTC)) - istDay(now)) / 86400000);
+}
+
 export function allEvents(now = new Date()): MarketEvent[] {
   const todayISO = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }))
     .toISOString()
@@ -312,7 +405,9 @@ export function allEvents(now = new Date()): MarketEvent[] {
     }));
   return [...SCHEDULED_EVENTS, ...expiriesAround(todayISO), ...holidays]
     .filter((e) => daysUntil(e.date, now) >= -PAST_WINDOW_DAYS)
-    .sort((a, b) => a.date.localeCompare(b.date));
+    .sort((a, b) =>
+      (a.instantUTC ?? `${a.date}T00:00:00Z`).localeCompare(b.instantUTC ?? `${b.date}T00:00:00Z`)
+    );
 }
 
 /** Where each data group comes from - shown on the page for trust. */
@@ -321,6 +416,8 @@ export const CALENDAR_SOURCES = [
   { label: "NSE circular CMTR71775 - 2026 trading holidays", href: "https://nsearchives.nseindia.com/content/circulars/CMTR71775.pdf" },
   { label: "US Federal Reserve FOMC calendar", href: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
   { label: "MoSPI advance release calendar", href: "https://www.mospi.gov.in/release-calendar" },
+  { label: "Bank of Canada - upcoming events", href: "https://www.bankofcanada.ca/press/upcoming-events/" },
+  { label: "UK Parliament - Budget statement, 28 October", href: "https://www.parliament.uk/business/news/2026/october-2026/budget-statement-wednesday-28-october/" },
 ];
 
-export const CALENDAR_REVIEWED_ON = "October 23, 2026";
+export const CALENDAR_REVIEWED_ON = "October 28, 2026";
