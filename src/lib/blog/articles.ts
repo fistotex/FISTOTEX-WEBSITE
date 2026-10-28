@@ -70,7 +70,7 @@ export const articles: Article[] = [
       {
         paragraphs: [
           "Jio Platforms, the digital and telecom arm of Reliance Industries, is scheduled to make its stock market debut on the NSE and BSE on Wednesday, 28 October 2026. The company's ₹30,213-crore initial public offering was priced at ₹1,119 per share, the top of its ₹1,065-1,119 band, and was subscribed 22.19 times overall, according to NSE data reported by NDTV Profit.",
-          "The issue ran on a tight timetable: bidding was open from 21 to 23 October, allotments were finalised on 26 October, and listing follows two days later. It was India's largest IPO of the year so far and consisted entirely of a fresh issue of 27 crore shares, with no offer-for-sale component; the company plans to use up to ₹27,500 crore of the proceeds to repay borrowings of its subsidiary Reliance Jio Infocomm.",
+          "The issue ran on a tight timetable: bidding was open from 21 to 23 October, allotments were finalised on 26 October, and listing follows two days later. It was India's largest IPO of the year so far and consisted entirely of a fresh issue of 27 crore shares, with no offer-for-sale component; the company plans to use up to ₹27,500 crore of the proceeds to prepay, in full or in part, borrowings of its subsidiary Reliance Jio Infocomm, as the prospectus sets out.",
         ],
         table: {
           caption: "Jio Platforms IPO in numbers, as reported ahead of the 28 October 2026 listing",
@@ -80,7 +80,7 @@ export const articles: Article[] = [
             ["Price band and final price", "₹1,065-1,119 per share; final price ₹1,119"],
             ["Lot size", "12 shares (about ₹13,428 per lot at the top of the band)"],
             ["Shares offered", "27 crore fresh shares; no offer-for-sale"],
-            ["Overall subscription", "22.19 times (bids for 438.26 crore shares against about 19.75 crore on offer, NSE data)"],
+            ["Overall subscription", "22.19 times (bids for 438.26 crore shares against about 19.75 crore offered to non-anchor bidders, NSE data)"],
             ["QIB / NII / retail subscription", "70.55 times / 14 times / 2.72 times"],
             ["Bidding window", "21-23 October 2026"],
             ["Allotment finalised", "26 October 2026"],
@@ -99,7 +99,7 @@ export const articles: Article[] = [
         heading: "The numbers you will hear today, decoded",
         paragraphs: [
           "Listing gain or loss: simply the difference between the listing price and the issue price of ₹1,119, expressed as a percentage. A listing at ₹1,300 would be a 16.2% gain; a listing at ₹1,000 would be a 10.6% loss. Neither says anything about where the price goes next.",
-          "Subscription multiples: the 22.19-times figure means total bids were about 22 times the shares on offer. It measures demand during the IPO, not quality, and it does not survive listing day as a meaningful signal. For retail applicants the practical consequence was allotment scarcity: with the retail portion subscribed 2.72 times, many applicants received no shares at all.",
+          "Subscription multiples: the 22.19-times figure means total bids were about 22 times the shares on offer. Note the base: about 19.75 crore shares were on offer to ordinary bidders, not the full 27 crore issued, because 7.25 crore shares were allotted to anchor investors before the public issue opened, as the final prospectus sets out. The multiple measures demand during the IPO, not quality, and it does not survive listing day as a meaningful signal. For retail applicants the practical consequence was allotment scarcity: with the retail portion subscribed 2.72 times, many applicants received no shares at all.",
           "Grey market premium (GMP): in the days before a big listing, unofficial markets quote a premium over the issue price - for Jio Platforms, about ₹244 per share on 27 October, according to IPO tracking websites cited by Mint. GMP is informal, unregulated and frequently wrong in both directions; Mint's own report cautions that the actual listing price can differ significantly from GMP-derived estimates. Treat it as gossip with a number attached, not as data.",
         ],
       },
@@ -126,8 +126,8 @@ export const articles: Article[] = [
         url: "https://www.livemint.com/market/ipo/jio-platforms-ipo-listing-date-and-time-share-price-prediction-expected-gains-latest-gmp-all-eyes-on-nse-bse-debut-11793071293037.html",
       },
       {
-        label: "NSE final prospectus filing, 26 October 2026: 27 crore equity shares at ₹1,119 aggregating ₹301,876 million",
-        url: "https://nsearchives.nseindia.com/corporate/FP_INE0BJO01010_26OCT2026.pdf",
+        label: "Jio Platforms final prospectus, dated 24 October 2026: 27 crore equity shares at ₹1,119 aggregating ₹301,876 million; anchor investor portion 7.25 crore shares; up to ₹27,500 crore of net proceeds to prepay RJIL borrowings",
+        url: "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Prospectus.pdf",
       },
     ],
   },
