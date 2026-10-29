@@ -38,6 +38,47 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Milky Mist Dairy Food",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited; year-ago figures management-derived, not reviewed/audited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "1,089.40",
+      "yoy": "769.47 (+41.58%)",
+      "qoq": "973.45 (+11.91%)"
+    },
+    {
+      "label": "Consolidated net profit after tax",
+      "current": "77.94",
+      "yoy": "28.39 (+174.52%)",
+      "qoq": "64.68 (+20.50%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "1.10",
+      "yoy": "0.44 (+150.00%)",
+      "qoq": "1.01 (+8.91%)"
+    }
+  ],
+  "summary": "Milky Mist Dairy Food reported consolidated revenue of ₹1,089.40 crore, up 41.58% year on year and 11.91% from June. Net profit was ₹77.94 crore versus ₹28.39 crore a year ago and ₹64.68 crore in June. The year-ago figures were management-derived and not reviewed or audited; the tax-regime change and recent IPO/share conversion also affect comparability.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 13 and notes on page 15. Original ₹ lakh amounts are divided by 100 for crore; changes use original values before rounding. EPS is reported and not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Note 8 says September 2025 quarter and half-year figures were derived by management and were not reviewed or audited by statutory auditors. These comparisons are not described as like-for-like reviewed results.",
+    "Consolidated PAT is the statement's profit-for-period line; no separate owner/non-controlling-interest split is printed on that page. Standalone results and press-release EBITDA are not substituted.",
+    "Total tax expense was ₹12.4059 crore versus ₹19.1041 crore a year ago and ₹8.8283 crore in June. Deferred tax was a ₹10.3416 crore credit versus ₹10.3676 crore expense a year ago and a ₹9.6819 crore credit in June. The company opted into a 25.168% tax regime effective 1 Apr 2026 and remeasured deferred taxes. No tax-adjusted or recurring PAT is inferred.",
+    "The company listed in August 2026 after its IPO; 2.5 crore CCPS were converted into equity shares in July. Reported EPS uses the applicable share basis and need not grow at the same rate as PAT. Fresh-issue proceeds, promoter offer-for-sale proceeds and issue expenses are not treated as operating revenue or profit.",
+    "The business reports one milk-processing and milk-products segment. No exceptional-item line is printed in this consolidated statement; nominal revenue growth does not establish volume growth.",
+    "Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f55906a8-4678-419c-bdea-de43eb1f6dc8.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:21:12 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Praj Industries",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
