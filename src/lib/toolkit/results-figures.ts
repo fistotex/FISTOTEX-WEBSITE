@@ -38,6 +38,108 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Grindwell Norton",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "883.67",
+      "yoy": "774.74 (+14.06%)",
+      "qoq": "803.29 (+10.01%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "166.45",
+      "yoy": "140.67 (+18.33%)",
+      "qoq": "157.01 (+6.01%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "18.84%",
+      "yoy": "18.16%",
+      "qoq": "19.55%"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "132.70",
+      "yoy": "106.88 (+24.16%)",
+      "qoq": "115.51 (+14.88%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "11.99",
+      "yoy": "9.65 (+24.25%)",
+      "qoq": "10.43 (+14.96%)"
+    }
+  ],
+  "summary": "Grindwell Norton's September-quarter revenue was ₹883.67 crore, up 14.06% year on year. Profit attributable to owners was ₹132.70 crore, up 24.16% year on year. The defined operating EBITDA margin was 18.84%, versus 18.16% a year earlier.",
+  "caveats": [
+    "Source: unaudited consolidated statement, PDF page 10. Original ₹ lakh divided by 100 for ₹ crore; EPS is ₹ per share and not annualised. Changes use source values before display rounding.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026.",
+    "EBITDA is computed from profit before exceptional items and tax, plus finance costs, plus depreciation and amortisation, minus other income. Margin is this measure divided by revenue from operations.",
+    "Detected through RSS and separately checked against the original statement. Raw notice timestamp has no supplied timezone suffix; this is selected checked coverage.",
+    "Operating EBITDA starts before the share of joint-venture profit, so excludes that non-operating contribution. PAT shown is attributable to owners; current total profit including non-controlling interest is ₹133.17 crore."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5f504c27-3524-4d01-a5b7-048fcb47c098.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:16:58 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
+  "company": "Jasch Industries",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Standalone, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "84.81",
+      "yoy": "51.62 (+64.31%)",
+      "qoq": "75.26 (+12.68%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "2.10",
+      "yoy": "4.17 (-49.56%)",
+      "qoq": "6.32 (-66.76%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "2.48%",
+      "yoy": "8.07%",
+      "qoq": "8.40%"
+    },
+    {
+      "label": "Net profit",
+      "current": "0.58",
+      "yoy": "2.09 (-72.23%)",
+      "qoq": "3.81 (-84.75%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "0.86",
+      "yoy": "3.08 (-72.08%)",
+      "qoq": "5.61 (-84.67%)"
+    }
+  ],
+  "summary": "Jasch Industries's September-quarter revenue was ₹84.81 crore, up 64.31% year on year. Net profit was ₹0.58 crore, down 72.23% year on year. The defined operating EBITDA margin was 2.48%, versus 8.07% a year earlier.",
+  "caveats": [
+    "Source: unaudited standalone statement, PDF page 2/3 for EPS. Original ₹ lakh divided by 100 for ₹ crore; EPS is ₹ per share and not annualised. Changes use source values before display rounding.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026.",
+    "EBITDA is computed from profit before exceptional items and tax, plus finance costs, plus depreciation and amortisation, minus other income. Margin is this measure divided by revenue from operations.",
+    "Detected through RSS and separately checked against the original statement. Raw notice timestamp has no supplied timezone suffix; this is selected checked coverage.",
+    "Prior September quarter had ₹0.12 crore exceptional expense. EBITDA uses profit before this expense; PAT comparisons use reported profit after it. Current-quarter profit fell despite revenue growth, with production costs rising sharply."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8305178f-49f9-4ed8-8771-95a4c03ed80d.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:17:22 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Tips Films",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
