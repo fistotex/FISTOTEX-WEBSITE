@@ -38,6 +38,46 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Aplab",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Standalone, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "10.83",
+      "yoy": "17.35 (-37.58%)",
+      "qoq": "9.61 (+12.67%)"
+    },
+    {
+      "label": "Net profit / (loss) after tax",
+      "current": "-0.61",
+      "yoy": "1.61 (profit to loss)",
+      "qoq": "-2.52 (loss narrowed 75.88%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "-0.39",
+      "yoy": "1.04",
+      "qoq": "-1.60"
+    }
+  ],
+  "summary": "Aplab reported standalone revenue of ₹10.83 crore, down 37.58% year on year but up 12.67% sequentially. It recorded a net loss of ₹0.61 crore versus a ₹1.61 crore profit a year ago. The loss was smaller than June's ₹2.52 crore, but the company remained loss-making.",
+  "caveats": [
+    "Source: standalone statement and notes on PDF page 3. Original values are ₹ lakh, divided by 100 for crore. Changes use original lakh figures before display rounding; EPS is reported and not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. The year-on-year profit-to-loss change is not given a growth percentage. Sequential loss narrowing compares absolute loss amounts.",
+    "Current pre-tax loss was ₹1.38 crore. A deferred-tax credit of ₹0.77 crore reduced the net loss; reported net loss is not an operating-profit measure.",
+    "No exceptional item was reported for these three quarter columns. The note about a ₹0.59 crore Labour Codes cost relates to the year ended March 2026, not a new September-quarter charge.",
+    "This is the company's stated standalone basis. It reports one electronic-equipment segment. No consolidated attribution or adjusted PAT is inferred.",
+    "Selected checked coverage from the original filing. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/aa961b45-33a5-482b-b97c-f5680ede02d3.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:15:30 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Ind-Swift Laboratories",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
