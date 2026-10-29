@@ -4,8 +4,6 @@ import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/layout/section";
 import { pageMetadata } from "@/lib/seo";
 import {
-  RESULTS_DIRECTORY,
-  RESULTS_DIRECTORY_REVIEWED_ON,
   RESULTS_ARCHIVE,
   RESULTS_ARCHIVE_REVIEWED_ON,
 } from "@/lib/toolkit/results-directory";
@@ -127,76 +125,6 @@ export default function ResultsPage() {
 
         <div className="mt-14">
           <h2 className="font-display text-2xl font-normal text-foreground sm:text-3xl">
-            Declaration dates we verified
-          </h2>
-          <p className="mt-3 mb-6 max-w-2xl text-sm text-muted-foreground">
-            Dated results confirmed against each company&rsquo;s own announcement. These entries
-            link out to the source; figures for them may be added above as we read each filing.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto rounded-sm border border-rule bg-card">
-          <table className="w-full min-w-[560px] text-sm">
-            <thead>
-              <tr className="border-b border-rule text-left font-mono text-xs font-bold uppercase tracking-wide text-muted-foreground">
-                <th className="px-4 py-3">Company</th>
-                <th className="px-4 py-3">Quarter</th>
-                <th className="px-4 py-3">Status</th>
-                <th className="px-4 py-3">Official source</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-rule">
-              {RESULTS_DIRECTORY.map((entry) => (
-                <tr key={entry.company} className="hover:bg-muted/40">
-                  <td className="px-4 py-3 font-semibold text-foreground">{entry.company}</td>
-                  <td className="px-4 py-3 font-mono text-xs text-muted-foreground">
-                    {entry.quarterLabel}
-                    <span className="block">ended {entry.quarterEnded}</span>
-                  </td>
-                  <td className="px-4 py-3 font-mono text-xs">
-                    {entry.status === "published" ? (
-                      <span className="inline-flex items-center gap-1.5 text-accent">
-                        <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-                        Published {entry.dateLabel}
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1.5 text-muted-foreground">
-                        <span
-                          className="h-1.5 w-1.5 rounded-full bg-muted-foreground"
-                          aria-hidden="true"
-                        />
-                        Scheduled {entry.dateLabel}
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-3">
-                    <a
-                      href={entry.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-semibold text-accent hover:underline"
-                    >
-                      View official results
-                      <ExternalLink className="h-3 w-3" aria-hidden="true" />
-                    </a>
-                    <span className="block font-mono text-xs text-muted-foreground">
-                      {entry.sourceName}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <p className="mt-4 font-mono text-xs text-muted-foreground">
-          {RESULTS_DIRECTORY.length} dated results verified {RESULTS_DIRECTORY_REVIEWED_ON}. We
-          check each company&rsquo;s terms before linking; some companies stay out until their
-          terms allow it.
-        </p>
-
-        <div className="mt-14">
-          <h2 className="font-display text-2xl font-normal text-foreground sm:text-3xl">
             Official results pages
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
@@ -250,8 +178,7 @@ export default function ResultsPage() {
           <p>
             The figures section above publishes key numbers we read directly in the exchange
             filing linked with each entry, with computed measures and their definitions shown and
-            basis caveats flagged. The dated table is verified by hand against each company&rsquo;s
-            official announcement. The directory below links to official results pages that we
+            basis caveats flagged. The directory below links to official results pages that we
             have fetched and reviewed against the companies&rsquo; published terms, without
             copying figures or reports. Companies whose terms restrict linking are excluded. See
             also the{" "}
