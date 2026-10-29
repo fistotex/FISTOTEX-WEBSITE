@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Economic & Market Calendar - PCE, CPI, Jobs, GDP & RBI | Fistotex",
+  title: "Economic & Market Calendar - PCE, CPI, Jobs, GDP & RBI",
   description:
     "Selected economic and market releases: official US PCE, CPI, jobs and GDP actuals with IST release times, plus RBI, Fed, expiry and holiday dates. Checked sources, no consensus forecasts.",
   path: "/toolkit/market-calendar",
