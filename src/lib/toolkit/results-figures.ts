@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Trent",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "5,873.14",
+      "yoy": "4,817.60 (+21.91%)",
+      "qoq": "5,754.71 (+2.06%)"
+    },
+    {
+      "label": "Net profit attributable to equity holders",
+      "current": "463.77",
+      "yoy": "376.86 (+23.06%)",
+      "qoq": "519.01 (-10.64%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share, bonus-adjusted)",
+      "current": "8.70",
+      "yoy": "7.07 (+23.06%)",
+      "qoq": "9.73 (-10.59%)"
+    }
+  ],
+  "summary": "Trent reported consolidated revenue of ₹5,873.14 crore, up 21.91% year on year and 2.06% from June. Profit attributable to equity holders was ₹463.77 crore, up 23.06% from a year ago but down 10.64% from June. Reported basic EPS of ₹8.70 and the comparison periods are adjusted for the 1-for-2 bonus issue.",
+  "caveats": [
+    "Source: consolidated statement on PDF pages 10-11 and notes on page 14. Amounts are already in ₹ crore; no million/lakh conversion is applied. Percentage changes use original figures. EPS is reported, not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Equity holders' PAT of ₹463.77 crore plus non-controlling profit of ₹4.32 crore equals total group PAT of ₹468.09 crore. The owners' line is used consistently; standalone results are not mixed in.",
+    "The share of associate/joint-venture losses was ₹21.06 crore versus ₹1.10 crore a year ago and ₹9.74 crore in June. This is included in reported profit before tax, not treated as an exceptional add-back.",
+    "Total tax expense was ₹150.97 crore versus ₹103.56 crore a year ago and ₹173.77 crore in June. Deferred-tax credits were ₹11.10 crore, ₹32.66 crore and ₹11.29 crore respectively. No adjusted or recurring PAT is inferred.",
+    "The company issued one bonus share for every two shares held during the half year and adjusted EPS for all reporting periods accordingly. Unadjusted historical EPS should not be substituted for these comparisons.",
+    "No exceptional item appears in the three quarter columns. The ₹26.11 crore labour-code charge relates to the year ended 31 Mar 2026. The disclosed operating margin includes an Ind AS 116 adjustment and is not relabelled as a simple quarterly EBITDA margin.",
+    "The group reports retailing/trading as its main business without separate reportable segments. Revenue growth does not alone establish like-for-like store sales, volumes or customer demand.",
+    "Selected original-source coverage, not a complete market list. Multiple board-outcome and press-release notices are counted once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b962e91a-b409-4f5f-a22f-3275c992153a.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:11:10 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Milky Mist Dairy Food",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
