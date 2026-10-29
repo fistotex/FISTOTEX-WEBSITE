@@ -38,6 +38,47 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "P N Gadgil Jewellers",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "2,666.38",
+      "yoy": "2,177.62 (+22.44%)",
+      "qoq": "2,412.98 (+10.50%)"
+    },
+    {
+      "label": "Net profit attributable to shareholders",
+      "current": "121.11",
+      "yoy": "79.31 (+52.70%)",
+      "qoq": "105.34 (+14.98%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "8.69",
+      "yoy": "5.84 (+48.80%)",
+      "qoq": "7.76 (+11.98%)"
+    }
+  ],
+  "summary": "P N Gadgil Jewellers reported consolidated revenue of ₹2,666.38 crore, up 22.44% year on year and 10.50% from June. Profit attributable to shareholders rose to ₹121.11 crore, compared with ₹79.31 crore a year ago and ₹105.34 crore in June. Reported basic EPS was ₹8.69.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 7 and notes on page 10. Original ₹ million amounts are divided by 10 for crore; changes use original values before rounding. EPS is reported and not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Current consolidated PAT is fully attributed to shareholders in the statement; the adjacent standalone table is not mixed into this summary.",
+    "The consolidated group includes Gadgil Diamonds Private Limited in India and PNG Jewelers, Inc. in the USA. It reports one jewellery-business segment.",
+    "During the period the company raised ₹700 crore through a QIP and allotted 1,14,94,252 shares. Reported EPS uses the applicable share basis and need not grow at the same rate as PAT.",
+    "The QIP note reports ₹23.23 crore of issue expenses adjusted against securities premium. These equity-issue costs are not treated here as a charge in quarterly PAT. No adjusted PAT is inferred.",
+    "No exceptional item was reported in these three quarter columns. Nominal revenue growth alone does not establish sales-volume growth.",
+    "Selected checked coverage from the original filing; board-outcome and result notices are not counted as separate company results. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/164ff9d6-a0c4-4fda-8780-c4574c1f3395.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:32:13 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Equitas Small Finance Bank",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
