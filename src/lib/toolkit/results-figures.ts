@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "InterGlobe Aviation (IndiGo)",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "23,363.80",
+      "yoy": "18,555.30 (+25.91%)",
+      "qoq": "24,584.10 (-4.96%)"
+    },
+    {
+      "label": "Net loss attributable to owners",
+      "current": "(1,878.60)",
+      "yoy": "(2,581.70) (loss narrowed 27.23%)",
+      "qoq": "(237.60) (loss widened 690.66%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "(48.58)",
+      "yoy": "(66.79)",
+      "qoq": "(6.15)"
+    }
+  ],
+  "summary": "IndiGo reported consolidated revenue of ₹23,363.80 crore, up 25.91% year on year but down 4.96% from June. Loss attributable to owners was ₹1,878.60 crore, narrower than ₹2,581.70 crore a year ago but wider than ₹237.60 crore in June. Reported foreign-exchange loss and fuel costs materially affect the comparison; no adjusted profit is inferred.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 3 and notes on pages 7-8. Original ₹ million amounts are divided by 10 for crore. Percentage changes use original values; loss narrowing/widening uses absolute loss amounts, not a misleading positive-profit growth rate. Parentheses indicate negative values.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' loss is ₹1,878.60 crore; total group loss is ₹1,879.10 crore including ₹0.50 crore non-controlling loss. The adjacent standalone results are not mixed into this summary.",
+    "Net foreign-exchange loss was ₹1,333.20 crore versus ₹2,892.10 crore a year ago and ₹82.50 crore in June. Aircraft fuel expense was ₹9,966.80 crore versus ₹5,961.80 crore and ₹10,832.90 crore respectively. These are reported expense lines, not a quantified causal bridge to PAT.",
+    "The fuel note says domestic ATF price caps applied through 8 Jun 2026. The group did not opt into the subsequent Price Stabilisation Fund scheme and accrued fuel at prevailing market prices under its contracts. Revenue growth alone does not establish passenger-volume or yield growth.",
+    "No exceptional item appears in the three quarter columns. The annual March 2026 exceptional charge is not treated as a current-quarter charge. EPS is not annualised; potential shares are excluded from diluted EPS because they are anti-dilutive in loss periods.",
+    "The tax note discloses disputed exposure of ₹2,418.50 crore excluding interest/penalty, with no provision based on the group's legal advice; it also says carried-forward losses could be affected. IGST paid under protest of ₹2,400 crore remains shown as recoverable. These are the company's accounting positions, not independent legal conclusions.",
+    "The regulatory note describes DGCA guarantees of ₹50 crore and a CCI matter held in abeyance while proposed commitments are considered; management made no provision pending the outcome. These matters are not presented as resolved.",
+    "Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6898d04a-23b0-45d7-a70e-0645f44dafc9.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:50:52 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Monarch Networth Capital",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
