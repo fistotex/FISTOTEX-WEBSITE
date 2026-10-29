@@ -148,4 +148,172 @@ export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
     sourceDisseminatedAt: "28 Oct 2026, 14:14 IST",
     verifiedAt: "28 Oct 2026",
   },
+  {
+    company: "Tata Consultancy Services",
+    quarterLabel: "Q2 FY2027",
+    periodEnded: "30 Sep 2026",
+    basis: "Consolidated (Ind AS)",
+    currencyUnit: "₹ crore",
+    rows: [
+      {
+        label: "Revenue from operations",
+        current: "73,188",
+        yoy: "65,799 (+11.23%)",
+        qoq: "72,275 (+1.26%)",
+      },
+      {
+        label: "EBITDA (computed, see note)",
+        current: "18,815",
+        yoy: "17,978 (+4.66%)",
+        qoq: "18,556 (+1.40%)",
+      },
+      {
+        label: "EBITDA margin (computed)",
+        current: "25.71%",
+        yoy: "27.32%",
+        qoq: "25.67%",
+      },
+      {
+        label: "Profit before tax and exceptional items",
+        current: "18,638",
+        yoy: "17,203 (+8.34%)",
+        qoq: "18,612 (+0.14%)",
+      },
+      {
+        label: "Net profit",
+        current: "13,934",
+        yoy: "12,131 (+14.86%)",
+        qoq: "13,420 (+3.83%)",
+      },
+      {
+        label: "Other income",
+        current: "1,337",
+        yoy: "867",
+        qoq: "1,568",
+      },
+    ],
+    summary:
+      "TCS's September-quarter revenue rose 11% from a year earlier to ₹73,188 crore and net profit grew 15% to ₹13,934 crore. The computed EBITDA margin narrowed to 25.7% from 27.3% a year ago; the year-ago quarter also carried a ₹1,135 crore restructuring expense below the operating line.",
+    caveats: [
+      "EBITDA is computed by Fistotex as profit before tax and exceptional items, plus finance costs, plus depreciation and amortisation, minus other income.",
+      "June-quarter figures are derived as the reported half-year totals minus the September quarter; the half-year includes a ₹668 crore legal claim settlement booked in the June quarter.",
+      "The year-ago quarter included ₹1,135 crore of restructuring expenses shown as an exceptional item, so the profit-before-tax comparison above uses the before-exceptional line.",
+    ],
+    sourceUrl:
+      "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2026-27/q2/IND%20AS/Consolidated.pdf",
+    sourceName: "TCS investor relations filing (PDF)",
+    sourceDisseminatedAt: "8 Oct 2026 (date on the filing)",
+    verifiedAt: "29 Oct 2026",
+  },
+  {
+    company: "Wipro",
+    quarterLabel: "Q2 FY2027",
+    periodEnded: "30 Sep 2026",
+    basis: "Consolidated (Ind AS), audited",
+    currencyUnit: "₹ crore",
+    rows: [
+      {
+        label: "Revenue from operations",
+        current: "24,752.7",
+        yoy: "22,697.3 (+9.06%)",
+        qoq: "24,478.6 (+1.12%)",
+      },
+      {
+        label: "EBITDA (computed, see note)",
+        current: "4,871.3",
+        yoy: "4,387.6 (+11.02%)",
+        qoq: "4,632.7 (+5.15%)",
+      },
+      {
+        label: "EBITDA margin (computed)",
+        current: "19.68%",
+        yoy: "19.33%",
+        qoq: "18.93%",
+      },
+      {
+        label: "Profit before tax",
+        current: "4,204.7",
+        yoy: "4,282.4 (-1.81%)",
+        qoq: "4,334.5 (-2.99%)",
+      },
+      {
+        label: "Net profit",
+        current: "3,199.7",
+        yoy: "3,262.4 (-1.92%)",
+        qoq: "3,356.3 (-4.67%)",
+      },
+      {
+        label: "Other income",
+        current: "755.5",
+        yoy: "947.7",
+        qoq: "979.0",
+      },
+    ],
+    summary:
+      "Wipro's September-quarter revenue rose 9% year on year to ₹24,753 crore, but profit declined: net profit fell about 2% to ₹3,200 crore, also below the June quarter. The computed EBITDA margin improved to 19.7% from 19.3% a year earlier as other income shrank.",
+    caveats: [
+      "The filing presents figures in ₹ million; values here are converted at 1 crore = 10 million.",
+      "EBITDA is computed by Fistotex as profit before tax, plus finance costs, plus depreciation, amortisation and impairment, minus other income. The filing reports no exceptional items in these quarters.",
+    ],
+    sourceUrl:
+      "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2026-2027/q2fy27/regulation-33-financial-results-q2fy27.pdf",
+    sourceName: "Wipro investor relations filing (PDF)",
+    sourceDisseminatedAt: "15 Oct 2026 (board approval date in the filing)",
+    verifiedAt: "29 Oct 2026",
+  },
+  {
+    company: "Infosys",
+    quarterLabel: "Q2 FY2027",
+    periodEnded: "30 Sep 2026",
+    basis: "Consolidated (Ind AS), audited",
+    currencyUnit: "₹ crore",
+    rows: [
+      {
+        label: "Revenue from operations",
+        current: "49,244",
+        yoy: "44,490 (+10.69%)",
+        qoq: "48,211 (+2.14%)",
+      },
+      {
+        label: "EBITDA (computed, see note)",
+        current: "11,689",
+        yoy: "10,535 (+10.95%)",
+        qoq: "11,409 (+2.45%)",
+      },
+      {
+        label: "EBITDA margin (computed)",
+        current: "23.74%",
+        yoy: "23.68%",
+        qoq: "23.66%",
+      },
+      {
+        label: "Profit before tax",
+        current: "11,063",
+        yoy: "10,229 (+8.15%)",
+        qoq: "11,028 (+0.32%)",
+      },
+      {
+        label: "Net profit",
+        current: "7,838",
+        yoy: "7,375 (+6.28%)",
+        qoq: "7,775 (+0.81%)",
+      },
+      {
+        label: "Other income, net",
+        current: "848",
+        yoy: "982",
+        qoq: "984",
+      },
+    ],
+    summary:
+      "Infosys's September-quarter revenue grew 11% year on year to ₹49,244 crore and net profit rose 6% to ₹7,838 crore, with the computed EBITDA margin steady at 23.7%. Growth over the June quarter was modest: revenue up 2% and profit up 1%.",
+    caveats: [
+      "EBITDA is computed by Fistotex as profit before tax, plus finance cost, plus depreciation and amortisation, minus other income (net). The filing reports no exceptional items in these quarters; the FY2026 full-year column includes a ₹1,289 crore Labour Codes impact not present in these quarters.",
+    ],
+    sourceUrl:
+      "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q2/documents/q2-and-h1-fy27-financial-results-auditorsreports.pdf",
+    sourceName: "Infosys investor relations filing (PDF)",
+    sourceDisseminatedAt: "23 Oct 2026 (board approval date in the filing)",
+    verifiedAt: "29 Oct 2026",
+  },
 ];
