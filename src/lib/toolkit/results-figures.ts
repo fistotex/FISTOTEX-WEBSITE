@@ -38,6 +38,59 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Welspun Corp",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "4,643.72",
+      "yoy": "4,373.61 (+6.18%)",
+      "qoq": "4,081.12 (+13.79%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "498.56",
+      "yoy": "439.68 (+13.39%)",
+      "qoq": "1,046.49 (-52.36%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "18.91",
+      "yoy": "16.70 (+13.23%)",
+      "qoq": "39.68 (-52.34%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "726.74",
+      "yoy": "591.10 (+22.95%)",
+      "qoq": "692.34 (+4.97%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "15.65%",
+      "yoy": "13.52%",
+      "qoq": "16.96%"
+    }
+  ],
+  "summary": "Welspun Corp reported September-quarter revenue of ₹4,643.72 crore, up 6.18% year on year and 13.79% sequentially. Profit attributable to owners was ₹498.56 crore, up 13.39% year on year. The sequential profit decline reflects a previous-quarter ₹547.93 crore gain on sale of associate shares, so it is not a clean operating comparison.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 9, and notes page 10. Values are ₹ crore, except reported basic EPS in ₹ per share; EPS is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Percentage changes use the reported rounded statement values.",
+    "EBITDA is computed from profit before exceptional items, share of JV/associate profit and tax, plus finance costs, plus depreciation and amortisation, minus other income. It excludes JV/associate contributions and the gain on sale of associate shares. Margin divides this measure by revenue from operations.",
+    "The previous quarter included ₹547.93 crore profit on sale of East Pipes associate shares. This remains in the reported owners-profit comparison; no adjusted PAT is inferred.",
+    "Owners' PAT of ₹498.56 crore differs from total PAT of ₹495.09 crore due to a ₹3.47 crore non-controlling loss. Total PAT was ₹1,047.88 crore previous quarter and ₹443.51 crore year ago.",
+    "Welspun Captive Power Generation became a subsidiary during this quarter after an additional 51% stake purchase, changing the group scope. The statement shows a current-tax credit of ₹57.84 crore and deferred-tax expense of ₹218.33 crore.",
+    "Selected checked coverage from the original filing, not raw RSS republication. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bd5b2914-a870-4538-86ac-cf6a854f393b.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:35:21 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Ambuja Cements",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
