@@ -38,6 +38,44 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Tips Films",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Standalone, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Net sales / income from operations",
+      "current": "62.07",
+      "yoy": "56.49 (+9.88%)",
+      "qoq": "47.96 (+29.41%)"
+    },
+    {
+      "label": "Net loss after tax",
+      "current": "-0.54",
+      "yoy": "-14.25 (loss narrowed)",
+      "qoq": "-29.41 (loss narrowed)"
+    },
+    {
+      "label": "Basic and diluted EPS (₹ per share)",
+      "current": "-1.24",
+      "yoy": "-32.97",
+      "qoq": "-68.04"
+    }
+  ],
+  "summary": "Tips Films reported net sales of ₹62.07 crore, up 9.88% year on year. Its net loss narrowed to ₹0.54 crore from ₹14.25 crore a year earlier and ₹29.41 crore in the June quarter. Basic and diluted loss per share was ₹1.24.",
+  "caveats": [
+    "Source: unaudited statement, PDF page 3; consolidated statements are not applicable per the filing. Original ₹ lakh values divided by 100 for ₹ crore display. Changes use unrounded values; EPS remains ₹ per share.",
+    "Revenue shown is net sales/income from operations, excluding other income; total income including other income is ₹62.30 crore. Year ago is 30 Sep 2025 quarter; previous quarter is 30 Jun 2026.",
+    "Losses are shown with negative signs. Percentage profit/EPS growth is omitted because comparison periods are losses. The prior September quarter included a ₹1.60 crore current-tax credit.",
+    "Detected through RSS and separately checked against the original statement. Raw notice timestamp has no supplied timezone suffix; this is selected checked coverage."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/86ea7367-4c29-41f3-9e42-ceebac08799a.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:04:05 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Man Infraconstruction",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
