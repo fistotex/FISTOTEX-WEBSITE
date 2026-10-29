@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Ram Ratna Wires",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "1,961.95",
+      "yoy": "1,163.39 (+68.64%)",
+      "qoq": "1,853.28 (+5.86%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "35.04",
+      "yoy": "21.30 (+64.53%)",
+      "qoq": "35.21 (-0.50%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share, bonus-adjusted)",
+      "current": "3.75",
+      "yoy": "2.28 (+64.47%)",
+      "qoq": "3.77 (-0.53%)"
+    }
+  ],
+  "summary": "Ram Ratna Wires reported consolidated revenue of ₹1,961.95 crore, up 68.64% year on year and 5.86% from June. Profit attributable to owners was ₹35.04 crore, up 64.53% year on year but down 0.50% from June; reported bonus-adjusted basic EPS was ₹3.75. Notes disclose an EPR obligation whose financial impact the group says it cannot yet reasonably determine.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 13, segments on page 16 and notes on page 17. Original ₹ lakh amounts are divided by 100 for crore; percentage changes use original figures before rounding. EPS is reported, not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT of ₹35.0372 crore plus ₹0.6674 crore non-controlling profit equals total group PAT of ₹35.7046 crore. The owners' line is used consistently; total PAT and standalone results are not mixed in.",
+    "The share of joint-venture losses was ₹2.1525 crore versus ₹1.2590 crore a year ago and ₹1.4153 crore in June. No exceptional item appears in these quarter columns. The ₹3.5643 crore labour-code charge belongs to the year ended 31 Mar 2026, not this quarter.",
+    "Total tax expense was ₹15.8342 crore versus ₹8.9568 crore a year ago and ₹10.9313 crore in June. Deferred-tax expense was ₹4.1445 crore versus ₹1.6004 crore and ₹0.7221 crore respectively. No tax-normalised profit is inferred.",
+    "Prior-period EPS is restated for the 1-for-1 bonus issue with 26 Dec 2025 record date, as note v states. Basic and diluted quarter EPS are both ₹3.75; growth need not exactly equal PAT growth because EPS is rounded.",
+    "Note vi says the group cannot reasonably determine the financial impact, if any, of its non-ferrous-metal scrap Extended Producer Responsibility obligation because the portal and operational/pricing framework are not yet available. This is the company's disclosure at the results date, not an independently verified statement of current regulation or a zero-cost assumption.",
+    "The board approved acquiring the remaining 50% of joint venture Epavo, with 100% ownership to take effect at closing. Epavo remains a joint venture in these September results; the proposed transaction is not treated as already consolidated. Segments are winding wires/strips, copper tubes/pipes and others; revenue growth is not labelled volume growth.",
+    "Selected original-source coverage, not a complete market list. Multiple results and board-outcome notices are counted once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1c315cdf-44fc-4936-92e2-fd7e581ab73f.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:25:36 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Blue Star",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
