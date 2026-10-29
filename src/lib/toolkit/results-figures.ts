@@ -38,6 +38,47 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "BlackBuck",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "235.33",
+      "yoy": "151.14 (+55.70%)",
+      "qoq": "204.17 (+15.26%)"
+    },
+    {
+      "label": "Consolidated net profit after tax",
+      "current": "41.40",
+      "yoy": "29.20 (+41.79%)",
+      "qoq": "42.17 (-1.83%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "2.27",
+      "yoy": "1.60 (+41.88%)",
+      "qoq": "2.31 (-1.73%)"
+    }
+  ],
+  "summary": "BlackBuck, formerly Zinka Logistics Solutions, reported consolidated revenue of ₹235.33 crore, up 55.70% year on year and 15.26% from June. Net profit was ₹41.40 crore, up 41.79% from a year ago but down 1.83% from June. Tax credits affect the profit comparison; reported basic EPS was ₹2.27.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 11 and notes on page 15. Original ₹ million amounts are divided by 10 for crore; percentage changes use original values before rounding. EPS is reported and not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Consolidated net profit is the statement's profit-for-period line. No separate owner/non-controlling-interest split is printed on that page; no additional attribution is invented.",
+    "Total tax expense was ₹1.42 crore, including a ₹1.17 crore deferred-tax credit, versus ₹9.75 crore a year ago. June had a ₹3.96 crore deferred-tax credit and ₹0.05 crore net tax credit. Reported PAT is not an adjusted or recurring-profit estimate.",
+    "The group has truck-operator services and a lending business through BlackBuck Finserve, an NBFC. An industrial EBITDA measure is not imposed on this mixed business.",
+    "Wholly owned ZZ Logistics Solutions was struck off on 11 May 2026 and derecognised from consolidation. BlackBuck Transport Services was incorporated on 24 Sep 2026; the Loads-business transfer to it was executed after the quarter on 12 Oct 2026. These scope changes are disclosed, not treated as a quantified growth driver.",
+    "No exceptional item appears in the three quarter columns. The ₹3.83 crore labour-code provision shown as exceptional relates to the year ended 31 Mar 2026, not the current quarter.",
+    "Selected checked coverage from the original filing. The board outcome and subsequent financial-result notice are counted once, not as two company results. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3d816d99-0925-4c22-a04d-71e9fa387b1b.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:34:05 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "P N Gadgil Jewellers",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
