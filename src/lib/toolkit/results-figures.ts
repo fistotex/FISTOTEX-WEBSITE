@@ -38,6 +38,65 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Equitas Small Finance Bank",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Bank standalone, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share and NPA ratios in %",
+  "rows": [
+    {
+      "label": "Total income",
+      "current": "2,357.51",
+      "yoy": "1,846.29 (+27.69%)",
+      "qoq": "2,215.50 (+6.41%)"
+    },
+    {
+      "label": "Net interest income (computed)",
+      "current": "1,025.71",
+      "yoy": "773.68 (+32.58%)",
+      "qoq": "1,029.59 (-0.38%)"
+    },
+    {
+      "label": "Net profit after tax",
+      "current": "218.04",
+      "yoy": "24.14 (+803.41%)",
+      "qoq": "183.61 (+18.75%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "1.91",
+      "yoy": "0.21",
+      "qoq": "1.61"
+    },
+    {
+      "label": "Gross NPA ratio (%)",
+      "current": "2.29%",
+      "yoy": "2.92%",
+      "qoq": "2.42%"
+    },
+    {
+      "label": "Net NPA ratio (%)",
+      "current": "0.70%",
+      "yoy": "0.98%",
+      "qoq": "0.71%"
+    }
+  ],
+  "summary": "Equitas Small Finance Bank reported total income of ₹2,357.51 crore and net profit of ₹218.04 crore, compared with ₹24.14 crore a year ago and ₹183.61 crore in June. Computed net interest income was ₹1,025.71 crore. The profit comparison needs a material caveat: the bank reversed ₹84.63 crore of excess provisions following sales of non-performing advances to an asset reconstruction company.",
+  "caveats": [
+    "Source: bank statement on PDF page 3 and notes on pages 7-8. Original ₹ lakh amounts are divided by 100 for crore; percentages use original figures before rounding. EPS is reported, not annualised.",
+    "Bank-specific measures are used instead of industrial revenue/EBITDA. Net interest income is computed as interest earned minus interest expended: ₹2,065.9953 crore minus ₹1,040.2825 crore in the current quarter. No NIM or EBITDA is inferred.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. The previous-quarter net-PAT line is ₹18,360.69 lakh, matching profit before tax less tax. The preceding ordinary-profit line prints ₹18,360.89 lakh; this ₹0.20 lakh source discrepancy is not silently reconciled.",
+    "Current provisions other than tax were ₹114.99 crore versus ₹207.02 crore a year ago and ₹160.66 crore in June. Note 11 reports ₹84.63 crore of excess-provision reversal on NPA sales to an ARC. Reported PAT is not an adjusted or recurring-profit estimate.",
+    "GNPA/NNPA ratios are the bank's reported asset-quality measures at the period ends, not growth rates. Gross NPA amount was ₹1,086.30 crore and net NPA ₹324.99 crore as of 30 Sep 2026.",
+    "The bank states it had no subsidiary, associate or joint venture as of 30 Sep 2026, so it was not required to publish consolidated results.",
+    "Selected checked coverage; multiple debt-scrip notices with this same attachment are counted once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6f889d64-cb01-49b0-a5ef-e74e55b30519.pdf",
+  "sourceName": "BSE bank statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:04:57 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Aplab",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
