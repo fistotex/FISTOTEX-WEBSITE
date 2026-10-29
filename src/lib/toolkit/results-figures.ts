@@ -38,6 +38,96 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Man Infraconstruction",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited Ind AS",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "266.01",
+      "yoy": "169.20 (+57.21%)",
+      "qoq": "218.31 (+21.85%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "62.76",
+      "yoy": "55.21 (+13.67%)",
+      "qoq": "71.64 (-12.40%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "1.56",
+      "yoy": "1.38 (+13.04%)",
+      "qoq": "1.77 (-11.86%)"
+    }
+  ],
+  "summary": "Man Infraconstruction's September-quarter revenue was ₹266.01 crore, up 57.21% year on year. Profit attributable to owners was ₹62.76 crore, up 13.67% year on year but 12.40% below the June quarter.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 6. Original ₹ lakh values divided by 100 to display ₹ crore; changes use unrounded statement amounts. EPS remains ₹ per share and is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Profit attributable to owners is taken from profit after tax and non-controlling interest, not total consolidated profit.",
+    "Starting this financial year, interest from loans to real-estate joint ventures and associates is classified as other operating revenue because it is part of primary revenue-generating activity; comparatives have been reclassified, per note 2. EBITDA and operating margin are omitted rather than treating that financing revenue as comparable industrial EBITDA.",
+    "The June quarter included a deferred-tax credit. These are reported PAT comparisons, not adjusted recurring-profit comparisons.",
+    "Detected through RSS and separately checked against the original statement. This selected summary is not unattended automatic publication or complete market coverage; raw RSS notice time has no supplied timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9cbf32a4-9e25-4326-8e6d-0caef06dd0de.pdf",
+  "sourceName": "BSE consolidated statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 13:51:32 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
+  "company": "Asian Paints",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited Ind AS",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "9976.51",
+      "yoy": "8531.27 (+16.94%)",
+      "qoq": "10541.94 (-5.36%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "1557.07",
+      "yoy": "1503.38 (+3.57%)",
+      "qoq": "2168.76 (-28.20%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "15.61%",
+      "yoy": "17.62%",
+      "qoq": "20.57%"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "1067.63",
+      "yoy": "993.59 (+7.45%)",
+      "qoq": "1539.25 (-30.64%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "11.14",
+      "yoy": "10.37 (+7.43%)",
+      "qoq": "16.06 (-30.64%)"
+    }
+  ],
+  "summary": "Asian Paints' September-quarter revenue rose 16.94% year on year to ₹9976.51 crore. Profit attributable to owners rose 7.45% to ₹1067.63 crore, but was 30.64% below the June quarter. The defined operating EBITDA margin was 15.61%.",
+  "caveats": [
+    "Source: unaudited consolidated statement, PDF page 12. Statement monetary values are ₹ crore; EPS remains ₹ per share and is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Percentage changes use the reported values; EPS comparisons use reported rounded EPS.",
+    "EBITDA is computed as profit before share of associates, exceptional items and tax, plus finance costs, plus depreciation and amortisation, minus other income. Margin is this measure divided by revenue from operations. Share of associates is excluded, rather than treated as operating profit.",
+    "Profit shown is attributable to owners, excluding non-controlling interest. Total consolidated profit for the current quarter is ₹1085.35 crore, including ₹17.72 crore of non-controlling interest.",
+    "Detected through RSS and separately checked against the original statement. This selected summary is not unattended automatic publication or complete market coverage; raw RSS notice time has no supplied timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e20392a9-cbd5-4271-9ad1-450cad3ff835.pdf",
+  "sourceName": "BSE consolidated statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:03:11 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "APAR Industries",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
