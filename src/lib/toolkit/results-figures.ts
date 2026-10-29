@@ -38,6 +38,47 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Wheels India",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "1,710.95",
+      "yoy": "1,263.97 (+35.36%)",
+      "qoq": "1,491.00 (+14.75%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "59.42",
+      "yoy": "30.90 (+92.30%)",
+      "qoq": "38.32 (+55.06%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "24.21",
+      "yoy": "12.65 (+91.38%)",
+      "qoq": "15.68 (+54.40%)"
+    }
+  ],
+  "summary": "Wheels India reported consolidated revenue of ₹1,710.95 crore, up 35.36% year on year and 14.75% sequentially. Profit attributable to owners rose to ₹59.42 crore from ₹30.90 crore a year ago and ₹38.32 crore in the June quarter. Reported basic EPS was ₹24.21.",
+  "caveats": [
+    "Source: consolidated columns on PDF page 3; notes on page 4. Amounts are ₹ crore except reported, non-annualised EPS in ₹ per share. The adjacent standalone columns are not mixed into this summary.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use the rounded figures printed in this filing.",
+    "Owners' PAT is ₹59.42 crore, not total consolidated PAT of ₹60.16 crore. The reported non-controlling share is ₹0.75 crore; the displayed components differ from the total by ₹0.01 crore. All three figures are retained as printed, without forcing a reconciliation.",
+    "The filing recasts previous-period consolidated figures after the merger of Forge 2000 into associate Axles India, effective 1 Apr 2025. Comparisons here use those recast figures, not earlier releases.",
+    "Paid-up capital increased during the quarter following preferential and QIB share allotments, with proceeds used to repay debt. Reported EPS reflects the applicable weighted share count and should not be inferred from closing share capital.",
+    "Consolidated profit before tax includes ₹3.76 crore share of associate profit versus ₹2.12 crore a year ago and ₹2.66 crore in the June quarter. No adjusted PAT is inferred.",
+    "Selected checked coverage from the original statement; repeated outcome and press-release notices are not additional company results. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5AB6F8ED-5CB6-4A2C-8BD5-6E38823971CB-145313.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:53:23 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Dwarikesh Sugar Industries",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
