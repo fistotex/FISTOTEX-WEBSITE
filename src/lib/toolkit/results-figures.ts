@@ -38,6 +38,49 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Horizon Industrial Parks",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited; year-ago figures not reviewed",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "214.99",
+      "yoy": "165.53 (+29.88%)",
+      "qoq": "200.55 (+7.20%)"
+    },
+    {
+      "label": "Net profit / (loss) attributable to owners",
+      "current": "15.34",
+      "yoy": "-73.99 (loss to profit)",
+      "qoq": "-10.32 (loss to profit)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "0.06",
+      "yoy": "-0.48 (loss to profit)",
+      "qoq": "-0.04 (loss to profit)"
+    }
+  ],
+  "summary": "Horizon Industrial Parks reported consolidated operating revenue of ₹214.99 crore, up 29.88% year on year and 7.20% from June. Profit attributable to owners was ₹15.34 crore against losses of ₹73.99 crore a year ago and ₹10.32 crore in June; basic EPS was ₹0.06. The year-ago results were management-compiled and not audited or reviewed. Current profit includes a tax credit and joint-venture profit.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 7, review on pages 2-3 and notes on page 10. Original ₹ million amounts are divided by 10 for crore; revenue growth uses original values before rounding. EPS is reported, not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Note 2 and the review report say September 2025 quarter and half-year results were management-compiled, board-approved and neither audited nor reviewed. That limitation applies to the revenue-growth comparison too.",
+    "Owners' PAT of ₹15.337 crore plus non-controlling loss of ₹1.403 crore equals total group PAT of ₹13.934 crore. Total group losses were ₹76.050 crore a year ago and ₹11.627 crore in June. The owners' basis is used consistently; no percentage gain is shown across a loss-to-profit comparison.",
+    "Total tax was ₹2.731 crore credit, including ₹1.905 crore current-tax credit and ₹0.826 crore deferred-tax credit. A year ago total tax was ₹3.048 crore expense and June was ₹4.719 crore expense. No tax-normalised or recurring PAT is estimated.",
+    "Other income was ₹37.311 crore versus ₹10.266 crore a year ago and ₹39.989 crore in June. Finance costs were ₹115.541 crore versus ₹148.113 crore and ₹131.316 crore respectively. These are separate from operating revenue; no single cause is asserted for the turnaround.",
+    "The quarter includes ₹1.200 crore share of joint-venture profit. The 49% Vision Softech investment is equity-accounted, not fully consolidated. The auditors rely on management-prepared, unreviewed JV information for 10 Jul-30 Sep 2026, with an unmodified review conclusion.",
+    "Note 3 records an IPO during the quarter and ₹2,250 crore of proceeds used to repay/prepay borrowings. The changing share base matters for EPS comparisons; the reported ₹0.06 EPS is not recomputed using only closing shares. The company reports one industrial/logistics-space leasing business in India.",
+    "This card uses statutory statement profit, not the presentation's pro-forma cash PAT or operational EBITDA. Those adjusted measures are not treated as interchangeable with owners' PAT. Basic and diluted quarter EPS are both ₹0.06.",
+    "Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix; duplicate notices count once."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9ec54eb0-701b-44be-a157-0bbd4f02e942.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:50:00 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "NINtec Systems",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
