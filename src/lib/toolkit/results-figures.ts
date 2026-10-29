@@ -38,6 +38,49 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Restaurant Brands Asia",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "844.85",
+      "yoy": "703.43 (+20.10%)",
+      "qoq": "822.61 (+2.70%)"
+    },
+    {
+      "label": "Net profit / (loss) attributable to owners",
+      "current": "-19.58",
+      "yoy": "-58.60 (loss narrowed)",
+      "qoq": "-28.35 (loss narrowed)"
+    },
+    {
+      "label": "Basic / diluted EPS (₹ per share)",
+      "current": "-0.29",
+      "yoy": "-1.01 (loss per share narrowed)",
+      "qoq": "-0.45 (loss per share narrowed)"
+    }
+  ],
+  "summary": "Restaurant Brands Asia reported consolidated operating revenue of ₹844.85 crore, up 20.10% year on year and 2.70% from June. Loss attributable to owners narrowed to ₹19.58 crore from ₹58.60 crore a year ago and ₹28.35 crore in June. Basic/diluted loss per share was ₹0.29; it is not a profit or a percentage gain.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 13, notes on pages 16-17, segments on page 18 and limited review on pages 11-12. Original ₹ million amounts are divided by 10 for crore; revenue changes use original line values before rounding. Reported EPS is not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' loss is ₹19.575 crore, ₹58.595 crore and ₹28.348 crore respectively. Negative-base comparisons are described as losses narrowing rather than ordinary percentage growth.",
+    "Total group loss was ₹23.791 crore versus ₹63.329 crore a year ago and ₹33.003 crore in June. Current owners' loss plus ₹4.216 crore non-controlling loss equals group loss. Total comprehensive loss includes OCI and is not substituted for owners' PAT.",
+    "Other income was ₹21.993 crore versus ₹8.246 crore a year ago and ₹19.802 crore in June. Current and deferred-tax rows show no expense in these quarter columns. The annual ₹2.252 crore labour-code exceptional expense belongs to FY26, not the current September quarter; no adjusted PAT is estimated.",
+    "India revenue was ₹705.570 crore versus Indonesia ₹139.277 crore. Segment results are reconciled separately to finance cost, depreciation and other income; they are not net profit. No sales-volume, same-store-growth or organic-growth claim is inferred from statutory revenue.",
+    "Note 5 records a June 2026 preferential equity/warrant issue and a July change in control. Closing share capital rose from ₹582.252 crore a year ago to ₹712.218 crore. Reported EPS uses its weighted-average basis, so per-share and absolute-loss comparisons are not interchangeable.",
+    "The group includes PT Sari Burger Indonesia and step-down PT Sari Chicken Indonesia. The review relies on another auditor's report for one subsidiary and its conclusion is unmodified. Unaudited means limited review, not an audit opinion.",
+    "The ₹980.761 crore balance of net preferential proceeds is shown as held in mutual funds and other investments/securities. It is not treated as proceeds already spent on operations or as earnings.",
+    "Selected original-source coverage, not a complete market list. Duplicate notices count once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://nsearchives.nseindia.com/corporate/RBA_29102026170235_FinalUpload.pdf",
+  "sourceName": "NSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 17:05:10 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "DCW",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
