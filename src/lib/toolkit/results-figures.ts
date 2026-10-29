@@ -38,6 +38,47 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Praj Industries",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "848.99",
+      "yoy": "841.63 (+0.87%)",
+      "qoq": "715.82 (+18.60%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "23.16",
+      "yoy": "19.28 (+20.09%)",
+      "qoq": "11.61 (+99.53%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "1.26",
+      "yoy": "1.05 (+20.00%)",
+      "qoq": "0.63 (+100.00%)"
+    }
+  ],
+  "summary": "Praj Industries reported consolidated revenue of ₹848.99 crore, up 0.87% year on year and 18.60% from June. Profit attributable to owners was ₹23.16 crore, compared with ₹19.28 crore a year ago and ₹11.61 crore in June. The June comparison includes an insurance claim recognised in that earlier quarter, not fresh income from its September cash receipt.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 10 and notes on page 11. Original ₹ million amounts are divided by 10 for crore; changes use original values before rounding. EPS is reported as printed, with no annualisation inferred.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT is ₹23.1582 crore; total group PAT is ₹23.1674 crore including ₹0.0092 crore non-controlling profit. Growth uses the owners' line consistently, not total PAT or standalone figures.",
+    "The company recognised ₹8.8974 crore insurance-claim income in June after approval, relating to a March 2025 fire whose losses were already expensed. The ₹2.3974 crore balance received in September is a cash receipt against that claim, not newly recognised September income.",
+    "Total tax expense was ₹12.9572 crore versus ₹10.3257 crore a year ago and ₹9.4428 crore in June. Current deferred-tax expense was ₹0.49 crore; June had a ₹5.82 crore deferred-tax credit and ₹1.8958 crore prior-period tax adjustment. No adjusted or recurring PAT is inferred.",
+    "No exceptional item appears in these three quarter columns. The ₹26.3821 crore new-labour-code provision was booked in the year ended 31 Mar 2026, not the current quarter.",
+    "The group reports one Process and Project Engineering segment. Geographic revenue is disclosed separately; nominal revenue growth alone does not establish volume growth, new orders or order-book conversion.",
+    "Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c8a47c6a-733c-43e3-b316-727201f72193.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:12:26 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Laurus Labs",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
