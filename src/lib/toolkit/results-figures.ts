@@ -38,6 +38,55 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Bliss GVS Pharma",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "313.37",
+      "yoy": "244.40 (+28.22%)",
+      "qoq": "285.58 (+9.73%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "52.25",
+      "yoy": "27.25 (+91.75%)",
+      "qoq": "50.10 (+4.30%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "4.92",
+      "yoy": "2.58 (+90.70%)",
+      "qoq": "4.73 (+4.02%)"
+    },
+    {
+      "label": "Diluted EPS (₹ per share)",
+      "current": "4.81",
+      "yoy": "2.54 (+89.37%)",
+      "qoq": "4.65 (+3.44%)"
+    }
+  ],
+  "summary": "Bliss GVS Pharma reported consolidated operating revenue of ₹313.37 crore, up 28.22% year on year and 9.73% from June. Owners' profit was ₹52.25 crore, up 91.75% year on year and 4.30% quarter on quarter. Basic EPS was ₹4.92; diluted EPS was ₹4.81.",
+  "caveats": [
+    "Source: combined standalone/consolidated statement on PDF page 2, notes on page 5 and consolidated limited-review report on pages 7-8. Original ₹ lakh values are divided by 100 for crore; changes use original amounts before rounding. EPS changes use reported per-share values.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT is ₹5,225.22 lakh versus ₹2,725.04 lakh and ₹5,009.74 lakh. Total group PAT is ₹5,334.20 lakh versus ₹2,858.86 lakh and ₹5,137.20 lakh; non-controlling profit is ₹108.98 lakh versus ₹133.82 lakh and ₹127.46 lakh. These bases are not mixed.",
+    "Consolidated revenue ₹31,336.70 lakh plus other income ₹830.49 lakh less expenses ₹24,657.41 lakh gives PBT ₹7,509.78 lakh. Current tax ₹2,172.35 lakh plus deferred tax ₹74.99 lakh less earlier-year tax credit ₹71.76 lakh gives tax ₹2,175.58 lakh and group PAT ₹5,334.20 lakh. Year-ago deferred tax was a ₹226.64 lakh credit; June was ₹747.82 lakh expense. No tax-normalised profit is estimated.",
+    "The ₹4,108.61 lakh impairment-provision reversal in note 6(a) belongs to standalone results, not consolidated exceptional income. It lifts standalone PAT to ₹7,356.54 lakh; it is not added to this consolidated owners' PAT. Consolidated exceptional items are nil for all three compared quarters.",
+    "Current group OCI is a ₹166.25 lakh loss, including foreign-operation translation loss ₹188.67 lakh. Group total comprehensive income ₹5,167.95 lakh is not PAT. Half-year operating cash inflow is ₹3,569.38 lakh versus ₹7,755.21 lakh a year ago; earnings growth is not described as cash-flow growth.",
+    "Half-year employee expense includes ₹698.82 lakh share-based payments versus ₹314.04 lakh. Note 5 records 541,500 employee-option shares allotted during the half year and another 53,500 after period-end. Closing capital is ₹1,063.30 lakh at ₹1 face value versus ₹1,056.49 lakh a year ago and ₹1,060.56 lakh in June. Basic/diluted EPS are separate and not annualised.",
+    "Note 7 says Anupam Rasayan India, with the named person acting in concert, acquired 50.07% and became holding company/promoter from 28 Sep 2026; the board was reconstituted. The company says the change in control has no impact on these quarter/half-year results. No organic-growth claim is inferred.",
+    "The consolidated review relies on other auditors for three subsidiaries and three step-down subsidiaries, and includes one unreviewed step-down subsidiary with ₹0.89 lakh assets and nil revenue/PAT, described by management as immaterial. The conclusion is unmodified; limited review is not an audit. Note 3 identifies a single Pharmaceutical and Healthcare operating segment.",
+    "Selected original-source coverage, not a complete market list. Duplicate filings, board-meeting notices and newspaper copies are not additional results. Raw RSS notice time carries no timezone suffix."
+  ],
+  "sourceUrl": "https://nsearchives.nseindia.com/corporate/BLISSGVS_29102026173905_Outcome_of_Board_Meeting.pdf",
+  "sourceName": "NSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 17:44:24 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Computer Age Management Services",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
