@@ -38,6 +38,54 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Strides Pharma Science",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited; June includes loss-of-control gain",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "1429.73",
+      "yoy": "1220.83 (+17.11%)",
+      "qoq": "1265.41 (+12.99%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "130.84",
+      "yoy": "127.53 (+2.59%)",
+      "qoq": "156.91 (-16.62%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "14.19",
+      "yoy": "13.84 (+2.53%)",
+      "qoq": "17.02 (-16.63%)"
+    },
+    {
+      "label": "Diluted EPS (₹ per share)",
+      "current": "14.19",
+      "yoy": "13.84 (+2.53%)",
+      "qoq": "17.02 (-16.63%)"
+    }
+  ],
+  "summary": "Strides Pharma Science reported consolidated operating revenue of ₹1,429.73 crore, up 17.11% year on year and 12.99% from June. Owners' profit was ₹130.84 crore, up 2.59% year on year but down 16.62% quarter on quarter. June included a ₹74.21 crore gain on losing control of Pivot Path, including remeasurement of the retained stake; the sequential profit comparison is not a clean operating-growth measure. Basic and diluted EPS were both ₹14.19.",
+  "caveats": [
+    "Source: consolidated statement on PDF pages 6-7, notes on pages 13-14, and limited-review report on pages 2-3. Original ₹ million amounts are divided by 10 for crore. Percentage changes use original amounts before rounding; EPS changes use reported per-share figures.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT is ₹1,308.36 million versus ₹1,275.34 million and ₹1,569.14 million. Group PAT is ₹1,341.18 million versus ₹1,315.24 million and ₹1,654.93 million; non-controlling profit is ₹32.82 million versus ₹39.90 million and ₹85.79 million. These bases are not mixed.",
+    "June exceptional items included a ₹742.07 million gain from dilution of Pivot Path to 19.95%, loss of control and remeasurement of the retained investment. June also had ₹110.10 million product-recall/settlement expense, leaving net exceptional gain ₹631.97 million. Current exceptional items are ₹17.04 million expense, versus ₹87.72 million expense a year ago. No adjusted PAT is invented by subtracting pre-tax gains from post-tax profit.",
+    "Current product-recall/settlement expense comprises ₹13.52 million for ranitidine/losartan withdrawal, settlements and related legal fees and ₹3.52 million for testosterone recall/related expenses. The notes describe ongoing litigation and legal complaints under evaluation; a charge is not evidence that all liabilities are settled.",
+    "Current pre-exceptional PBT is ₹1,512.41 million. After ₹17.04 million exceptional expense and ₹8.99 million share of associate/JV profit, PBT is ₹1,504.36 million. Current tax ₹216.79 million less deferred-tax credit ₹53.61 million gives tax ₹163.18 million and group PAT ₹1,341.18 million. Deferred tax was a credit ₹11.46 million a year ago and expense ₹51.17 million in June; no tax-normalised profit is estimated.",
+    "Current group OCI ₹391.59 million and total comprehensive income ₹1,732.77 million are not PAT. EPS is not annualised. The separate standalone PAT ₹92.63 million is not added to consolidated profit; the standalone June exceptional gain ₹764.01 million differs from the consolidated ₹742.07 million gain.",
+    "The limited-review report includes two subsidiaries reviewed by other auditors and 25 subsidiaries not reviewed, plus four associates and a joint venture with unreviewed interim information. Unreviewed subsidiaries have quarter revenue ₹1,668 million and loss ₹244 million before consolidation adjustments; management describes this information as immaterial to the group. The review conclusion is unmodified. A limited review is not an audit.",
+    "Selected original-source coverage, not a complete market list. Duplicate filings, board-meeting notices and newspaper copies are not additional results. Raw RSS notice time carries no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/dc0b6154-0cfe-4d66-a38e-5871d2a377ee.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 18:44:13 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "ICRA",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
