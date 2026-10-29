@@ -38,6 +38,46 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Dwarikesh Sugar Industries",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Standalone, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "256.59",
+      "yoy": "245.93 (+4.33%)",
+      "qoq": "358.13 (-28.35%)"
+    },
+    {
+      "label": "Net profit / (loss) after tax",
+      "current": "-13.12",
+      "yoy": "-32.62 (loss narrowed 59.80%)",
+      "qoq": "-25.73 (loss narrowed 49.03%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "-0.71",
+      "yoy": "-1.76",
+      "qoq": "-1.39"
+    }
+  ],
+  "summary": "Dwarikesh Sugar reported revenue of ₹256.59 crore, up 4.33% year on year but down 28.35% from the June quarter. Its net loss narrowed to ₹13.12 crore from ₹32.62 crore a year ago and ₹25.73 crore in the previous quarter. A narrower loss is not a return to profit.",
+  "caveats": [
+    "Source: statement on PDF page 4 and notes on page 7. Original amounts are ₹ lakh, converted to ₹ crore by dividing by 100. Percentages use the original lakh values before rounding; EPS is reported, not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Loss-narrowing percentages compare absolute loss amounts, not profit growth.",
+    "The company states it had no subsidiary, associate or joint venture as of 30 Sep 2026, so this is standalone coverage. No consolidated basis is implied.",
+    "The filing warns that the seasonal sugar industry makes a quarter an unreliable proportional guide to annual performance. The sequential revenue decline should be read in that context.",
+    "Current loss before tax was ₹17.52 crore; a deferred-tax credit of ₹4.40 crore reduced the reported net loss. No exceptional item was reported for the quarter.",
+    "Selected checked coverage from the original filing. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bd69baf5-f5fe-43f0-8b10-d96dfa925ea6.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:54:13 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Greaves Cotton",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
