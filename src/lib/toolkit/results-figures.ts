@@ -38,6 +38,46 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Ind-Swift Laboratories",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Standalone only, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "234.89",
+      "yoy": "156.43 (+50.15%)",
+      "qoq": "186.08 (+26.23%)"
+    },
+    {
+      "label": "Net profit after tax",
+      "current": "31.03",
+      "yoy": "8.76 (+254.33%)",
+      "qoq": "24.44 (+26.94%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "3.57",
+      "yoy": "1.09 (+227.52%)",
+      "qoq": "2.81 (+27.05%)"
+    }
+  ],
+  "summary": "On a standalone basis, Ind-Swift Laboratories reported revenue of ₹234.89 crore, up 50.15% year on year and 26.23% sequentially. Reported net profit was ₹31.03 crore, compared with ₹8.76 crore a year ago and ₹24.44 crore in June. These are parent-company figures, not consolidated group profit. Interim PAT excludes any deferred-tax adjustment, which the filing says will be provided at year end.",
+  "caveats": [
+    "Source: standalone statement on PDF page 4 and notes on pages 13-14. Original ₹ lakh amounts are divided by 100 for crore; changes use original figures before display rounding. EPS is reported and not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Standalone coverage is deliberate: the separate consolidated table is not mixed with this statement, and no owners-attributable group PAT is inferred.",
+    "The company says no deferred-tax adjustment has been made under Ind AS 12 because it will be provided at year end. This is a material basis limitation on the reported interim PAT; no normalised tax or adjusted PAT is estimated.",
+    "Exceptional expense of ₹0.58 crore relates to balances written back/written off on amounts no longer payable/receivable; it was ₹0.24 crore in June and nil a year ago. Reported PAT retains those items.",
+    "Reported standalone basic EPS is ₹3.57 versus ₹1.09 a year ago and ₹2.81 in June; diluted EPS is ₹3.56 versus ₹1.05 and ₹2.81. No per-share figures are inferred from closing capital.",
+    "Selected checked coverage from the original filing. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b7c4cfe4-5a2f-483e-a52e-dc13318374e3.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:07:59 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "HeidelbergCement India",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
