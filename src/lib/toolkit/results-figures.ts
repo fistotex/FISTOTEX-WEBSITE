@@ -37,6 +37,158 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // insurers and companies whose results include exceptional or discontinued
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
+{
+  "company": "APAR Industries",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited Ind AS",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "6931.19",
+      "yoy": "5715.42 (+21.27%)",
+      "qoq": "6591.06 (+5.16%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "720.79",
+      "yoy": "465.09 (+54.98%)",
+      "qoq": "757.57 (-4.85%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "10.40%",
+      "yoy": "8.14%",
+      "qoq": "11.49%"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "447.32",
+      "yoy": "251.70 (+77.72%)",
+      "qoq": "467.45 (-4.31%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "110.10",
+      "yoy": "62.66 (+75.71%)",
+      "qoq": "116.37 (-5.39%)"
+    }
+  ],
+  "summary": "APAR Industries's September-quarter revenue rose 21.27% year on year to ₹6931.19 crore. Net profit was ₹447.32 crore, up 77.72% from a year earlier. The defined operating EBITDA margin was 10.40%, compared with 8.14% a year earlier.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 3. Statement monetary values are ₹ crore; EPS remains ₹ per share and is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use original source values before display rounding; EPS changes use reported rounded EPS.",
+    "EBITDA is computed as profit before tax plus finance cost plus depreciation and amortisation minus other income. Margin is that measure divided by revenue from operations. This is our defined operating measure, not a copied channel figure.",
+    "Detected through RSS, then separately read and checked against the official filing. This selected summary is not unattended automatic publication or complete market coverage. Raw RSS publication time has no supplied timezone suffix.",
+    "The company's press release uses a different EBITDA measure: post open-period forex, about ₹787 crore and 11.4%. Our ₹720.79 crore/10.40% excludes other income under the definition above; these measures must not be mixed."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f99ee437-60bb-453d-a742-5900973eee21.pdf",
+  "sourceName": "BSE consolidated statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 13:52:13 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
+  "company": "Shadowfax Technologies",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited Ind AS",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "1537.70",
+      "yoy": "982.11 (+56.57%)",
+      "qoq": "1358.12 (+13.22%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "103.79",
+      "yoy": "39.15 (+165.11%)",
+      "qoq": "91.77 (+13.10%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "6.75%",
+      "yoy": "3.99%",
+      "qoq": "6.76%"
+    },
+    {
+      "label": "Net profit",
+      "current": "67.95",
+      "yoy": "13.02 (+421.89%)",
+      "qoq": "65.40 (+3.90%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "1.16",
+      "yoy": "0.26 (+346.15%)",
+      "qoq": "1.11 (+4.50%)"
+    }
+  ],
+  "summary": "Shadowfax Technologies's September-quarter revenue rose 56.57% year on year to ₹1537.70 crore. Net profit was ₹67.95 crore, up 421.89% from a year earlier. The defined operating EBITDA margin was 6.75%, compared with 3.99% a year earlier.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 4. Statement monetary values are ₹ crore; EPS remains ₹ per share and is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use original source values before display rounding; EPS changes use reported rounded EPS.",
+    "EBITDA is computed as profit before tax plus finance cost plus depreciation and amortisation minus other income. Margin is that measure divided by revenue from operations. This is our defined operating measure, not a copied channel figure.",
+    "Detected through RSS, then separately read and checked against the official filing. This selected summary is not unattended automatic publication or complete market coverage. Raw RSS publication time has no supplied timezone suffix.",
+    "September 2025 quarter figures were approved by the board but were not reviewed by the statutory auditors, per note 4. Criticalog became wholly owned during the June 2026 quarter, per note 5; PAT here is the statement profit for the period, not a separately disclosed owners-attribution row."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8a5f89ba-20c9-41f2-8550-664d5d302e61.pdf",
+  "sourceName": "BSE consolidated statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 13:47:05 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
+  "company": "Sambhv Steel Tubes",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited Ind AS",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "835.99",
+      "yoy": "580.17 (+44.09%)",
+      "qoq": "732.17 (+14.18%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "100.99",
+      "yoy": "60.24 (+67.66%)",
+      "qoq": "95.14 (+6.15%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "12.08%",
+      "yoy": "10.38%",
+      "qoq": "12.99%"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "60.95",
+      "yoy": "30.60 (+99.17%)",
+      "qoq": "56.52 (+7.83%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "2.07",
+      "yoy": "1.04 (+99.04%)",
+      "qoq": "1.92 (+7.81%)"
+    }
+  ],
+  "summary": "Sambhv Steel Tubes's September-quarter revenue rose 44.09% year on year to ₹835.99 crore. Net profit was ₹60.95 crore, up 99.17% from a year earlier. The defined operating EBITDA margin was 12.08%, compared with 10.38% a year earlier.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 8. Original ₹ million values converted to ₹ crore by dividing by 10; EPS remains ₹ per share and is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use original source values before display rounding; EPS changes use reported rounded EPS.",
+    "EBITDA is computed as profit before tax plus finance cost plus depreciation and amortisation minus other income. Margin is that measure divided by revenue from operations. This is our defined operating measure, not a copied channel figure.",
+    "Detected through RSS, then separately read and checked against the official filing. This selected summary is not unattended automatic publication or complete market coverage. Raw RSS publication time has no supplied timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e3c4bbd4-a39a-4a9c-9bff-2b9cb3cc34cc.pdf",
+  "sourceName": "BSE consolidated statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 13:39:43 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
   {
     company: "Vaibhav Global",
     quarterLabel: "Q2 FY2027",
