@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "NINtec Systems",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "48.20",
+      "yoy": "41.69 (+15.60%)",
+      "qoq": "45.86 (+5.10%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "10.57",
+      "yoy": "7.87 (+34.36%)",
+      "qoq": "9.20 (+14.99%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "5.69",
+      "yoy": "4.24 (+34.20%)",
+      "qoq": "4.95 (+14.95%)"
+    }
+  ],
+  "summary": "NINtec Systems reported consolidated operating revenue of ₹48.20 crore, up 15.60% year on year and 5.10% from June. Profit attributable to owners was ₹10.57 crore, up 34.36% and 14.99% respectively; basic EPS was ₹5.69. Total comprehensive income fell from June as other comprehensive income was smaller, not because PAT fell.",
+  "caveats": [
+    "Source: consolidated results and notes on PDF page 9, limited review on pages 6-7. Original ₹ lakh amounts are divided by 100 for crore. Growth uses the printed original line values before rounding; EPS is reported, not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT equals total group PAT in these quarter columns, with no non-controlling interest shown. Standalone results are not substituted.",
+    "Total comprehensive income was ₹10.6877 crore versus ₹8.1318 crore a year ago and ₹10.9355 crore in June. It includes other comprehensive income of ₹0.1134 crore versus ₹0.2617 crore and ₹1.7395 crore respectively. Hedge and foreign-operation translation movements are OCI, not PAT.",
+    "Other income was ₹1.3337 crore versus ₹0.8253 crore a year ago and ₹0.6905 crore in June. No exceptional, extraordinary or discontinued-operation item is reported in these quarter columns; no adjusted PAT is estimated.",
+    "Current tax expense was ₹3.4427 crore versus ₹2.5840 crore a year ago and ₹2.7608 crore in June. Deferred tax was ₹0.0862 crore credit versus ₹0.0822 crore credit and ₹0.1150 crore expense respectively.",
+    "The group includes wholly owned Nintec Systems B.V., Netherlands, and reports one software-services segment. The auditors' unmodified limited-review conclusion relies on management-provided unaudited subsidiary information: quarter revenue ₹21.2964 crore and PAT ₹1.0485 crore. This is not described as an audit of the subsidiary.",
+    "The filing contains small rounding differences between some displayed components and totals, including revenue plus other income and quarterly sums versus half-year figures. Each metric is retained on its own printed line; no silent balancing adjustment is made. Basic and diluted quarter EPS are both ₹5.69.",
+    "Selected original-source coverage, not a complete market list. Duplicate notices count once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4f57e6c4-1d88-4c58-9c13-6ad99354f8b7.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:43:02 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Indian Energy Exchange",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
