@@ -38,6 +38,49 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Indian Energy Exchange",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "167.10",
+      "yoy": "153.92 (+8.56%)",
+      "qoq": "157.88 (+5.84%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "139.24",
+      "yoy": "123.35 (+12.88%)",
+      "qoq": "134.76 (+3.32%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "1.56",
+      "yoy": "1.39 (+12.23%)",
+      "qoq": "1.52 (+2.63%)"
+    }
+  ],
+  "summary": "Indian Energy Exchange reported consolidated revenue from operations of ₹167.10 crore, up 8.56% year on year and 5.84% from June. Profit attributable to owners was ₹139.24 crore, up 12.88% and 3.32% respectively; basic EPS was ₹1.56. Other income fell from June, while the share of associate profit increased.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 11, review report on pages 8-10 and notes on page 14. Original ₹ lakh figures are divided by 100 for crore. Percentage changes use original amounts before rounding; reported EPS is not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT equals total group PAT in these quarter columns, with no non-controlling profit shown. Standalone results and other comprehensive income are not substituted.",
+    "Other income was ₹35.8613 crore versus ₹29.3432 crore a year ago and ₹44.9327 crore in June. Total income of ₹202.9576 crore includes this item and is not presented here as operating revenue.",
+    "The share of associate profit, already net of tax, was ₹11.0475 crore versus ₹4.5255 crore a year ago and ₹7.7188 crore in June. It is included in consolidated profit, not operating revenue. No exceptional item is separately reported in these quarter columns.",
+    "Total tax expense was ₹42.1584 crore versus ₹37.7524 crore a year ago and ₹42.0447 crore in June. The current quarter includes a ₹1.9981 crore deferred-tax credit, compared with ₹0.3179 crore credit a year ago and ₹0.3338 crore expense in June. No adjusted or recurring PAT is estimated.",
+    "The group includes subsidiaries ICX and Indian Coal Exchange, plus associate Indian Gas Exchange. The review annexure says Indian Coal Exchange is included from 1 Jun 2026. The company reports one operating segment; no like-for-like growth adjustment or trading-volume growth is inferred from revenue.",
+    "The auditors give an unmodified review conclusion but rely on management-certified, unreviewed interim information for the ESOP Trust and one subsidiary, described by management as immaterial to the group. This is a limited review, not an audit.",
+    "The ₹2 per share final FY2026 dividend mentioned in note 6 was approved at the September AGM and paid during the quarter; it is not labelled a new Q2 dividend declaration. Basic and diluted quarter EPS are both ₹1.56; EPS rounding can make its growth differ from PAT growth.",
+    "Selected original-source coverage, not a complete market list. Board outcomes and duplicate notices count once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0bdb7483-6c23-4290-8f3a-78e5d627ec2a.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:48:10 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Ram Ratna Wires",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
