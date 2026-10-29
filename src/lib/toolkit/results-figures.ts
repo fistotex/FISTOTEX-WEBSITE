@@ -38,6 +38,29 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
   {
+    company: "Vaibhav Global",
+    quarterLabel: "Q2 FY2027",
+    periodEnded: "30 Sep 2026",
+    basis: "Consolidated, unaudited Ind AS",
+    currencyUnit: "₹ crore, except EPS in ₹/share",
+    rows: [
+      { label: "Revenue from operations", current: "938.37", yoy: "877.32 (+6.96%)", qoq: "917.07 (+2.32%)" },
+      { label: "Net profit attributable to owners", current: "41.71", yoy: "47.55 (-12.28%)", qoq: "56.38 (-26.02%)" },
+      { label: "Basic EPS (₹ per share)", current: "2.49", yoy: "2.85 (-12.63%)", qoq: "3.37 (-26.11%)" },
+    ],
+    summary: "Vaibhav Global's September-quarter revenue rose 6.96% year on year to ₹938.37 crore, while net profit attributable to owners fell 12.28% to ₹41.71 crore. Basic EPS was ₹2.49, compared with ₹2.85 a year earlier. Against the June quarter, revenue rose 2.32% and profit fell 26.02%.",
+    caveats: [
+      "Source: consolidated statement, PDF page 3. Monetary figures converted from ₹ lakh to ₹ crore by dividing by 100; EPS remains ₹ per share and is not annualised.",
+      "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use the original statement values before display rounding; EPS changes use the reported rounded EPS.",
+      "The filing notice was detected through RSS; the figures were separately read and checked. This selected summary is not an automatic live feed or complete market coverage.",
+      "Publication time below is the raw RSS timestamp, with no timezone suffix supplied by the feed; it is not a measured detection delay.",
+    ],
+    sourceUrl: "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e99d4794-1360-4e70-8508-f6bc8f669322.pdf",
+    sourceName: "BSE statement; RSS notice timestamp",
+    sourceDisseminatedAt: "29-Oct-2026 00:34:31 (raw source time)",
+    verifiedAt: "29 Oct 2026",
+  },
+  {
     company: "AGI Greenpac",
     quarterLabel: "Q2 FY2027",
     periodEnded: "30 Sep 2026",
