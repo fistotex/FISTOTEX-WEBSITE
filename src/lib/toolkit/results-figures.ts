@@ -38,6 +38,55 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Computer Age Management Services",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "414.47",
+      "yoy": "376.74 (+10.01%)",
+      "qoq": "395.03 (+4.92%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "131.49",
+      "yoy": "114.94 (+14.40%)",
+      "qoq": "128.02 (+2.72%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "5.30",
+      "yoy": "4.65 (+13.98%)",
+      "qoq": "5.16 (+2.71%)"
+    },
+    {
+      "label": "Diluted EPS (₹ per share)",
+      "current": "5.27",
+      "yoy": "4.62 (+14.07%)",
+      "qoq": "5.14 (+2.53%)"
+    }
+  ],
+  "summary": "Computer Age Management Services reported consolidated operating revenue of ₹414.47 crore, up 10.01% year on year and 4.92% from June. Profit attributable to owners was ₹131.49 crore, up 14.40% year on year and 2.72% quarter on quarter. Basic EPS was ₹5.30 and diluted EPS ₹5.27.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 7, notes on page 10 and limited-review report on pages 11-12. Original ₹ lakh amounts are divided by 100 for crore. Changes use original line values before crore rounding; EPS changes use reported per-share figures.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT is ₹13,149.22 lakh versus ₹11,494.31 lakh and ₹12,801.59 lakh. Total group PAT is ₹13,066.27 lakh versus ₹11,393.59 lakh and ₹12,709.52 lakh because non-controlling interests made losses.",
+    "Current owners' PAT ₹13,149.22 lakh plus non-controlling loss ₹82.95 lakh equals total group PAT ₹13,066.27 lakh. OCI ₹69.08 lakh is separate from earnings; total comprehensive income ₹13,135.35 lakh is not PAT.",
+    "Other income was ₹1,369.13 lakh versus ₹1,220.18 lakh a year ago and ₹1,658.17 lakh in June. Current tax includes ₹108.02 lakh credit for earlier periods; deferred tax was ₹67.34 lakh expense versus ₹162.03 lakh credit a year ago and ₹170.07 lakh expense in June. No adjusted PAT is estimated.",
+    "The statement shows a ₹25.75 lakh joint-venture loss for the current quarter. The review report paragraph 7(ii) instead describes ₹20.25 lakh; both show ₹50.25 lakh for the half year. That source difference is unresolved. The table uses the signed statement's reported revenue, owners' PAT and EPS and does not substitute the review narrative or invent an adjustment.",
+    "Note 6 records 433,880 employee-option shares allotted during the half year. Closing capital was ₹4,968.37 lakh at ₹2 face value versus ₹4,949.64 lakh a year ago and ₹4,964.09 lakh in June. Reported basic and diluted EPS are kept separate and are not annualised.",
+    "Note 5 says there are no separate reportable operating segments for the group and joint venture. No assets-under-management, market-share, transaction-volume or organic-growth claim is inferred from revenue.",
+    "The review relies on other auditors for six subsidiaries and management-certified, unreviewed information for one step-down subsidiary and one joint venture. Its conclusion is unmodified; limited review is not an audit opinion. The step-down entity is included only up to 28 Aug 2026, so scope is not assumed unchanged.",
+    "Selected original-source coverage, not a complete market list. Dividend and duplicate outcome notices do not count as additional results. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://nsearchives.nseindia.com/corporate/Nandhini_29102026171739_Outcome_of_Board_Meeting.pdf",
+  "sourceName": "NSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 17:21:53 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "AMJ Land Holdings",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
