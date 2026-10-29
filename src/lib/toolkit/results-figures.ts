@@ -38,6 +38,53 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Greaves Cotton",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "1,175.91",
+      "yoy": "815.46 (+44.20%)",
+      "qoq": "974.12 (+20.72%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "4.82",
+      "yoy": "26.01 (-81.47%)",
+      "qoq": "25.77 (-81.30%)"
+    },
+    {
+      "label": "Total consolidated profit / (loss) after tax",
+      "current": "-29.81",
+      "yoy": "6.32 (profit to loss)",
+      "qoq": "6.16 (profit to loss)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "0.20",
+      "yoy": "1.12 (-82.14%)",
+      "qoq": "1.11 (-81.98%)"
+    }
+  ],
+  "summary": "Greaves Cotton reported revenue of ₹1,175.91 crore, up 44.20% year on year and 20.72% sequentially. Profit attributable to owners fell to ₹4.82 crore, while the group recorded a total consolidated loss of ₹29.81 crore. These are different attribution bases: non-controlling interests absorbed ₹34.63 crore of losses.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 10, and notes page 14. Values are ₹ crore, except reported basic EPS in ₹ per share; EPS is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Percentages use reported rounded values. The total-PAT row labels a switch from profit to loss rather than a misleading growth rate.",
+    "Current exceptional expense of ₹32.75 crore comprises ₹12.66 crore of abandoned subsidiary IPO costs and ₹20.09 crore of goodwill/brand impairment. Prior-quarter exceptional expense was nil; year-ago expense was ₹3.58 crore. Reported profits retain these items.",
+    "The electric-mobility subsidiary accelerated depreciation by ₹7.75 crore and brand amortisation by ₹19.55 crore after useful-life reviews. These charges affect the quarter; no adjusted PAT is inferred.",
+    "Total group PAT is not owners' PAT. Owners' profit plus the non-controlling loss reconciles to the total consolidated loss; basic EPS uses the owners' basis.",
+    "No industrial EBITDA/margin is imposed on this mixed group, which includes vehicle finance as well as engines and electric mobility.",
+    "Selected checked coverage from the original filing. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bc014ca2-6ff1-4ef8-ade5-c94a845412dc.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:42:54 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Welspun Corp",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
