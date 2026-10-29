@@ -46,6 +46,8 @@ export interface MarketEvent {
   currency?: string;
   /** The previous officially published figure, with its basis. Forecasts are never shown. */
   previous?: string;
+  /** Official released figures, with period and measurement basis. Absent until checked. */
+  actual?: string;
   /** The organiser's own page for this specific event. */
   source?: { label: string; href: string };
 }
@@ -114,6 +116,168 @@ export function expiriesAround(fromISO: string, pastMonths = 3, futureMonths = 4
 
 /** Fixed, officially published events. Decision day is the date used for sorting. */
 export const SCHEDULED_EVENTS: MarketEvent[] = [
+{
+  "date": "2026-10-29",
+  "title": "US PCE inflation - September 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-10-29T12:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BEA September PCE release",
+    "href": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+  },
+  "actual": "Headline 3.6% YoY / 0.5% MoM; core 3.1% YoY / 0.3% MoM.",
+  "note": "Monthly price-index release. Core excludes food and energy. YoY is the change from the same month a year earlier, not a one-month rise. No consensus forecast is supplied. Figures verified 29 Oct 2026."
+},
+{
+  "date": "2026-10-29",
+  "title": "US real GDP - Q3 2026 advance estimate",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-10-29T12:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BEA Q3 GDP advance release",
+    "href": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026"
+  },
+  "actual": "+3.4% quarter-on-quarter at a seasonally adjusted annual rate (SAAR); +0.8% at a quarterly rate.",
+  "previous": "Q2 2026: +2.2% SAAR, as reported in this release.",
+  "note": "Advance estimate, subject to revision. This is not year-on-year GDP growth. The quarterly PCE price measure in this GDP report is a different basis from monthly PCE inflation. Figures verified 29 Oct 2026."
+},
+{
+  "date": "2026-10-14",
+  "title": "US CPI inflation - September 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-10-14T12:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BLS September CPI release",
+    "href": "https://www.bls.gov/news.release/cpi.htm"
+  },
+  "actual": "Headline 3.7% YoY (not seasonally adjusted) / 0.6% MoM (seasonally adjusted); core 2.6% YoY / 0.3% MoM.",
+  "previous": "August headline: 3.4% YoY / 0.4% MoM; core: 2.4% YoY / 0.3% MoM.",
+  "note": "Core excludes food and energy. Current BLS release page checked 29 Oct 2026; it rolls to the next release, so the month and check date identify these figures."
+},
+{
+  "date": "2026-10-02",
+  "title": "US jobs - September 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-10-02T12:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BLS September employment release",
+    "href": "https://www.bls.gov/news.release/empsit.htm"
+  },
+  "actual": "Nonfarm payrolls +29,000 jobs (seasonally adjusted monthly change); unemployment rate 4.2%.",
+  "note": "Payroll change and unemployment rate come from different surveys and are not interchangeable. Payroll estimates can be revised. Current BLS release page checked 29 Oct 2026; it rolls to the next release."
+},
+{
+  "date": "2026-11-06",
+  "title": "US jobs - October 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-11-06T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BLS jobs release schedule",
+    "href": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  "note": "Scheduled 08:30 US Eastern Time, converted to IST with daylight saving handled by date. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-12-04",
+  "title": "US jobs - November 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-12-04T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BLS jobs release schedule",
+    "href": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  "note": "Scheduled 08:30 US Eastern Time, converted to IST with daylight saving handled by date. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-11-10",
+  "title": "US CPI inflation - October 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-11-10T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BLS CPI release schedule",
+    "href": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  "note": "Scheduled 08:30 US Eastern Time, converted to IST with daylight saving handled by date. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-12-10",
+  "title": "US CPI inflation - November 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-12-10T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BLS CPI release schedule",
+    "href": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  "note": "Scheduled 08:30 US Eastern Time, converted to IST with daylight saving handled by date. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-11-25",
+  "title": "US PCE inflation - October 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-11-25T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BEA release schedule",
+    "href": "https://www.bea.gov/news/schedule/full"
+  },
+  "note": "Personal Income and Outlays release, including headline and core PCE inflation. Scheduled 08:30 US Eastern Time. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-11-25",
+  "title": "US real GDP - Q3 2026 second estimate",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-11-25T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BEA release schedule",
+    "href": "https://www.bea.gov/news/schedule/full"
+  },
+  "note": "A revision of the same July-September quarter, not a new quarter. Scheduled 08:30 US Eastern Time. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-12-23",
+  "title": "US PCE inflation - November 2026",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-12-23T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BEA release schedule",
+    "href": "https://www.bea.gov/news/schedule/full"
+  },
+  "note": "Personal Income and Outlays release, including headline and core PCE inflation. Scheduled 08:30 US Eastern Time. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
+{
+  "date": "2026-12-23",
+  "title": "US real GDP - Q3 2026 third estimate",
+  "kind": "macro-data",
+  "volatile": true,
+  "instantUTC": "2026-12-23T13:30:00Z",
+  "currency": "USD",
+  "source": {
+    "label": "BEA release schedule",
+    "href": "https://www.bea.gov/news/schedule/full"
+  },
+  "note": "A revision of the same July-September quarter, not a new quarter. Scheduled 08:30 US Eastern Time. Actual figures are not released yet. Date checked 29 Oct 2026; schedules can change."
+},
   {
     date: "2026-07-29",
     span: "Jul 28-29",
@@ -412,6 +576,9 @@ export function allEvents(now = new Date()): MarketEvent[] {
 
 /** Where each data group comes from - shown on the page for trust. */
 export const CALENDAR_SOURCES = [
+  { label: "BEA economic release schedule (PCE and GDP)", href: "https://www.bea.gov/news/schedule/full" },
+  { label: "BLS CPI release schedule", href: "https://www.bls.gov/schedule/news_release/cpi.htm" },
+  { label: "BLS employment release schedule", href: "https://www.bls.gov/schedule/news_release/empsit.htm" },
   { label: "RBI press release, MPC schedule 2026-27 (Mar 23, 2026)", href: "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62422" },
   { label: "NSE circular CMTR71775 - 2026 trading holidays", href: "https://nsearchives.nseindia.com/content/circulars/CMTR71775.pdf" },
   { label: "US Federal Reserve FOMC calendar", href: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
@@ -421,3 +588,6 @@ export const CALENDAR_SOURCES = [
 ];
 
 export const CALENDAR_REVIEWED_ON = "October 28, 2026";
+
+/** Selected economic-release entries checked separately from the legacy date list. */
+export const ECONOMIC_DATA_REVIEWED_ON = "October 29, 2026";
