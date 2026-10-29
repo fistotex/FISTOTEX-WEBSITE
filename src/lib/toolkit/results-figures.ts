@@ -38,6 +38,46 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "HeidelbergCement India",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Company financial results, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "567.78",
+      "yoy": "511.66 (+10.97%)",
+      "qoq": "628.11 (-9.61%)"
+    },
+    {
+      "label": "Net profit after tax",
+      "current": "16.77",
+      "yoy": "24.93 (-32.73%)",
+      "qoq": "30.55 (-45.11%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "0.74",
+      "yoy": "1.10 (-32.73%)",
+      "qoq": "1.35 (-45.19%)"
+    }
+  ],
+  "summary": "HeidelbergCement India reported revenue of ₹567.78 crore, up 10.97% year on year but down 9.61% from June. Net profit fell to ₹16.77 crore, down 32.73% year on year and 45.11% sequentially. Higher revenue did not translate into higher profit.",
+  "caveats": [
+    "Source: company financial statement on PDF page 4 and notes on page 7. Original values are ₹ million, converted to ₹ crore by dividing by 10. EPS is reported, not annualised.",
+    "The filing presents one company statement, not separate standalone and consolidated tables. This summary retains that stated company basis and does not label it a consolidated group result.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use the printed values. No exceptional charge appears in any of these three quarter columns.",
+    "The ₹8.04 crore Labour Codes exceptional charge in the annual March 2026 column is not a September-quarter charge. No adjusted PAT is inferred.",
+    "Power and fuel expense rose to ₹153.18 crore from ₹148.27 crore a year ago; freight was ₹75.51 crore versus ₹73.68 crore. These are reported costs, not a complete attribution of the profit decline.",
+    "Selected original-source coverage. The BSE notices at 14:24:23 and 14:29:14 link byte-identical documents and are counted once. Raw RSS time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1ce9dace-e99a-451e-98fa-1d063a4d3680.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:24:23 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Wheels India",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
