@@ -38,6 +38,53 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Ambuja Cements",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "9,166",
+      "yoy": "9,130 (+0.39%)",
+      "qoq": "9,474 (-3.25%)"
+    },
+    {
+      "label": "Profit before tax",
+      "current": "298",
+      "yoy": "883 (-66.25%)",
+      "qoq": "848 (-64.86%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "193",
+      "yoy": "1,774 (-89.12%)",
+      "qoq": "577 (-66.55%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "0.78",
+      "yoy": "7.19 (-89.15%)",
+      "qoq": "2.32 (-66.38%)"
+    }
+  ],
+  "summary": "Ambuja Cements reported September-quarter revenue from operations of ₹9,166 crore, up 0.39% year on year and down 3.25% sequentially. Profit attributable to owners was ₹193 crore versus ₹1,774 crore a year earlier. The profit comparison is distorted by a large tax credit in the year-ago quarter; acquisition scope and restatements also affect comparability.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 19; restatement note page 23, tax note page 24 and exceptional-items table page 26. Values are rounded to the nearest ₹ crore; EPS is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025, using the restated comparative figures in this filing; previous quarter is 30 Jun 2026. Percentages use the displayed rounded values.",
+    "The year-ago quarter had a ₹1,453 crore net tax credit, including ₹1,710 crore of prior-period tax writebacks/adjustments, versus ₹62 crore tax expense in the current quarter. The PAT decline is not a clean operating-growth measure.",
+    "Current exceptional expense was ₹85 crore for voluntary severance, versus ₹24 crore sequentially and ₹223 crore a year earlier. No adjusted PAT has been inferred.",
+    "Owners' profit excludes ₹43 crore of non-controlling interests; total consolidated PAT was ₹236 crore. Prior owners' PAT was ₹577 crore and year-ago owners' PAT ₹1,774 crore.",
+    "The filing restates year-ago results for the final Orient Cement purchase-price allocation. It also flags limited comparability from Adani Cementation/Adani Cement Industries consolidation from August 2025.",
+    "Revenue shown excludes separately disclosed government grants: ₹31 crore current, ₹26 crore previous and ₹45 crore year ago. Selected checked coverage; raw RSS time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e0c0cfdf-78b1-4b8a-b879-350be59d438c.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 14:32:23 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Senores Pharmaceuticals",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
