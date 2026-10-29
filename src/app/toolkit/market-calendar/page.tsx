@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/layout/section";
 import { pageMetadata } from "@/lib/seo";
 import {
   allEvents,
+  ECONOMIC_DATA_REVIEWED_ON,
   daysUntil,
   daysUntilInstant,
   istDateLabel,
@@ -21,9 +22,9 @@ import { cn } from "@/lib/utils";
 export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Market Calendar - RBI Policy, F&O Expiry, Budget & Event Dates",
+  title: "Economic & Market Calendar - PCE, CPI, Jobs, GDP & RBI | Fistotex",
   description:
-    "Every date that moves the Indian stock market: RBI MPC decisions, F&O expiry days, Union Budget, CPI and GDP releases, Fed meetings, results seasons and trading holidays - the last three months and what's next, with high-volatility days flagged.",
+    "Selected economic and market releases: official US PCE, CPI, jobs and GDP actuals with IST release times, plus RBI, Fed, expiry and holiday dates. Checked sources, no consensus forecasts.",
   path: "/toolkit/market-calendar",
 });
 
@@ -122,7 +123,10 @@ function MonthGroup({
                   <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                     {KIND_LABEL[e.kind]}
                   </span>
-                  {past && (
+                  {e.actual && (
+                    <span className="rounded-sm bg-accent px-1.5 py-px font-mono text-[11px] font-bold uppercase text-accent-foreground">Released</span>
+                  )}
+                  {past && !e.actual && (
                     <span className="rounded-sm border border-rule px-1.5 py-px font-mono text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                       Past
                     </span>
@@ -135,6 +139,11 @@ function MonthGroup({
                   )}
                 </div>
                 {e.note && <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>}
+                {e.actual && (
+                  <p className="mt-2 rounded-sm border border-rule bg-background px-3 py-2 text-sm text-foreground">
+                    <span className="font-semibold">Official actual:</span> {e.actual}
+                  </p>
+                )}
                 {e.previous && (
                   <p className="mt-1 text-sm text-muted-foreground">
                     <span className="font-semibold text-ink-2">Previous:</span> {e.previous}
@@ -168,8 +177,9 @@ export default function MarketCalendarPage() {
     if (e.spanEnd && daysUntil(e.spanEnd, now) >= 0) return false; // still underway
     return true;
   };
-  const past = events.filter(isPast);
-  const upcoming = events.filter((e) => !isPast(e));
+  const released = events.filter((e) => Boolean(e.actual)).sort((a, b) => b.date.localeCompare(a.date));
+  const past = events.filter((e) => isPast(e) && !e.actual);
+  const upcoming = events.filter((e) => !isPast(e) && !e.actual);
   const timedEvents: CountdownEvent[] = events
     .filter((e): e is MarketEvent & { instantUTC: string } => Boolean(e.instantUTC))
     .map((e) => ({
@@ -185,7 +195,7 @@ export default function MarketCalendarPage() {
       <PageHeader
         eyebrow="Toolkit / Market Calendar"
         title="The dates that move the market"
-        description="RBI policy decisions, F&O expiry days, the Union Budget, inflation and GDP prints, Fed meetings, results seasons and trading holidays - what's next, plus the last three months for context. Days marked volatile are when indices historically swing the most - size your positions accordingly."
+        description="Official US PCE, CPI, jobs and GDP releases with checked actual figures and IST times, alongside RBI policy decisions, F&O expiry days, the Union Budget, inflation and GDP prints, Fed meetings, results seasons and trading holidays - what's next, plus the last three months for context. Days marked volatile are when indices historically swing the most - size your positions accordingly."
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
@@ -200,6 +210,20 @@ export default function MarketCalendarPage() {
             last officially published values - forecasts are not shown.
           </span>
         </div>
+
+        <div className="mb-8 rounded-sm border border-rule bg-card p-4 text-sm text-muted-foreground">
+          <p className="font-semibold text-foreground">Economic data checked {ECONOMIC_DATA_REVIEWED_ON}</p>
+          <p className="mt-1">Selected US PCE, CPI, jobs and GDP releases are shown below with official actuals, period and measurement basis. Upcoming dates currently cover November and December 2026. Sources are BEA and BLS, not a consensus-forecast feed. This is checked coverage, not a complete live calendar: figures do not update automatically at release time and may later be revised. Future actuals are left blank until verified.</p>
+        </div>
+
+        <section className="mb-12" aria-label="Released economic data">
+          <h2 className="mb-6 font-display text-2xl font-normal text-foreground sm:text-3xl">Released economic data</h2>
+          <div className="space-y-8">
+            {groupByMonth(released).map(([month, list]) => (
+              <MonthGroup key={month} month={month} list={list} now={now} />
+            ))}
+          </div>
+        </section>
 
         <NextEventCountdown events={timedEvents} serverNow={now.getTime()} />
 
