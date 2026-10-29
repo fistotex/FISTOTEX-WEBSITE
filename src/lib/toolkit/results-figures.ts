@@ -38,6 +38,57 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Senores Pharmaceuticals",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "192.33",
+      "yoy": "153.94 (+24.94%)",
+      "qoq": "180.21 (+6.73%)"
+    },
+    {
+      "label": "EBITDA (computed, see note)",
+      "current": "57.66",
+      "yoy": "41.69 (+38.31%)",
+      "qoq": "53.76 (+7.25%)"
+    },
+    {
+      "label": "EBITDA margin (computed)",
+      "current": "29.98%",
+      "yoy": "27.08%",
+      "qoq": "29.83%"
+    },
+    {
+      "label": "Net profit attributable to equity holders",
+      "current": "39.49",
+      "yoy": "32.38 (+21.96%)",
+      "qoq": "30.72 (+28.55%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "8.85",
+      "yoy": "6.54 (+35.32%)",
+      "qoq": "6.61 (+33.89%)"
+    }
+  ],
+  "summary": "Senores Pharmaceuticals' September-quarter revenue rose 24.94% year on year to ₹192.33 crore. Profit attributable to equity holders was ₹39.49 crore, up 21.96% year on year. The defined operating EBITDA margin was 29.98%, compared with 27.08% a year earlier.",
+  "caveats": [
+    "Source: consolidated statement, PDF page 5. Values are ₹ crore, except reported basic EPS in ₹ per share; EPS is not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use reported statement values; EPS changes use reported rounded EPS.",
+    "EBITDA is computed as profit before tax plus finance costs plus depreciation and amortisation minus other income. Margin is this measure divided by revenue from operations.",
+    "Equity-holder profit of ₹39.49 crore is higher than total consolidated PAT of ₹36.60 crore because non-controlling interests recorded a ₹2.89 crore loss. The same attribution basis is used for comparisons.",
+    "Detected through RSS and separately checked against the original statement. Raw notice timestamp has no supplied timezone suffix; this is selected checked coverage."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/aea5b6ce-116a-4f25-9b60-459ed53a4bbd.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 13:56:12 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Grindwell Norton",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
