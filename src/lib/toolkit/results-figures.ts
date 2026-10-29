@@ -38,6 +38,49 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "AMJ Land Holdings",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "17.32",
+      "yoy": "11.09 (+56.17%)",
+      "qoq": "14.30 (+21.09%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "4.98",
+      "yoy": "4.83 (+3.24%)",
+      "qoq": "3.26 (+52.93%)"
+    },
+    {
+      "label": "Basic / diluted EPS (₹ per share)",
+      "current": "1.21",
+      "yoy": "1.18 (+2.54%)",
+      "qoq": "0.79 (+53.16%)"
+    }
+  ],
+  "summary": "AMJ Land Holdings reported consolidated operating revenue of ₹17.32 crore, up 56.17% year on year and 21.09% from June. Profit attributable to owners was ₹4.98 crore, up 3.24% year on year and 52.93% quarter on quarter. Basic/diluted EPS was ₹1.21. Associate-results coverage is incomplete, as disclosed in note 5.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 5, segments on page 6, notes on page 8 and limited review on pages 10-11. Original ₹ lakh figures are divided by 100 for crore. Changes use original figures before crore rounding; EPS changes use reported per-share figures.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT is ₹498.13 lakh versus ₹482.51 lakh and ₹325.72 lakh. Total group PAT is ₹513.76 lakh versus ₹493.18 lakh and ₹337.27 lakh; the difference is non-controlling profit, not additional owners' earnings.",
+    "Current total group PAT ₹513.76 lakh equals owners' ₹498.13 lakh plus non-controlling ₹15.63 lakh. OCI of ₹1,233.72 lakh is separate: total comprehensive income ₹1,747.48 lakh is not PAT. Much of OCI reflects FVOCI investment movements, including associate OCI.",
+    "Other income was ₹247.43 lakh versus ₹389.26 lakh a year ago and ₹219.85 lakh in June. Current deferred-tax credit was ₹36.23 lakh versus expenses of ₹36.36 lakh and ₹16.84 lakh. No adjusted PAT is estimated.",
+    "Note 5 says Prime Mall Developers, an associate firm of Biodegradable Products India, had no available results at signing, so its results are omitted from the associate consolidation. Management estimates no material impact; that is management's estimate, not an independently quantified adjustment.",
+    "Real estate revenue ₹1,599.78 lakh plus wind-power revenue ₹132.28 lakh reconciles to ₹1,732.06 lakh. Segment results are before interest, tax and depreciation and are not net profit; no sales-volume or organic-growth claim is inferred.",
+    "Share capital is ₹820 lakh at ₹2 face value in all quarter columns. EPS is reported, not annualised. Absolute PAT and EPS percentage changes differ because reported EPS is rounded.",
+    "The limited-review conclusion is unmodified and relies on another auditor for one subsidiary entity. Limited review is not an audit opinion. Note 6 records Ind AS 109 amendments adopted from 1 Apr 2026 without restating comparatives.",
+    "The later 17:10:52 BSE results attachment is byte-identical to the 17:02:40 board-outcome filing and counts once. Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ad554bcf-10f6-4450-b60b-6710ead8d661.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 17:02:40 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Restaurant Brands Asia",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
