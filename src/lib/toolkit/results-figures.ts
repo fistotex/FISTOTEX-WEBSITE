@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Laurus Labs",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "2,206.37",
+      "yoy": "1,653.47 (+33.44%)",
+      "qoq": "2,026.31 (+8.89%)"
+    },
+    {
+      "label": "Net profit attributable to equity holders",
+      "current": "441.48",
+      "yoy": "194.97 (+126.43%)",
+      "qoq": "367.60 (+20.10%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "8.17",
+      "yoy": "3.61 (+126.32%)",
+      "qoq": "6.81 (+19.97%)"
+    }
+  ],
+  "summary": "Laurus Labs reported consolidated revenue of ₹2,206.37 crore, up 33.44% year on year and 8.89% from June. Profit attributable to equity holders rose to ₹441.48 crore, compared with ₹194.97 crore a year ago and ₹367.60 crore in June. Total group profit after the share of associates and joint venture was ₹436.19 crore, a different attribution basis.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 2 and notes on page 5. The statement is already in ₹ crore; no million/lakh conversion is applied. Changes use original amounts before rounding. EPS is reported and not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Equity holders' PAT of ₹441.48 crore plus non-controlling loss of ₹5.29 crore equals total group PAT of ₹436.19 crore. That total includes ₹0.55 crore share of associate/joint-venture losses; the preceding ₹436.74 crore PAT line is not substituted for owners' profit.",
+    "Total tax expense was ₹155.08 crore versus ₹75.98 crore a year ago and ₹119.37 crore in June. Deferred-tax credits were ₹7.86 crore, ₹11.93 crore and ₹15.51 crore respectively. Reported PAT is not an adjusted or recurring-profit estimate.",
+    "The group reports one pharmaceuticals segment. Consolidation includes Laurus Bio at 78.34%, associates and the 49% KRKA Pharma joint venture; standalone results are not mixed into the comparison.",
+    "The proposed Synthesis/Sriam scheme remains subject to approvals. The company says these consolidated results do not give effect to the proposed merger. Laurus Generics GmbH liquidation remains ongoing through its statutory creditor-objection period; the note describes its net assets and results as not material.",
+    "The company allotted 455,636 ESOP shares during the half year. Reported EPS uses its applicable share basis. The ₹1 per-share interim dividend approved on 29 Oct is a distribution decision, not an addition to quarterly PAT.",
+    "No separate exceptional-item line appears in this consolidated statement. No EBITDA or acquisition-adjusted profit is inferred from a press release. Board-outcome, presentation and press-release notices are not counted as separate company results.",
+    "Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/62c262ff-9bb7-43ac-93da-16eac8dbe6d4.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:00:11 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "InterGlobe Aviation (IndiGo)",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
