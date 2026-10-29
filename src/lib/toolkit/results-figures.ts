@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Firstsource Solutions",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, audited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "2,830.64",
+      "yoy": "2,314.70 (+22.29%)",
+      "qoq": "2,751.75 (+2.87%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "232.82",
+      "yoy": "179.52 (+29.70%)",
+      "qoq": "165.92 (+40.32%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "3.37",
+      "yoy": "2.60 (+29.62%)",
+      "qoq": "2.40 (+40.42%)"
+    }
+  ],
+  "summary": "Firstsource Solutions reported consolidated revenue from operations of ₹2,830.64 crore, up 22.29% year on year and 2.87% from June. Profit attributable to owners was ₹232.82 crore, up 29.70% and 40.32% respectively. Reported basic EPS was ₹3.37. June included an exceptional expense; the comparisons are not adjusted for it.",
+  "caveats": [
+    "Source: audited consolidated statement on PDF page 6, segment reconciliation on page 8 and audit report on pages 2-5. Original ₹ million figures are divided by 10 for crore; changes use original values. EPS is reported, not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT of ₹232.823 crore plus ₹0.383 crore non-controlling loss equals ₹232.440 crore total group PAT. Owners' PAT is used consistently; standalone figures are not mixed in.",
+    "Revenue is the statement's revenue-from-operations line before other operating income. The release's rounded ₹2,825.6 crore revenue includes net negative other operating income: ₹2,830.637 crore less ₹5.038 crore equals ₹2,825.599 crore. Its 22.2% growth therefore has a different base from the 22.29% shown here.",
+    "No exceptional item is shown for September 2026. June carried ₹71.686 crore net exceptional expense, while September 2025 carried ₹1.911 crore net exceptional income. No after-tax adjusted profit or recurring-growth claim is inferred.",
+    "Total tax expense was ₹66.910 crore versus ₹44.821 crore a year ago and ₹53.424 crore in June. Deferred tax was ₹3.792 crore expense versus ₹2.549 crore credit and ₹2.483 crore expense respectively.",
+    "Basic EPS was ₹3.37 versus ₹2.60/₹2.40; diluted EPS was ₹3.31 versus ₹2.54/₹2.36. The reported per-share figures are not replaced by profit divided by period-end share capital.",
+    "Four business segments are disclosed: Banking and Financial Services, Healthcare, Communication/Media/Technology and Diverse Industries. The segment result before tax and finance costs is not relabelled as EBITDA.",
+    "Selected original-source coverage, not a complete market list. Multiple results, board-outcome and presentation notices are counted once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/906bdb1b-9c33-454e-b411-8f4cd03285dd.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:24:18 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Trent",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
