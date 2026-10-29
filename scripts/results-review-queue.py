@@ -25,7 +25,7 @@ def validate(candidate, provenance):
     for metric in ['revenue','patTotal','epsBasic']+(['patOwners'] if candidate.get('basis')=='Consolidated' else []):
         fact=candidate.get('figures',{}).get(metric,{})
         try:
-            for key in ['current','prior','yoyPercent']:
+            for key in ['current','prior','yoyPercent','previous','qoqPercent']:
                 v=fact.get(key)
                 if v is not None and not Decimal(str(v)).is_finite():raise ValueError()
             if fact.get('current') is None:raise ValueError()
@@ -88,7 +88,9 @@ class Queue:
             f=c['figures'][key];current=f['current'];prior=f.get('prior');change=f.get('yoyPercent')
             fmt=lambda v:format(Decimal(str(v)),'.2f')
             comparison='Not available' if prior is None else fmt(prior)+(f' ({fmt(change)}% YoY)' if change is not None else ' (YoY not meaningful)')
-            rows.append(f'<section><h2>{label}</h2><strong>{esc(fmt(current))} {esc(f["unit"])}</strong><p>Year ago: {esc(comparison)}</p></section>')
+            previous=f.get('previous');qoq=f.get('qoqPercent')
+            sequential='Not available' if previous is None else fmt(previous)+(f' ({fmt(qoq)}% QoQ)' if qoq is not None else ' (QoQ not meaningful)')
+            rows.append(f'<section><h2>{label}</h2><strong>{esc(fmt(current))} {esc(f["unit"])}</strong><p>Year ago: {esc(comparison)}</p><p>Previous quarter: {esc(sequential)}</p></section>')
         return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reviewed numeric card preview</title><style>body{font:16px system-ui;max-width:640px;margin:24px auto;padding:0 24px;color:#251f21}h1{font-size:28px}h2{font-size:16px}section{border-top:1px solid #eae9ea;padding:16px 0}strong{font-size:22px;color:#446f63}p{line-height:1.5}footer{font-size:12px;overflow-wrap:anywhere}</style>'+f'<h1>{esc(c["company"])}</h1><p>{esc(c["start"])} to {esc(c["end"])} · {esc(c["basis"])}</p><p>OFFLINE REVIEWED PREVIEW. Not published or automatic.</p>'+''.join(rows)+f'<footer><a href="{esc(p["sourceUrl"])}">Original statement</a><p>Checked by {esc(record["review"]["reviewer"])}. Source document SHA256: {esc(p["documentSha256"])}</p></footer></html>'
 
 # No CLI that publishes, no collector, and no production credentials.
