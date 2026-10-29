@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Monarch Networth Capital",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "123.14",
+      "yoy": "83.12 (+48.15%)",
+      "qoq": "91.23 (+34.97%)"
+    },
+    {
+      "label": "Consolidated net profit after tax",
+      "current": "56.56",
+      "yoy": "44.97 (+25.77%)",
+      "qoq": "45.18 (+25.19%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "7.13",
+      "yoy": "5.67 (+25.75%)",
+      "qoq": "5.70 (+25.09%)"
+    }
+  ],
+  "summary": "Monarch Networth Capital reported consolidated revenue from operations of ₹123.14 crore, up 48.15% year on year and 34.97% from June. Net profit was ₹56.56 crore, up 25.77% and 25.19% respectively. Revenue includes fair-value gains while a separate fair-value loss sits in expenses; it is not a net trading-income measure.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 12, segment table on page 13, notes on page 16 and review report on pages 10-11. Original ₹ lakh amounts are divided by 100 for crore; changes use original amounts before rounding. EPS is reported, not annualised.",
+    "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. The company says September-quarter figures are the balancing figures between the six-month results and the June quarter. Consolidated PAT is used as printed; no separate owner/non-controlling-interest split appears on the statement page.",
+    "Revenue from operations includes ₹82.46 crore fees/commission, ₹34.81 crore interest and ₹5.87 crore net fair-value gains. Expenses separately include ₹15.18 crore net fair-value losses, versus ₹0.35 crore in June and nil in the year-ago column. These gain/loss lines are not silently netted or treated as exceptional adjustments.",
+    "The group includes broking and related services, non-banking finance, insurance, asset management and other activities. Industrial EBITDA and a recurring-profit estimate are not inferred.",
+    "Total tax expense was ₹15.53 crore versus ₹15.83 crore a year ago and ₹10.41 crore in June. Current deferred-tax expense was ₹5.18 crore; June had a ₹0.85 crore deferred-tax credit.",
+    "Finserve subsidiary results were reviewed by another auditor. Five other subsidiaries supplied management-certified, unreviewed interim information; the review report says these were not material to the group and its conclusion was not modified for reliance on them. The results remain unaudited, not annual audited accounts.",
+    "The company allotted 40,000 ESOP shares during the half year. Reported EPS follows its applicable share basis. Prior-year half-year PBT differs by ₹0.02 lakh between the statement and segment table; no half-year growth is computed here.",
+    "Selected original-source coverage, not a complete market list. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b955d9a5-c5ef-4daa-abc1-d36b627b72a5.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 15:43:22 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "BlackBuck",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
