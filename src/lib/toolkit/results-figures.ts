@@ -38,6 +38,49 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "KRN Heat Exchanger and Refrigeration",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "319.14",
+      "yoy": "152.07 (+109.86%)",
+      "qoq": "252.32 (+26.48%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "36.11",
+      "yoy": "18.02 (+100.38%)",
+      "qoq": "32.90 (+9.78%)"
+    },
+    {
+      "label": "Basic / diluted EPS (₹ per share)",
+      "current": "5.52",
+      "yoy": "2.90 (+90.34%)",
+      "qoq": "5.20 (+6.15%)"
+    }
+  ],
+  "summary": "KRN Heat Exchanger and Refrigeration reported consolidated operating revenue of ₹319.14 crore, up 109.86% year on year and 26.48% from June. Profit attributable to owners was ₹36.11 crore, up 100.38% and 9.78% respectively; reported basic/diluted EPS was ₹5.52. The June-quarter QIP changed the share base, so EPS and PAT growth are not interchangeable.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 2, notes on page 3, geographical information on page 4 and limited review on pages 9-10. Original ₹ lakh amounts are divided by 100 for crore; changes use original line values before rounding. EPS is reported, not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT equals group PAT in these quarter columns, with no non-controlling profit shown. Standalone figures and total comprehensive income are not substituted.",
+    "Note 5 says September-quarter figures are balancing figures between the half-year results and June-quarter figures, with the corresponding 2025 quarter prepared the same way. The comparative quarter information was subject to limited review.",
+    "Other income was ₹7.4863 crore versus ₹2.3927 crore a year ago and ₹2.7776 crore in June. Quarter exceptional/prior-period item columns are blank; the ₹0.3971 crore prior-year annual item is not treated as a September-quarter item. No recurring PAT is estimated.",
+    "Total tax expense was ₹9.7462 crore versus ₹8.9226 crore a year ago and ₹9.4352 crore in June. Deferred-tax expense was ₹0.1526 crore versus ₹0.6357 crore and ₹1.7978 crore respectively. Reported PAT includes these tax effects without normalisation.",
+    "The June-quarter QIP allotted 33,01,886 shares, as note 8 states. Closing equity capital rose to ₹65.4585 crore from ₹62.1566 crore a year ago. Reported EPS uses its own weighted-average basis and is not recomputed from closing shares.",
+    "The consolidated group includes KRN HVAC Products and Thermotech Research Laboratory. The auditors rely on independent subsidiary auditors' review reports for both, and their consolidated review conclusion is unmodified. Geographical revenue is not equated to manufacturing volume or organic growth.",
+    "The filing presents comprehensive income using a subtractive OCI convention and has a small discrepancy between the current OCI total and owners' OCI line. Those figures are not used here to infer PAT; the separate printed owners' net-profit line is used consistently.",
+    "Selected original-source coverage, not a complete market list. Duplicate notices count once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b761024-8cc6-4b35-a835-a083b20093be.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:58:07 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Horizon Industrial Parks",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
