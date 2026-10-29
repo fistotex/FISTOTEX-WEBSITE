@@ -38,6 +38,54 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Timken India",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited; pooled GGB comparatives partly unreviewed",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "986.04",
+      "yoy": "786.35 (+25.39%)",
+      "qoq": "943.32 (+4.53%)"
+    },
+    {
+      "label": "Net profit after tax",
+      "current": "120.90",
+      "yoy": "93.60 (+29.16%)",
+      "qoq": "119.66 (+1.03%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "16.07",
+      "yoy": "12.44 (+29.18%)",
+      "qoq": "15.91 (+1.01%)"
+    },
+    {
+      "label": "Diluted EPS (₹ per share)",
+      "current": "16.07",
+      "yoy": "12.44 (+29.18%)",
+      "qoq": "15.91 (+1.01%)"
+    }
+  ],
+  "summary": "Timken India reported consolidated operating revenue of ₹986.04 crore, up 25.39% year on year and 4.53% from June. Net profit was ₹120.90 crore, up 29.16% year on year and 1.03% quarter on quarter. Basic and diluted EPS were both ₹16.07. The year-ago consolidated figures include GGB under common-control pooling and are management-compiled with a stated review limitation; these are reported changes, not an organic-growth claim.",
+  "caveats": [
+    "Source: consolidated statement and notes on PDF page 6, and consolidated limited-review report on pages 9-10. Original ₹ million figures are divided by 10 for crore. Changes use original amounts before rounding; EPS changes use reported per-share figures.",
+    "Important comparison basis: note 6 records the 100% acquisition of GGB for ₹1,288 million, paid on 1 December 2025. Common-control pooling under Ind AS 103 accounts for GGB from 1 April 2024 at carrying amounts, rather than adding it only after acquisition. The year-ago consolidated comparison therefore already includes pooled GGB figures.",
+    "The year-ago quarter and half-year consolidated figures are based on management-compiled information and were not audited/reviewed by the current statutory auditor except for the parent information and subsidiary Ind AS adjustments. The auditor repeats this in Other Matters. Do not treat the displayed YoY change as fully reviewed organic growth.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Revenue is ₹9,860.40 million versus ₹7,863.54 million and ₹9,433.20 million; consolidated PAT is ₹1,208.95 million versus ₹935.99 million and ₹1,196.59 million. The statement does not show a separate owners/non-controlling split, so PAT is labelled as reported, not recast.",
+    "Current revenue ₹9,860.40 million plus other income ₹85.64 million less expenses ₹8,317.31 million gives PBT ₹1,628.73 million. Current tax ₹396.37 million plus deferred tax ₹23.41 million gives tax ₹419.78 million and PAT ₹1,208.95 million. The current-tax label includes earlier-year reversals but the statement does not quantify a separate reversal here; no tax-normalised profit is estimated.",
+    "Current other comprehensive income ₹9.68 million and total comprehensive income ₹1,218.63 million are not PAT. The statement has no separate exceptional-item line; that does not prove there are no non-recurring effects. Basic and diluted EPS are not annualised.",
+    "GGB is wholly owned. Note 7 says the proposed amalgamation into Timken India, with appointed date 1 April 2026, was pending NCLT approval at the reporting date; a proposed amalgamation is not described as completed. The ₹2.50 per-share final dividend paid in the quarter was approved earlier, not a new dividend announcement.",
+    "The consolidated limited-review conclusion is unmodified, with the comparative-information limitation described above. A limited review is not an audit. Selected original-source coverage, not a complete market list; duplicate filings, conference calls and newspaper copies are not additional results. Raw RSS time carries no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c79ed944-19da-4722-a7e6-ce2ba5fdc984.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 19:20:44 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Strides Pharma Science",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
