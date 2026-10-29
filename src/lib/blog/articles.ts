@@ -57,6 +57,86 @@ export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
   {
+    slug: "fed-holds-rates-october-2026-fomc-india",
+    title:
+      "US Fed holds rates at 3.75-4%: the October 2026 FOMC decision explained for India",
+    description:
+      "On 28 October 2026 the US Federal Reserve kept the federal funds rate at 3.75% to 4.00%, a month after raising it. Two committee members dissented in favour of another hike. What the decision, the split vote and the statement's language mean for Indian markets.",
+    category: "Investing basics",
+    tags: ["US Fed", "FOMC", "federal funds rate", "interest rates", "Indian markets"],
+    datePublished: "2026-10-29",
+    status: "published",
+    sections: [
+      {
+        paragraphs: [
+          "The US Federal Reserve's rate-setting committee, the Federal Open Market Committee (FOMC), kept its benchmark interest rate unchanged at its meeting on 27-28 October 2026. The target range for the federal funds rate stays at 3.75% to 4.00%, where the committee placed it with a 25 basis point increase on 16 September 2026. The decision was released at 2:00 pm US Eastern time on 28 October, which is 11:30 pm in India.",
+          "The vote was 10 in favour and 2 against. The two dissenters, Fed Governor Lisa Cook and Cleveland Fed President Beth Hammack, wanted to raise the target range by a further quarter percentage point at this meeting instead of waiting.",
+        ],
+      },
+      {
+        heading: "A 10-2 vote: two members wanted another hike now",
+        paragraphs: [
+          "Twelve officials vote on each FOMC decision when the committee is fully staffed: the seven members of the Board of Governors, the president of the Federal Reserve Bank of New York, and four of the other eleven regional reserve bank presidents, who vote in rotation.",
+          "A dissent in favour of tighter policy is called hawkish. Two hawkish dissents against a decision to hold tell readers that the live debate inside the committee is not whether to cut rates, but whether one more increase is needed to bring inflation back to the 2 percent goal. The majority chose to wait: the statement says the accumulation of more information will help the committee judge the stance needed for a timely return of inflation to target, and it commits to no specific next move.",
+        ],
+      },
+      {
+        heading: "What the Fed sees in the US economy",
+        paragraphs: [
+          "The October statement describes economic activity as expanding at a strong pace; September's statement had said a solid pace. It notes resilient domestic spending, strong productivity growth and robust capital investment, with job gains keeping pace with the workforce and the unemployment rate little changed. On prices, the committee repeats that inflation remains elevated, and it closes with a promise: the committee will deliver price stability.",
+          "The accompanying implementation note sets the rates that sit around the target range, summarised in the table below.",
+        ],
+        table: {
+          caption: "The 28 October 2026 FOMC decision at a glance",
+          columns: ["Item", "Decision", "Detail"],
+          rows: [
+            ["Federal funds target range", "3.75% to 4.00%, unchanged", "Set on 16 September 2026 with a 25 bps increase, approved 12-0"],
+            ["Vote this meeting", "10 in favour, 2 against", "Lisa Cook and Beth Hammack preferred a 25 bps hike at this meeting"],
+            ["Interest on reserve balances", "3.90%", "Effective 29 October 2026"],
+            ["Overnight reverse repo rate", "3.75%", "Per-counterparty limit of $160 billion per day"],
+            ["Standing repo operations", "4.00%", "Standing overnight facility"],
+            ["Primary credit (discount window) rate", "4.00%", "Unchanged, approved unanimously"],
+            ["Balance sheet", "Treasury bill purchases continue", "To keep reserves ample; maturing Treasuries rolled over and agency MBS principal reinvested into T-bills"],
+          ],
+        },
+      },
+      {
+        heading: "What the decision means for India",
+        paragraphs: [
+          "Nothing in the Fed's statement changes an Indian bank account, loan EMI or mutual fund NAV by itself. The Fed reaches India through four broad channels, set out in our preview of this meeting: foreign investor flows, the rupee, the RBI's own policy room, and exporters' earnings.",
+          "The rate gap between the two central banks is now easy to state in numbers. The RBI's repo rate is 5.50% after its 7 October 2026 increase, while the top of the Fed's range is 4.00%: a difference of 1.5 percentage points. That gap is one of the inputs global investors weigh when they compare rupee assets with dollar assets.",
+          "On flows: while US rates stay high, dollar deposits and bonds remain competitive, which can temper foreign portfolio flows into Indian equities and debt. If and when the Fed eventually eases, that pressure typically relaxes. The October statement gives no date for any such move, and two of its members publicly wanted to move in the opposite direction at this meeting.",
+          "On the rupee: a firm US rate backdrop generally supports the dollar, and a stronger dollar tends to weigh on the rupee. A weaker rupee makes dollar-priced imports such as crude oil costlier, while exporters' dollar revenues convert into more rupees.",
+          "For the RBI, a Fed that is holding rather than cutting keeps the external argument for caution in place, but Indian rate decisions are driven mainly by domestic inflation and growth data. It is worth noting that both central banks tightened at their previous meetings: the Fed raised in mid-September and the RBI raised on 7 October.",
+          "These are transmission channels, not forecasts. What actually happens to flows, the rupee or Indian interest rates depends on data and decisions that are still to come.",
+        ],
+      },
+      {
+        paragraphs: [
+          "This article is based on the Federal Reserve's statement and implementation note of 28 October 2026 and the sources listed below. It is educational, is not investment, tax or legal advice, and does not recommend buying, selling or holding any security or currency position.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Federal Reserve: FOMC statement, 28 October 2026 (decision to hold at 3.75% to 4.00%, 10-2 vote, statement language on the economy and inflation)",
+        url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      },
+      {
+        label: "Federal Reserve: FOMC statement and implementation note, 28 October 2026, PDF (reserve balance rate 3.90%, reverse repo 3.75% with $160 billion per-counterparty limit, standing repo 4.00%, primary credit rate 4.00%, balance sheet directives)",
+        url: "https://www.federalreserve.gov/monetarypolicy/files/monetary20261028a1.pdf",
+      },
+      {
+        label: "Federal Reserve: FOMC statement, 16 September 2026, PDF (25 bps increase to 3.75% to 4.00%, approved 12-0, economic activity described as a solid pace)",
+        url: "https://www.federalreserve.gov/monetarypolicy/files/monetary20260916a1.pdf",
+      },
+      {
+        label: "RBI press release, 7 October 2026: Monetary Policy Committee raises policy repo rate by 25 bps to 5.50%",
+        url: "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63742",
+      },
+    ],
+  },
+  {
     slug: "vedanta-q2-fy27-results-profit-loss-explained",
     title:
       "Vedanta Q2 FY27: record profit or a ₹170 crore loss? Reading one filing three ways",
