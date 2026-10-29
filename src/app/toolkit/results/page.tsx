@@ -111,7 +111,7 @@ export default function ResultsPage() {
                     <ExternalLink className="h-3 w-3" aria-hidden="true" />
                   </a>
                   <span className="ml-2">
-                    {entry.sourceName}, published by the exchange {entry.sourceDisseminatedAt}.
+                    {entry.sourceName}, published {entry.sourceDisseminatedAt}.
                     Figures verified {entry.verifiedAt}.
                   </span>
                 </p>
