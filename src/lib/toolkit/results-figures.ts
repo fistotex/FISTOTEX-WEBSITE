@@ -38,6 +38,56 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "ICRA",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited; acquisition affects YoY comparison",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "177.86",
+      "yoy": "136.58 (+30.22%)",
+      "qoq": "163.37 (+8.87%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "52.17",
+      "yoy": "47.81 (+9.12%)",
+      "qoq": "56.16 (-7.11%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "54.20",
+      "yoy": "49.68 (+9.10%)",
+      "qoq": "58.36 (-7.13%)"
+    },
+    {
+      "label": "Diluted EPS (₹ per share)",
+      "current": "54.07",
+      "yoy": "49.57 (+9.08%)",
+      "qoq": "58.27 (-7.21%)"
+    }
+  ],
+  "summary": "ICRA reported consolidated operating revenue of ₹177.86 crore, up 30.22% year on year and 8.87% from June. Owners' profit was ₹52.17 crore, up 9.12% year on year but down 7.11% quarter on quarter. The year-ago period excludes Fintellix, so these reported changes are not like-for-like growth. Basic EPS was ₹54.20; diluted EPS was ₹54.07.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 4, cash flows on page 6, segment information and notes on page 7, and limited-review report on pages 2-3. Original ₹ lakh values are divided by 100 for crore; changes use original amounts before rounding. EPS changes use reported per-share values.",
+    "Important comparison limit: note 7 says Fintellix India was acquired in October 2025 and is absent from the September 2025 quarter and half year. The company says current and corresponding year-ago figures are not directly comparable. The displayed YoY percentages are changes in reported amounts, not organic or like-for-like growth.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT is ₹5,216.97 lakh versus ₹4,780.77 lakh and ₹5,616.16 lakh. Group PAT is ₹5,243.53 lakh versus ₹4,802.24 lakh and ₹5,645.88 lakh; non-controlling profit is ₹26.56 lakh versus ₹21.47 lakh and ₹29.72 lakh. These bases are not mixed.",
+    "Current revenue ₹17,785.64 lakh plus other income ₹1,739.14 lakh less expenses ₹12,326.21 lakh gives PBT ₹7,198.57 lakh. Current tax ₹2,059.73 lakh less deferred-tax credit ₹104.69 lakh gives tax ₹1,955.04 lakh and group PAT ₹5,243.53 lakh. Deferred tax was an expense of ₹278.17 lakh a year ago and ₹287.64 lakh in June. No tax-normalised profit is estimated.",
+    "June other income included a ₹6.76 crore gain from remeasuring the D2K acquisition-related liability, under note 4. June also included ₹438.66 lakh exceptional gain on sale of property, plant and equipment; the current and year-ago quarters have no exceptional items. No adjusted PAT is invented by subtracting pre-tax gains from post-tax profit.",
+    "Under note 4, ICRA Analytics increased its D2K holding from 60% to 100% for ₹32.02 crore, with share-transfer formalities completed in July 2026. Note 5 records the remaining 1.25% Fintellix stake acquired this quarter for ₹3.17 crore, making it wholly owned. Changes in ownership and scope should not be read as organic earnings growth.",
+    "Current group OCI is ₹34.21 lakh and total comprehensive income is ₹5,277.74 lakh, not PAT. Half-year operating cash inflow is ₹12,990.81 lakh versus ₹7,799.85 lakh a year ago; this is a half-year measure, not quarter PAT. Basic and diluted EPS are kept separate and are not annualised.",
+    "The separate standalone statement reports PAT ₹9,242.58 lakh and note 6 includes ₹53.74 crore dividend income from wholly owned ICRA Analytics. That standalone dividend and profit are not added to consolidated profit.",
+    "The consolidated limited review includes six subsidiaries not reviewed by the reporting auditor or their auditors, with assets ₹4,835.21 lakh, quarter revenue ₹276.61 lakh and quarter PAT ₹134.02 lakh. Management describes these as immaterial; the review conclusion is unmodified. A limited review is not an audit.",
+    "Selected original-source coverage, not a complete market list. Duplicate filings, board-meeting notices and newspaper copies are not additional results. Raw RSS notice time carries no timezone suffix."
+  ],
+  "sourceUrl": "https://nsearchives.nseindia.com/corporate/ICRA_29102026180227_BSER3329102026.pdf",
+  "sourceName": "NSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 18:04:07 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Bliss GVS Pharma",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
