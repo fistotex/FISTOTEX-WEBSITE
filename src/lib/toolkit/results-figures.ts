@@ -38,6 +38,48 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "Blue Star",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Consolidated, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "2,930.95",
+      "yoy": "2,422.37 (+21.00%)",
+      "qoq": "3,377.92 (-13.23%)"
+    },
+    {
+      "label": "Net profit attributable to owners",
+      "current": "123.92",
+      "yoy": "99.01 (+25.16%)",
+      "qoq": "102.50 (+20.90%)"
+    },
+    {
+      "label": "Basic EPS (₹ per share)",
+      "current": "6.03",
+      "yoy": "4.80 (+25.63%)",
+      "qoq": "4.99 (+20.84%)"
+    }
+  ],
+  "summary": "Blue Star reported consolidated revenue of ₹2,930.95 crore, up 21.00% year on year but down 13.23% from June. Profit attributable to owners was ₹123.92 crore, up 25.16% and 20.90% respectively; basic EPS was ₹6.03. Reported profit includes a ₹23.02 crore exceptional gain on sale of the Medtech business.",
+  "caveats": [
+    "Source: consolidated statement on PDF page 5, ratios and segment information on pages 6-7 and notes on page 10. Amounts are already in ₹ crore. Percentage changes use the printed figures; EPS is reported and not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. Owners' PAT of ₹123.92 crore plus ₹0.01 crore non-controlling loss equals total group PAT of ₹123.91 crore. Owners' profit is used consistently; standalone numbers are not substituted.",
+    "Exceptional income was ₹23.02 crore in September from sale of the Medtech business by wholly owned Blue Star Engineering & Electronics. June included ₹9.17 crore property-sale profit, while September 2025 had no exceptional item. These are pre-tax amounts; no recurring or after-tax adjusted PAT is estimated.",
+    "Profit before exceptional items and tax was ₹134.28 crore versus ₹132.17 crore a year ago and ₹125.42 crore in June. Joint-venture profit of ₹0.67 crore is included in that line, compared with losses of ₹0.99 crore and ₹0.20 crore respectively.",
+    "Total tax expense was ₹33.39 crore, unchanged year on year, versus ₹32.08 crore in June. Deferred tax was ₹0.59 crore expense versus ₹0.01 crore credit and ₹3.05 crore expense respectively.",
+    "The company describes its Unitary Products segment as seasonal. Its revenue was ₹897.66 crore versus ₹693.81 crore a year ago and ₹1,689.31 crore in June; one sequential group-revenue decline is not labelled a demand trend.",
+    "The disclosed operating margin is 6.91% versus 7.57% a year ago and 5.18% in June, using (profit before tax and exceptional items less other income plus finance costs plus depreciation/amortisation) divided by revenue. It is not the owners' PAT margin or the sum of segment margins.",
+    "Selected original-source coverage, not a complete market list. Multiple board outcomes and management notices are not additional results. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/040a7f5f-1c11-4a81-a9a7-090afa506a1d.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 16:18:16 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "Firstsource Solutions",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
