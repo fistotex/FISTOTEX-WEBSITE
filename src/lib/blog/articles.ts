@@ -56,6 +56,116 @@ export const blogPath = "/blog";
 export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
+{
+  "slug": "trent-q2-fy27-results-standalone-consolidated-pat-explained",
+  "title": "Trent Q2 FY27 results: why PAT can be ₹490 crore, ₹468 crore or ₹464 crore",
+  "description": "Trent's 29 October 2026 results show three different profit figures. A source-based guide to standalone PAT, consolidated group profit, owners' profit and bonus-adjusted EPS.",
+  "category": "Results explained",
+  "tags": [
+    "Trent",
+    "Q2 FY27 results",
+    "consolidated results",
+    "PAT",
+    "earnings per share"
+  ],
+  "datePublished": "2026-10-29",
+  "status": "published",
+  "sections": [
+    {
+      "paragraphs": [
+        "Trent released its results for the quarter ended 30 September 2026 on 29 October. Its standalone net profit was ₹489.65 crore, consolidated profit for the period was ₹468.09 crore, and consolidated profit attributable to equity holders was ₹463.77 crore. Rounded to the nearest crore, those are ₹490 crore, ₹468 crore and ₹464 crore. They are different lines in the same filing, not interchangeable answers to one question.",
+        "The useful first step is to read the reporting basis beside a profit number. Then keep that basis unchanged when comparing it with a year earlier. This explainer uses the company's unaudited financial statements and its separate results press release, not estimates or a forecast of the share price."
+      ]
+    },
+    {
+      "heading": "Three profit figures, three reporting labels",
+      "paragraphs": [
+        "On the standalone statement, PAT increased from ₹450.77 crore to ₹489.65 crore, or 8.63% year on year. On the consolidated statement, total group PAT increased from ₹373.42 crore to ₹468.09 crore, or 25.35%. The profit attributable to the company's equity holders increased from ₹376.86 crore to ₹463.77 crore, or 23.06%.",
+        "These percentages use (current quarter ÷ year-ago quarter − 1) × 100, rounded to two decimal places. The company's press release rounds standalone PAT growth to 9% and consolidated total-PAT growth to 25%. Those rounded percentages can both be consistent with the financial statements."
+      ],
+      "table": {
+        "caption": "Quarter ended 30 September: ₹ crore, except growth",
+        "columns": [
+          "Profit line",
+          "2026",
+          "2025",
+          "YoY change"
+        ],
+        "rows": [
+          [
+            "Standalone PAT",
+            "489.65",
+            "450.77",
+            "+8.63%"
+          ],
+          [
+            "Consolidated total PAT",
+            "468.09",
+            "373.42",
+            "+25.35%"
+          ],
+          [
+            "Consolidated equity-holders' PAT",
+            "463.77",
+            "376.86",
+            "+23.06%"
+          ],
+          [
+            "Non-controlling interests' profit/(loss)",
+            "4.32",
+            "(3.44)",
+            "No growth % shown"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Why group profit is not all attributable to the parent's shareholders",
+      "paragraphs": [
+        "The consolidated statement explicitly splits profit between equity holders of the company and non-controlling interests. For this quarter, ₹463.77 crore plus ₹4.32 crore equals ₹468.09 crore. A year earlier, ₹376.86 crore plus a ₹3.44 crore non-controlling loss equals ₹373.42 crore.",
+        "That sign change matters. Comparing current total group profit with last year's equity-holders' profit would mix two bases. Our results card uses the equity-holders' line consistently; the press release's consolidated PAT summary uses total group profit."
+      ]
+    },
+    {
+      "heading": "Consolidated revenue does not mean every business's sales are added",
+      "paragraphs": [
+        "Trent reported standalone revenue from operations of ₹5,787.64 crore versus ₹4,724.06 crore, up 22.51%. Consolidated revenue was ₹5,873.14 crore versus ₹4,817.60 crore, up 21.91%. The press release rounds those growth rates to 23% and 22%, respectively.",
+        "The company also explains a boundary in its consolidated numbers: revenue of the Trent Hypermarket business is not included in consolidated revenue. Its proportionate profitability is accounted for using the equity method. A reference to the wider retail portfolio therefore does not mean every business's sales appear line by line in reported revenue.",
+        "The consolidated statement records an aggregate ₹21.06 crore share of associate/joint-venture losses for the quarter, compared with ₹1.10 crore a year earlier. That aggregate line should not be assigned entirely to one venture without a supporting breakdown."
+      ]
+    },
+    {
+      "heading": "The bonus issue changes the EPS comparison basis",
+      "paragraphs": [
+        "Consolidated basic EPS was ₹8.70, compared with ₹7.07 a year earlier and ₹9.73 in the June 2026 quarter. Note 5 to the consolidated results says Trent issued one bonus share for every two shares held during the half year and adjusted EPS for all reporting periods presented.",
+        "Use those adjusted comparison figures rather than an older, unadjusted EPS value. The quarter's EPS is marked not annualised. Multiplying it by four would be a reader's extrapolation, not a company forecast of full-year earnings. Standalone basic EPS is a different series: ₹9.18 for this quarter versus ₹8.45 a year earlier."
+      ]
+    },
+    {
+      "heading": "Read the comparison notes before calling growth recurring",
+      "paragraphs": [
+        "The press release says prior-year standalone other income included ₹96 crore of pre-tax profit on asset sales in Q2 FY26, while the corresponding profit in Q2 FY27 was not material. That is relevant context for the 8.63% reported standalone PAT increase, but subtracting a pre-tax gain directly from after-tax profit would not produce a reliable adjusted PAT.",
+        "The consolidated statement also shows different tax effects across quarters. Total tax expense was ₹150.97 crore this quarter versus ₹103.56 crore a year earlier; deferred-tax credits were ₹11.10 crore and ₹32.66 crore, respectively. This article does not estimate a tax-normalised or recurring profit.",
+        "The takeaway is a reading method: identify standalone or consolidated, distinguish total profit from the equity-holders' share, use the same period and basis, and check the EPS and other-income notes. None of these figures alone establishes cash generation, valuation or a reason to buy or sell Trent shares."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Amounts and notes were checked against the 29 October 2026 filings. Statement references: standalone pages 3-4, consolidated pages 10-11 and consolidated notes page 14. The press release's rounded tables are on pages 2-3. This is an educational explanation, not investment, tax or legal advice."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Trent, 29 October 2026: unaudited standalone and consolidated results with limited-review reports",
+      "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b962e91a-b409-4f5f-a22f-3275c992153a.pdf"
+    },
+    {
+      "label": "Trent, 29 October 2026: Q2 and H1 FY27 results press release",
+      "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/984d68e3-738c-43cf-afd1-756b33f60610.pdf"
+    }
+  ]
+},
   {
     slug: "fed-holds-rates-october-2026-fomc-india",
     title:
