@@ -38,6 +38,49 @@ export const RESULTS_FIGURES_REVIEWED_ON = "29 Oct 2026";
 // items are summarised on their stated basis, or left out until they can be.
 export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
 {
+  "company": "DCW",
+  "quarterLabel": "Q2 FY2027",
+  "periodEnded": "30 Sep 2026",
+  "basis": "Standalone, unaudited",
+  "currencyUnit": "₹ crore, except EPS in ₹/share",
+  "rows": [
+    {
+      "label": "Revenue from operations",
+      "current": "662.86",
+      "yoy": "539.21 (+22.93%)",
+      "qoq": "541.91 (+22.32%)"
+    },
+    {
+      "label": "Net profit after tax",
+      "current": "10.36",
+      "yoy": "13.81 (-24.97%)",
+      "qoq": "34.55 (-70.01%)"
+    },
+    {
+      "label": "Basic / diluted EPS (₹ per share)",
+      "current": "0.35",
+      "yoy": "0.47 (-25.53%)",
+      "qoq": "1.17 (-70.09%)"
+    }
+  ],
+  "summary": "DCW reported standalone operating revenue of ₹662.86 crore, up 22.93% year on year and 22.32% from June. Reported PAT was ₹10.36 crore, down 24.97% and 70.01% respectively; basic/diluted EPS was ₹0.35. The June comparison includes a ₹34.28 crore deferred-tax remeasurement gain, so the sequential PAT fall is not a clean operating-performance comparison.",
+  "caveats": [
+    "Source: statement on PDF page 8, segments on page 9, notes on page 12 and limited review on pages 6-7. Original monetary figures are ₹ lakh, consistent with the accompanying balance sheet and cash-flow units; divide by 100 for crore. Changes use original line values before rounding. EPS is reported, not annualised.",
+    "Year ago is 30 Sep 2025; previous quarter is 30 Jun 2026. This is standalone, not consolidated. Note 3 says the 28.96% Kaze Renewables holding does not give significant influence under Ind AS 28 and consolidated results are not required.",
+    "June PAT of ₹34.5463 crore includes a ₹34.2792 crore deferred-tax adjustment gain. September has no such adjustment line. Note 5 attributes the gain to remeasurement/reassessment after the company elected its new tax regime. This is the company's accounting explanation, not independent tax-law advice; no adjusted PAT is invented.",
+    "September total tax expense was ₹3.6625 crore versus ₹7.2442 crore a year ago and a ₹34.1894 crore credit in June. Current tax was ₹2.7244 crore, and deferred-tax expense ₹0.9381 crore. The reported PAT comparison retains all tax effects.",
+    "Profit before tax was ₹14.0222 crore versus ₹21.0510 crore a year ago and ₹0.3569 crore in June. The exceptional-item row is blank in all three quarter columns. Other income was ₹7.1183 crore versus ₹4.6204 crore and ₹5.6502 crore respectively.",
+    "The review conclusion is unmodified but contains Emphasis of Matters about electricity-tax and customs demands, Sahupuram land proceedings and income-tax/MAT-credit disputes, with no provisions for the cited demands. The review and note 4D print different MAT-credit reduction amounts, ₹16.9442 crore and ₹28.9315 crore; that unresolved source discrepancy is not used to calculate profit.",
+    "Basic-chemicals revenue was ₹472.9950 crore and speciality-chemicals revenue ₹184.3871 crore. Segment results are before interest, tax and exceptional items, not segment PAT. No volume or organic-growth claim is inferred.",
+    "The filing separately announces a board-approved buyback. It is not treated as completed, and no future EPS benefit or investment recommendation is assumed.",
+    "Selected original-source coverage, not a complete market list. Duplicate notices count once. Raw RSS notice time has no timezone suffix."
+  ],
+  "sourceUrl": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/be5f818f-e4de-4a02-9901-f34eabafaa97.pdf",
+  "sourceName": "BSE statement; RSS notice timestamp",
+  "sourceDisseminatedAt": "29-Oct-2026 17:01:40 (raw source time)",
+  "verifiedAt": "29 Oct 2026"
+},
+{
   "company": "KRN Heat Exchanger and Refrigeration",
   "quarterLabel": "Q2 FY2027",
   "periodEnded": "30 Sep 2026",
