@@ -77,6 +77,7 @@ export const RESULTS_FIGURES: ResultsFiguresEntry[] = [
   ],
   "summary": "Senores Pharmaceuticals' September-quarter revenue rose 24.94% year on year to ₹192.33 crore. Profit attributable to equity holders was ₹39.49 crore, up 21.96% year on year. The defined operating EBITDA margin was 29.98%, compared with 27.08% a year earlier.",
   "caveats": [
+    "The group acquired 75% of Apnar Pharma on 16 Jan 2026 and consolidated it from acquisition; year-on-year comparisons therefore include a changed group perimeter.",
     "Source: consolidated statement, PDF page 5. Values are ₹ crore, except reported basic EPS in ₹ per share; EPS is not annualised.",
     "Year ago is the quarter ended 30 Sep 2025; previous quarter is 30 Jun 2026. Changes use reported statement values; EPS changes use reported rounded EPS.",
     "EBITDA is computed as profit before tax plus finance costs plus depreciation and amortisation minus other income. Margin is this measure divided by revenue from operations.",
