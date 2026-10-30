@@ -57,6 +57,139 @@ export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
 {
+  "slug": "us-pce-inflation-september-2026-headline-core-real-spending",
+  "title": "US PCE inflation, September 2026: 3.6% headline, 3.1% core and nearly flat real spending",
+  "description": "A guide to the 29 October BEA release: monthly versus annual PCE inflation, nominal versus real spending, and why the latest August comparison differs from its first estimate.",
+  "category": "Economic data explained",
+  "tags": [
+    "US PCE inflation",
+    "September 2026",
+    "core PCE",
+    "consumer spending",
+    "BEA"
+  ],
+  "datePublished": "2026-10-30",
+  "status": "published",
+  "sections": [
+    {
+      "paragraphs": [
+        "The US Bureau of Economic Analysis released September 2026 personal income and spending data on 29 October. The headline PCE price index rose 3.6% from a year earlier and 0.5% from August. The core index, which excludes food and energy, rose 3.1% year on year and 0.3% month on month.",
+        "Those are four different readings of price change, not four competing estimates. The same release also reported a 0.5% monthly increase in current-dollar consumer spending, while inflation-adjusted spending increased by less than 0.1%. Keeping prices, spending and the comparison period separate is the key to reading the report."
+      ]
+    },
+    {
+      "heading": "The September PCE figures, on consistent bases",
+      "paragraphs": [
+        "The table uses August comparison figures as shown in the 29 October release and BEA indicator pages checked for this article. Monthly changes compare September with August; annual changes compare September 2026 with September 2025. The monthly rates below are not annualised growth rates."
+      ],
+      "table": {
+        "caption": "BEA data checked on 30 October 2026; percentage changes unless stated",
+        "columns": [
+          "Measure",
+          "Comparison basis",
+          "August 2026",
+          "September 2026"
+        ],
+        "rows": [
+          [
+            "Headline PCE prices",
+            "Month on month",
+            "+0.3%",
+            "+0.5%"
+          ],
+          [
+            "Core PCE prices",
+            "Month on month",
+            "+0.3%",
+            "+0.3%"
+          ],
+          [
+            "Headline PCE prices",
+            "Year on year",
+            "+3.4%",
+            "+3.6%"
+          ],
+          [
+            "Core PCE prices",
+            "Year on year",
+            "+3.0%",
+            "+3.1%"
+          ],
+          [
+            "Current-dollar PCE spending",
+            "Month on month",
+            "+0.9%",
+            "+0.5%"
+          ],
+          [
+            "Real PCE spending",
+            "Month on month",
+            "+0.5%",
+            "0.0% rounded"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Headline and core answer different questions",
+      "paragraphs": [
+        "Headline PCE includes food and energy; core PCE leaves those categories out. BEA describes core as a way to see the underlying inflation trend without two categories whose prices can swing sharply. Excluding them does not mean households stop paying those bills.",
+        "The annual headline rate rose from 3.4% in August to 3.6% in September, a change of 0.2 percentage points. Core rose from 3.0% to 3.1%, or 0.1 percentage point. A percentage-point change between two inflation rates is not the same thing as a percentage increase in consumer prices.",
+        "The September monthly headline rate of 0.5% should not be read as the annual inflation rate. Nor does multiplying a single month by 12 reproduce the observed year-on-year change, which compares price levels twelve months apart."
+      ]
+    },
+    {
+      "heading": "Spending rose in dollars, but barely after inflation",
+      "paragraphs": [
+        "PCE can mean the value of consumer purchases, while the PCE price index measures price change. The release reports current-dollar PCE spending up 0.5% in September. That does not establish that consumers bought 0.5% more goods and services in volume terms.",
+        "BEA reports real PCE up by less than 0.1%, displayed as 0.0% in its one-decimal summary table. That is rounding, not a claim of exactly zero movement. Real estimates remove the effects of price changes; nominal, or current-dollar, estimates use the prices at which transactions occurred.",
+        "The release also shows disposable personal income up 0.2% in current dollars but down 0.3% after inflation. The personal saving rate was 3.8% of disposable personal income. That rate is an aggregate measure, not the saving rate of a typical household."
+      ]
+    },
+    {
+      "heading": "Why an older August headline can disagree with this table",
+      "paragraphs": [
+        "The original August release, published on 30 September, reported August core PCE inflation of 0.2% month on month and real spending growth of 0.6%. The September release's August comparison column shows 0.3% and 0.5%, respectively. The earlier release also showed August personal income growth of 0.2%, while the newer comparison column shows 0.3%.",
+        "This article uses the newer comparison column rather than mixing release vintages. The difference is visible in the two dated BEA releases; it should not be hidden by calling the figures identical. BEA notes that data are updated and that later releases supersede the current data. These are the estimates available for this article, not permanently fixed historical values."
+      ]
+    },
+    {
+      "heading": "PCE is not CPI, and this report is not a market forecast",
+      "paragraphs": [
+        "PCE and the Consumer Price Index are separate measures. BEA identifies differences in formulas, spending weights and coverage: PCE covers spending by and on behalf of the personal sector, while CPI measures households' out-of-pocket spending. Their rates should be labelled rather than swapped into the same series.",
+        "For a reader following US economic data from India, the useful conclusion is precise: September annual PCE inflation was higher than August on both headline and core measures, while real monthly spending was nearly flat. The release alone does not establish the next interest-rate decision, exchange-rate move or equity-market outcome.",
+        "Figures were checked against BEA sources on 30 October 2026. This is an educational explanation of released data, not an investment recommendation or a forecast. No consensus forecast or market-surprise claim is used."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEA, 29 October 2026: Personal Income and Outlays, September 2026",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+    },
+    {
+      "label": "BEA: PCE price index, annual readings checked 30 October 2026",
+      "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index"
+    },
+    {
+      "label": "BEA: Core PCE price index, annual readings checked 30 October 2026",
+      "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index-excluding-food-and-energy"
+    },
+    {
+      "label": "BEA, 30 September 2026: original August release, for vintage comparison",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+    },
+    {
+      "label": "BEA: Personal Income and Outlays definitions and statistical conventions",
+      "url": "https://www.bea.gov/news/pio-release-additional-information"
+    },
+    {
+      "label": "BEA: Why PCE and CPI differ",
+      "url": "https://www.bea.gov/help/faq/555"
+    }
+  ]
+},
+{
   "slug": "trent-q2-fy27-results-standalone-consolidated-pat-explained",
   "title": "Trent Q2 FY27 results: why PAT can be ₹490 crore, ₹468 crore or ₹464 crore",
   "description": "Trent's 29 October 2026 results show three different profit figures. A source-based guide to standalone PAT, consolidated group profit, owners' profit and bonus-adjusted EPS.",
