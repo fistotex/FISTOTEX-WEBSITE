@@ -57,6 +57,158 @@ export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [
 {
+  "slug": "india-core-sector-september-2026-nine-industries-growth-base-year",
+  "title": "India core sector growth, September 2026: 7.9% and a nine-industry index",
+  "description": "A guide to September core-sector output: the 7.9% annual rise, nine industries in the rebased index, sector weights and the revised August comparison.",
+  "category": "Economy & data",
+  "tags": [
+    "India core sector growth",
+    "Index of Core Industries",
+    "September 2026",
+    "base year 2022-23",
+    "industrial production"
+  ],
+  "datePublished": "2026-10-30",
+  "status": "published",
+  "sections": [
+    {
+      "paragraphs": [
+        "India's Index of Core Industries rose 7.9% year on year in September 2026, according to the provisional release published by the Office of the Economic Adviser on 21 October. August's final growth rate was 5.9%, and cumulative growth for April-September was 5.1%. These are production-volume comparisons, not company revenue or share-price returns.",
+        "There is an important change behind the familiar 'eight core industries' label: the new series, with base year 2022-23, covers nine industries. Iron ore has joined the basket. Some official page headings still use the older name, so the series and its composition matter more than the shorthand."
+      ]
+    },
+    {
+      "heading": "September core-sector growth by industry",
+      "table": {
+        "caption": "Official September 2026 release. Growth is year on year; September is provisional and August is final. Weights are within ICI, not shares of GDP.",
+        "columns": [
+          "Industry",
+          "ICI weight (%)",
+          "Aug YoY (%)",
+          "Sep YoY (%)"
+        ],
+        "rows": [
+          [
+            "Coal",
+            "5.596",
+            "-3.8",
+            "10.7"
+          ],
+          [
+            "Natural gas",
+            "3.841",
+            "-4.9",
+            "-4.6"
+          ],
+          [
+            "Crude oil",
+            "7.430",
+            "-3.6",
+            "-1.4"
+          ],
+          [
+            "Refinery products",
+            "22.572",
+            "5.6",
+            "10.3"
+          ],
+          [
+            "Fertilizers",
+            "2.731",
+            "-12.4",
+            "-11.7"
+          ],
+          [
+            "Steel",
+            "17.584",
+            "3.5",
+            "4.9"
+          ],
+          [
+            "Cement",
+            "4.410",
+            "11.7",
+            "9.8"
+          ],
+          [
+            "Electricity",
+            "30.932",
+            "13.1",
+            "11.4"
+          ],
+          [
+            "Iron ore",
+            "4.905",
+            "5.5",
+            "18.4"
+          ],
+          [
+            "Overall index",
+            "100.000",
+            "5.9",
+            "7.9"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Six industries grew, but the headline is not a simple average",
+      "paragraphs": [
+        "Iron ore recorded the fastest annual growth in this table, at 18.4%. Electricity, coal, refinery products, cement and steel also expanded. Natural gas, crude oil and fertilizers contracted. A positive aggregate therefore does not mean that every core industry grew.",
+        "Each industry has a different weight. Electricity accounts for 30.932% of the core index, compared with 4.905% for iron ore. The index combines production relatives using fixed base-year weights; averaging the nine published growth rates would not reproduce the official headline. Small differences in the sum of displayed weights reflect rounding."
+      ]
+    },
+    {
+      "heading": "What changed when the base year moved to 2022-23?",
+      "paragraphs": [
+        "OEA launched the new series on 20 July 2026, replacing the 2011-12 series. Alongside adding iron ore, it changed steel to gross production rather than net production. Coal now includes raw coal only, excluding middlings and washed coal to avoid double counting.",
+        "Electricity's weight rose from 19.853% in the old series to 30.932% in the new one. OEA's FAQ attributes this to the sector's relative gross-value-added change and the inclusion of renewable sources in the electricity weights used by the new IIP series. This is a change in the statistical structure, not September electricity growth of 30.932%.",
+        "The nine industries together account for 32.88% of the weight in the wider Index of Industrial Production with base 2022-23, according to OEA's metadata. ICI and IIP are therefore related but are not interchangeable readings of all industrial activity. Comparisons should use a consistent base-year series rather than splice old and new index levels."
+      ]
+    },
+    {
+      "heading": "Use the revised August figure, and label the comparison",
+      "paragraphs": [
+        "The September release revised August's index from 119.2 to 120.4, and August annual growth from 4.8% to 5.9%. Comparing September's 7.9% with the older 4.8% would mix publication vintages. On the latest release's basis, annual growth increased by 2.0 percentage points, from 5.9% to 7.9%.",
+        "The September index level was 118.3, versus 109.6 in September 2025 and 120.4 in August 2026. The 7.9% headline compares September with the same month a year earlier. It does not mean output rose 7.9% from August. An index level and its growth rate answer different questions."
+      ]
+    },
+    {
+      "heading": "What this release does and does not tell an investor",
+      "paragraphs": [
+        "Read the release month, reference month, base year and provisional/final status together. This is September production data released in October, not an estimate of October output. The release schedules October's provisional index for 20 November 2026; that is a publication date, not a forecast.",
+        "Core-sector volumes provide context for industrial activity. They do not establish a listed company's sales, margins, cash flow or valuation. For a company-level conclusion, its own financial statements and reporting basis still need checking. The aggregate alone does not justify a stock recommendation."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "OEA: September 2026 ICI release and annexures, 21 October 2026",
+      "url": "https://www.eaindustry.nic.in/eight_core_infra/Press_Release_ICI_20261021.pdf"
+    },
+    {
+      "label": "PIB: September release, published 21 October 2026",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2326038&lang=1&reg=3"
+    },
+    {
+      "label": "OEA: Launch of the 2022-23 series, 20 July 2026",
+      "url": "https://eaindustry.nic.in/eight_core_infra/Press_Release_ICI_20260720.pdf"
+    },
+    {
+      "label": "OEA: FAQs on the new ICI series, checked 30 October 2026",
+      "url": "https://eaindustry.nic.in/uploaded_files/ici/ICI_FAQS.pdf"
+    },
+    {
+      "label": "OEA: ICI metadata, checked 30 October 2026",
+      "url": "https://www.eaindustry.nic.in/uploaded_files/ici/ICI_Metadata_20260722.pdf"
+    },
+    {
+      "label": "OEA: Advance release calendar, checked 30 October 2026",
+      "url": "https://www.eaindustry.nic.in/uploaded_files/Advance_Release_Calander_ICI.pdf"
+    }
+  ]
+},
+{
   "slug": "us-pce-inflation-september-2026-headline-core-real-spending",
   "title": "US PCE inflation, September 2026: 3.6% headline, 3.1% core and nearly flat real spending",
   "description": "A guide to the 29 October BEA release: monthly versus annual PCE inflation, nominal versus real spending, and why the latest August comparison differs from its first estimate.",
