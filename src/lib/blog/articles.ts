@@ -844,7 +844,7 @@ export const articles: Article[] = [{
     category: "Investing basics",
     tags: ["US Fed", "FOMC", "federal funds rate", "interest rates", "Indian markets"],
     datePublished: "2026-10-27",
-    status: "published",
+    status: "draft", // superseded by fed-holds-rates-october-2026-fomc-india (redirected in next.config.ts)
     sections: [
       {
         paragraphs: [

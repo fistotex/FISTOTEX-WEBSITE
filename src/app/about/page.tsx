@@ -21,7 +21,7 @@ import { PageHeader, Section } from "@/components/layout/section";
 import { calculators } from "@/lib/calculators/registry";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About Us",
+  title: "About Fistotex: Free Indian Finance Calculators & Guides",
   description:
     "Fistotex builds free, transparent financial calculators and curates attributed market news for Indian investors. Learn who we are and how we check our numbers.",
   path: "/about",
