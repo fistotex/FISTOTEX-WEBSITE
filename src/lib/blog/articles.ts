@@ -56,6 +56,115 @@ export const blogPath = "/blog";
 export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [{
+  "slug": "india-forex-reserves-week-ended-october-23-2026-rbi-wss",
+  "title": "India's forex reserves, week ended 23 October 2026: $719.7 billion, down $1.27 billion as gold value fell",
+  "description": "The RBI's weekly statistical supplement shows reserves of $719.75 billion as on 23 October 2026, $1.27 billion lower than the previous week. Foreign currency assets actually rose; the fall came from the gold component.",
+  "category": "Economy & data",
+  "tags": [
+    "India forex reserves",
+    "RBI weekly statistical supplement",
+    "foreign exchange reserves",
+    "gold reserves",
+    "October 2026"
+  ],
+  "datePublished": "2026-10-31",
+  "status": "published",
+  "sections": [
+    {
+      "paragraphs": [
+        "India's foreign exchange reserves stood at $719,748 million (Rs 68,33,505 crore) as on 23 October 2026, according to the Reserve Bank of India's weekly statistical supplement released on 30 October. That is $1,269 million lower than the previous week, when reserves were $721,016 million as on 16 October.",
+        "The headline fall hides a split: the foreign currency assets portion actually rose by $1,358 million during the week, while the gold component fell by $2,650 million. This explainer walks through what the four components are, what moved each one, and what the table does not say."
+      ]
+    },
+    {
+      "heading": "What the reserves are made of",
+      "paragraphs": [
+        "The RBI reports reserves in four parts. Foreign currency assets are deposits and securities held in currencies such as the US dollar, euro, pound and yen. Gold is the RBI's bullion holding, reported at market value. SDRs are special drawing rights, the IMF unit of account held with the IMF. The reserve position in the IMF is the portion of India's IMF quota that can be drawn on readily."
+      ],
+      "table": {
+        "caption": "RBI weekly statistical supplement, 30 October 2026: components of India's foreign exchange reserves as on 23 October 2026. Share column is computed from the reported figures.",
+        "columns": [
+          "Component",
+          "Value (US$ mn)",
+          "Change in the week (US$ mn)",
+          "Share of total (%)"
+        ],
+        "rows": [
+          [
+            "Foreign currency assets",
+            "593,205",
+            "+1,358",
+            "82.4"
+          ],
+          [
+            "Gold",
+            "103,150",
+            "-2,650",
+            "14.3"
+          ],
+          [
+            "Special drawing rights (SDRs)",
+            "18,605",
+            "+27",
+            "2.6"
+          ],
+          [
+            "Reserve position in the IMF",
+            "4,787",
+            "-4",
+            "0.7"
+          ],
+          [
+            "Total reserves",
+            "719,748",
+            "-1,269",
+            "100"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Why the total fell while foreign currency assets rose",
+      "paragraphs": [
+        "One possible explanation is valuation. The gold component is valued at market prices, so its dollar figure can fall without any gold being sold. In the week ended 23 October, front-month Comex gold fell 4.05% to settle at $3,991.10 a troy ounce, its largest one-week decline since the week ending 5 June 2026, according to Dow Jones data published by Morningstar. A 4% weekly fall in the gold price is consistent with the size of the $2,650 million drop in the reported value of the RBI's gold holding, but the RBI's table does not split any component's weekly change into valuation effects and actual transactions, so the exact contribution of the gold-price move is not stated.",
+        "Foreign currency assets work the same way for exchange rates. They are held in several currencies but reported in US dollars, so when the euro, pound or yen moves against the dollar, the reported dollar value changes even if the RBI bought or sold nothing. A rise in this component, as in the latest week, does not by itself say how much came from market moves and how much from the RBI's own transactions.",
+        "The RBI's footnotes to the table also list items kept outside the headline foreign currency assets, including its own SDR holdings and certain swap and funding arrangements. The footnotes further note that differences, if any, are due to rounding off: the four components add to $719,747 million against the reported total of $719,748 million, and subtracting the two weekly totals gives a fall of $1,268 million against the $1,269 million shown in the table's own weekly-variation column, which this article follows."
+      ]
+    },
+    {
+      "heading": "Where reserves stand over longer windows",
+      "paragraphs": [
+        "Against end-March 2026, reserves are up $28,640 million. Against the same week a year ago, they are up $24,392 million. Weekly changes of a billion dollars or two in either direction are common in this series, because valuation effects alone can move the total by that much.",
+        "The rupee's reference rate against the US dollar, published by FBIL and reproduced in the same supplement, was 94.94 for the week ended 23 October, compared with 95.02 the week before and 96.61 for the week ended 9 October. The ten-year government security par yield in the same table was 7.52%."
+      ]
+    },
+    {
+      "heading": "How to read this series each week",
+      "paragraphs": [
+        "Three checks make the weekly release easier to read. First, compare the total against its components: a fall in the total alongside rising foreign currency assets is consistent with valuation effects in the other components, gold especially, rather than large dollar sales, though the table alone cannot prove that split. Second, look at the rupee and gold price for the same week before reading intent into the numbers. Third, use the RBI's own 'as on' date: the supplement released on Friday 30 October reports the position as on Friday 23 October, and some press reports label the same data with a date one day later."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Weekly Statistical Supplement, 30 October 2026: foreign exchange reserves",
+      "url": "https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28804"
+    },
+    {
+      "label": "RBI Weekly Statistical Supplement, 30 October 2026: ratios and rates",
+      "url": "https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28807"
+    },
+    {
+      "label": "RBI Weekly Statistical Supplement, 23 October 2026: foreign exchange reserves",
+      "url": "https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28789"
+    },
+    {
+      "label": "Dow Jones via Morningstar, 23 October 2026: Comex gold ends the week 4.05% lower",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237436/comex-gold-ends-the-week-405-lower-at-399110-data-talk"
+    }
+  ]
+},
+{
   slug: "sip-vs-lumpsum-which-is-better",
   title: "SIP vs lumpsum: which grows more, and when each makes sense",
   description:
