@@ -1,0 +1,15 @@
+# Weekly pull requests for security and version updates. CI checks each one
+# before you merge, so a Next.js security release never sits unnoticed again.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
