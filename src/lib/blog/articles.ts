@@ -55,7 +55,165 @@ export interface Article {
 export const blogPath = "/blog";
 export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
-export const articles: Article[] = [
+export const articles: Article[] = [{
+  "slug": "india-fiscal-deficit-april-september-2026-h1-cga-accounts",
+  "title": "India fiscal deficit, April-September 2026: 42.1% of the full-year target",
+  "description": "A guide to the CGA's September 2026 union government accounts: half-year receipts and spending, the 42.1% fiscal-deficit reading, financing and major subsidies.",
+  "category": "Economy & data",
+  "tags": [
+    "India fiscal deficit",
+    "CGA union government accounts",
+    "April-September 2026",
+    "FY 2026-27 budget",
+    "capital expenditure"
+  ],
+  "datePublished": "2026-10-31",
+  "status": "published",
+  "sections": [
+    {
+      "paragraphs": [
+        "On 30 October 2026 the Controller General of Accounts released the Union government's accounts up to September 2026, closing the first half of financial year 2026-27. The fiscal deficit for April-September stood at Rs 7,14,413 crore, or 42.1% of the budgeted Rs 16,95,768 crore for the full year. In the same period of 2025-26, the deficit had reached 36.5% of that year's budget estimate.",
+        "The fiscal deficit is the gap between the government's total expenditure and its non-debt receipts. It is the amount the government borrows during the period. All figures in the CGA release are provisional and unaudited."
+      ]
+    },
+    {
+      "heading": "April-September 2026 against the full-year budget",
+      "table": {
+        "caption": "CGA union government accounts at the end of September 2026. Figures are cumulative for April-September; 'same period FY26' is the percentage of last year's budget estimate, not a growth rate.",
+        "columns": [
+          "Item",
+          "FY27 budget (Rs crore)",
+          "Apr-Sep actual (Rs crore)",
+          "% of budget",
+          "Same period FY26 (%)"
+        ],
+        "rows": [
+          [
+            "Total receipts",
+            "36,51,547",
+            "18,35,422",
+            "50.3",
+            "49.5"
+          ],
+          [
+            "Revenue receipts",
+            "35,33,150",
+            "17,56,820",
+            "49.7",
+            "49.6"
+          ],
+          [
+            "Net tax revenue",
+            "28,66,922",
+            "12,76,088",
+            "44.5",
+            "43.3"
+          ],
+          [
+            "Non-tax revenue",
+            "6,66,228",
+            "4,80,732",
+            "72.2",
+            "79.9"
+          ],
+          [
+            "Total expenditure",
+            "53,47,315",
+            "25,49,835",
+            "47.7",
+            "45.5"
+          ],
+          [
+            "Revenue expenditure",
+            "41,25,494",
+            "18,95,288",
+            "45.9",
+            "43.7"
+          ],
+          [
+            "Capital expenditure",
+            "12,21,821",
+            "6,54,547",
+            "53.6",
+            "51.8"
+          ],
+          [
+            "Fiscal deficit",
+            "16,95,768",
+            "7,14,413",
+            "42.1",
+            "36.5"
+          ],
+          [
+            "Revenue deficit",
+            "5,92,344",
+            "1,38,468",
+            "23.4",
+            "5.2"
+          ],
+          [
+            "Primary deficit",
+            "2,91,796",
+            "68,403",
+            "23.4",
+            "-1.7"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Receipts: half the annual budget collected",
+      "paragraphs": [
+        "Total receipts reached Rs 18.35 lakh crore, 50.3% of the budget estimate, close to the 49.5% pace of the same period last year. Revenue receipts - tax and non-tax revenue - stood at 49.7% of the budget.",
+        "Net tax revenue was Rs 12.76 lakh crore, 44.5% of the budget versus 43.3% a year earlier. Non-tax revenue reached 72.2% of its annual budget, a high ratio that the CGA accounts also showed in the previous year, when it was 79.9%. Other receipts, the category that includes disinvestment proceeds, reached Rs 62,159 crore, or 77.7% of the Rs 80,000 crore budgeted."
+      ]
+    },
+    {
+      "heading": "Spending: capital outlay ahead of revenue spending",
+      "paragraphs": [
+        "Total expenditure was Rs 25.50 lakh crore, 47.7% of the annual budget. Revenue expenditure, the recurring kind, stood at 45.9%. Interest payments alone absorbed Rs 6.46 lakh crore, 46.0% of the budgeted amount.",
+        "Capital expenditure - spending that creates assets - was Rs 6.55 lakh crore, or 53.6% of the budget, compared with 51.8% in the same period of 2025-26. Within it, loans disbursed by the Centre reached 54.2% of the budgeted Rs 2,78,780 crore."
+      ]
+    },
+    {
+      "heading": "Three deficits, three different readings",
+      "paragraphs": [
+        "The fiscal deficit of 42.1% compares with 36.5% in the first half of last year, measured against each year's own budget estimate.",
+        "The revenue deficit, which is revenue expenditure minus revenue receipts, stood at Rs 1,38,468 crore, 23.4% of the budgeted gap versus 5.2% a year earlier. The primary deficit - the fiscal deficit excluding interest payments - was Rs 68,403 crore, 23.4% of the budget, against a small primary surplus at this point last year, shown as -1.7% in the accounts."
+      ]
+    },
+    {
+      "heading": "How the deficit was financed",
+      "paragraphs": [
+        "Domestic financing covered Rs 7.12 lakh crore of the gap. Market borrowings were the largest source at Rs 5,38,242 crore, 41% of the year's budgeted market borrowing. Securities issued against small savings contributed Rs 95,975 crore. External financing was small, at Rs 2,189 crore.",
+        "The total financing figure of Rs 7,14,412.96 crore matches the fiscal deficit of Rs 7,14,413 crore, a built-in consistency check in the CGA presentation."
+      ]
+    },
+    {
+      "heading": "Major subsidies in the first half",
+      "paragraphs": [
+        "Spending on the four major subsidies totalled Rs 2,22,905 crore, 54% of the Rs 4,10,513 crore budgeted. Food subsidy was the largest at Rs 1,02,506 crore, followed by urea at Rs 85,586 crore and nutrient-based fertilizer subsidy at Rs 33,664 crore. Petroleum subsidies were Rs 1,149 crore, 10% of the budgeted amount."
+      ]
+    },
+    {
+      "heading": "How to read these numbers",
+      "paragraphs": [
+        "The CGA itself cautions that the fiscal deficit shown in monthly accounts is not necessarily an indicator of the full-year outcome. Timing mismatches between receipts and spending can push the ratio up or down within the year and substantially offset by March.",
+        "These percentages are shares of budget estimates, not of GDP, and the year-earlier comparison is a share of last year's budget, not a growth rate in rupee terms. The figures are provisional and unaudited, and this release is an account of what was spent and received, not a forecast of where the deficit will end the year."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "CGA: Union government accounts at a glance, as at the end of September 2026",
+      "url": "https://cga.nic.in/writereaddata/MonthAccount/92026/DATA2627.htm"
+    },
+    {
+      "label": "CGA: release note for accounts up to September 2026, updated 30 October 2026",
+      "url": "https://cga.nic.in/News/Release-of-Union-Government-Accounts-upto-September-2026.aspx"
+    }
+  ]
+},
 {
   "slug": "india-core-sector-september-2026-nine-industries-growth-base-year",
   "title": "India core sector growth, September 2026: 7.9% and a nine-industry index",
