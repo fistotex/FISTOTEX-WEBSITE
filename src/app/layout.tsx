@@ -10,6 +10,7 @@ import { GA4, GA4PageView } from "@/components/analytics/GA4";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { themeInitScript } from "@/components/layout/theme-toggle";
 import { consentInitScript } from "@/components/ads/consent";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Body and UI. Variable font — no weight list needed.
 const jakarta = Plus_Jakarta_Sans({
@@ -185,6 +186,7 @@ export default function RootLayout({
         {/* Site-wide structured data, emitted once */}
         <StructuredData type="WebSite" />
         <StructuredData type="Organization" />
+        <SpeedInsights />
       </body>
     </html>
   );
