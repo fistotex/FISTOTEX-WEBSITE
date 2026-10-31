@@ -16,6 +16,7 @@ import {
 
 import {
   calculateSIP,
+  calculateStepUpSIP,
   calculateLumpsum,
   calculateEMI,
   calculateFD,
@@ -218,6 +219,58 @@ const sip: CalculatorDef = {
     { q: "What is a SIP?", a: "A Systematic Investment Plan invests a fixed amount in mutual funds at regular intervals, usually monthly." },
     { q: "Is the return guaranteed?", a: "No. Mutual fund returns depend on the market and the scheme's holdings. This is a projection based on the rate you enter." },
     { q: "Does a step-up help?", a: "Increasing your SIP each year meaningfully raises the final value, because the larger instalments still have years to compound." },
+  ],
+};
+
+const stepUpSip: CalculatorDef = {
+  id: "step-up-sip",
+  name: "Step-up SIP Calculator",
+  tagline: "See what raising your SIP every year could grow into.",
+  category: "investment",
+  icon: TrendingUp,
+  fields: [
+    { key: "monthlyInvestment", label: "Starting monthly investment", kind: "currency", min: 500, max: 200000, step: 500, help: "Your SIP amount in the first year." },
+    { key: "stepUpPercent", label: "Annual step-up", kind: "percent", min: 0, max: 50, step: 1, help: "How much you raise the SIP each year, for example in line with a pay rise." },
+    { key: "annualReturn", label: "Expected annual return", kind: "percent", min: 1, max: 30, step: 0.5, help: "An assumption, not a promise." },
+    { key: "years", label: "Investment duration", kind: "years", min: 1, max: 40, step: 1 },
+  ],
+  defaults: { monthlyInvestment: 10000, stepUpPercent: 10, annualReturn: 12, years: 10 },
+  compute: (v) => {
+    const r = calculateStepUpSIP({
+      monthlyInvestment: num(v.monthlyInvestment),
+      stepUpPercent: num(v.stepUpPercent),
+      annualReturn: num(v.annualReturn),
+      years: num(v.years),
+    });
+    const plain = calculateSIP({ monthlyInvestment: num(v.monthlyInvestment), annualReturn: num(v.annualReturn), years: num(v.years) });
+    return [
+      { label: "Total invested", value: r.totalInvested, kind: "currency", split: "base" },
+      { label: "Estimated returns", value: r.estimatedReturns, kind: "currency", tone: "positive", split: "gain" },
+      { label: "Maturity value", value: r.futureValue, kind: "currency", emphasis: true },
+      { label: "Without step-up", value: plain.futureValue, kind: "currency" },
+    ];
+  },
+  chart: (v) =>
+    calculateStepUpSIP({
+      monthlyInvestment: num(v.monthlyInvestment),
+      stepUpPercent: num(v.stepUpPercent),
+      annualReturn: num(v.annualReturn),
+      years: num(v.years),
+    }).yearly.map((p) => ({ label: `${p.year}Y`, invested: p.invested, value: p.value })),
+  chartSeriesLabels: { invested: "Invested", value: "Estimated value" },
+  formula: {
+    expression: "FV = Σ Pₖ × (1 + r)ⁿ⁻ᵏ,  Pₖ = P × (1 + s)^⌊k ÷ 12⌋",
+    note: "P = first-year monthly SIP, s = annual step-up, r = annual return ÷ 12 ÷ 100, n = months, k = month number from 0. Each instalment is invested at the start of its month; with s = 0 this equals the plain SIP formula.",
+  },
+  steps: [
+    "Your SIP stays the same for 12 months, then rises by the step-up percentage.",
+    "Each instalment compounds monthly for the months it stays invested.",
+    "The result assumes a constant return; real markets are uneven.",
+  ],
+  faqs: [
+    { q: "What is a step-up SIP?", a: "A SIP whose monthly amount increases by a fixed percentage or amount every year. Many fund houses and platforms call it a top-up SIP." },
+    { q: "How much difference does a 10% step-up make?", a: "With ₹10,000 a month at an assumed 12% for 10 years, a plain SIP grows to about ₹23.2 lakh, while a 10% yearly step-up grows to about ₹33.7 lakh. You also invest more: ₹19.1 lakh instead of ₹12 lakh." },
+    { q: "Is the return guaranteed?", a: "No. Mutual fund returns depend on the market. This is a projection based on the rate you enter." },
   ],
 };
 
@@ -918,6 +971,7 @@ const inflation: CalculatorDef = {
 
 export const calculators: CalculatorDef[] = [
   sip,
+  stepUpSip,
   lumpsum,
   mutualFund,
   cagr,

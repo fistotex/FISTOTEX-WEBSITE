@@ -30,6 +30,19 @@ export const calculatorSeo: Record<string, CalculatorSeo> = {
       { q: "Why might a fund's own projection differ from this one?", a: "This calculator assumes a constant return compounded monthly, with each instalment invested at the start of the month. Real funds move up and down, and costs, taxes and exit loads are not included here. Treat the result as an illustration, not a forecast." },
     ],
   },
+  "step-up-sip": {
+    title: "Step-up SIP Calculator: Top-up SIP Returns",
+    description:
+      "Free step-up SIP calculator for India. See how raising your monthly SIP by a fixed percentage every year changes the final corpus, compared with a flat SIP.",
+    intro: [
+      "A step-up SIP calculator estimates the future value of a SIP whose monthly amount rises by a fixed percentage once a year. Enter your starting amount, the yearly step-up, an expected return and the number of years.",
+      "Raising your SIP in line with salary increases is one of the simplest ways to reach a goal sooner. The calculator also shows what the same SIP would reach without a step-up, so you can see the difference in rupees.",
+    ],
+    faqs: [
+      { q: "Should the step-up match my salary increase?", a: "It is a common rule of thumb, because the SIP then stays a similar share of your income. Pick a step-up you can sustain every year; a smaller step-up kept up for longer often beats a large one you stop." },
+      { q: "How is this different from the regular SIP calculator?", a: "The regular SIP calculator keeps the instalment the same for the whole period. This one raises it every 12 months. At a 0% step-up both give the same answer." },
+    ],
+  },
   lumpsum: {
     title: "Lumpsum Calculator: One-Time Investment Returns",
     description:

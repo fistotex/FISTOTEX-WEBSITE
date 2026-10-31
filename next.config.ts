@@ -5,7 +5,7 @@ import type { NextConfig } from "next";
 // Razorpay checkout for the planned payment features.
 const google = "https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.gstatic.com https://*.adtrafficquality.google https://*.googleadservices.com";
 const razorpay = "https://checkout.razorpay.com https://api.razorpay.com https://lumberjack.razorpay.com";
-const csp = [
+const csp = (frameAncestors: string) => [
   "default-src 'self'",
   // 'unsafe-inline': Next.js hydration, the consent/theme init scripts and JSON-LD are inline.
   `script-src 'self' 'unsafe-inline' ${google} ${razorpay}`,
@@ -14,7 +14,7 @@ const csp = [
   "font-src 'self' data:",
   `connect-src 'self' ${google} ${razorpay}`,
   `frame-src ${google} ${razorpay}`,
-  "frame-ancestors 'self'",
+  `frame-ancestors ${frameAncestors}`,
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
@@ -58,16 +58,27 @@ const nextConfig: NextConfig = {
             value: "max-age=63072000; includeSubDomains; preload",
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           // allow-popups keeps AdSense click-outs and a future Razorpay checkout popup working.
           { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
-          // Report-only first: violations show in the browser console without
-          // breaking ads. Once a week of browsing shows none, rename the key to
-          // Content-Security-Policy to enforce it.
-          { key: "Content-Security-Policy-Report-Only", value: csp },
         ],
+      },
+      // Every page except the embeddable calculators refuses to be framed by other sites.
+      // CSP is report-only first: violations show in the browser console without
+      // breaking ads. Once a week of browsing shows none, rename the key to
+      // Content-Security-Policy to enforce it.
+      {
+        source: "/:path((?!embed/).*)",
+        headers: [
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Content-Security-Policy-Report-Only", value: csp("'self'") },
+        ],
+      },
+      // /embed/* is built to sit in an <iframe> on other people's sites.
+      {
+        source: "/embed/:path*",
+        headers: [{ key: "Content-Security-Policy-Report-Only", value: csp("*") }],
       },
       { source: "/sitemap.xml", headers: [{ key: "Cache-Control", value: longCache }] },
       { source: "/robots.txt", headers: [{ key: "Cache-Control", value: longCache }] },

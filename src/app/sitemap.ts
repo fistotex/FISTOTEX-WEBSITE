@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // The calendar is computed relative to today, so it genuinely changes daily.
     { url: `${baseUrl}/toolkit/market-calendar`, lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/toolkit/results`, lastModified: new Date(RESULTS_FIGURES_REVIEWED_ON), changeFrequency: "daily", priority: 0.8 },
+    { url: `${baseUrl}/embed`, lastModified: reviewed, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/about`, lastModified: reviewed, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: reviewed, changeFrequency: "yearly", priority: 0.5 },
     { url: `${baseUrl}/privacy-policy`, lastModified: legalUpdated, changeFrequency: "yearly", priority: 0.3 },

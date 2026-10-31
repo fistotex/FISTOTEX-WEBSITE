@@ -49,6 +49,35 @@ export function calculateSIP(input: SIPInput): SIPResult {
 }
 
 /**
+ * Step-up SIP: the monthly instalment rises by a fixed % once a year.
+ * Same convention as calculateSIP (instalment at the start of each month,
+ * monthly compounding), so a 0% step-up gives exactly the plain SIP value.
+ */
+export function calculateStepUpSIP(input: {
+  monthlyInvestment: number;
+  stepUpPercent: number;
+  annualReturn: number;
+  years: number;
+}): { totalInvested: number; estimatedReturns: number; futureValue: number; yearly: Array<{ year: number; invested: number; value: number }> } {
+  const { monthlyInvestment, stepUpPercent, annualReturn, years } = input;
+  if (!(monthlyInvestment > 0) || !(years > 0)) {
+    return { totalInvested: 0, estimatedReturns: 0, futureValue: 0, yearly: [] };
+  }
+  const r = annualReturn / 12 / 100;
+  const months = Math.round(years * 12);
+  let invested = 0;
+  let value = 0;
+  const yearly = [{ year: 0, invested: 0, value: 0 }];
+  for (let m = 0; m < months; m++) {
+    const instalment = monthlyInvestment * Math.pow(1 + stepUpPercent / 100, Math.floor(m / 12));
+    invested += instalment;
+    value = (value + instalment) * (1 + r);
+    if ((m + 1) % 12 === 0) yearly.push({ year: (m + 1) / 12, invested, value });
+  }
+  return { totalInvested: invested, estimatedReturns: value - invested, futureValue: value, yearly };
+}
+
+/**
  * Calculate lumpsum investment returns
  * Formula: FV = P × (1+r)^n
  */

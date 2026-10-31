@@ -56,6 +56,145 @@ export const blogPath = "/blog";
 export const articlePath = (slug: string) => `${blogPath}/${slug}` as const;
 
 export const articles: Article[] = [{
+  slug: "sip-vs-lumpsum-which-is-better",
+  title: "SIP vs lumpsum: which grows more, and when each makes sense",
+  description:
+    "₹12 lakh invested as a lumpsum at 12% for 10 years grows to about ₹37.3 lakh; the same ₹12 lakh as a ₹10,000 monthly SIP grows to about ₹23.2 lakh. Why the gap exists, what it hides, and how to choose.",
+  category: "Investing basics",
+  tags: ["SIP", "lumpsum", "mutual funds", "rupee cost averaging", "comparison"],
+  datePublished: "2026-10-31",
+  status: "published",
+  sections: [
+    {
+      paragraphs: [
+        "A lumpsum invests all your money on day one; a SIP (systematic investment plan) invests a fixed amount every month. At the same constant return, a lumpsum always ends higher, because every rupee stays invested for the full period. A SIP's advantage is about risk and cash flow, not a higher number on a calculator.",
+      ],
+    },
+    {
+      heading: "The same ₹12 lakh, two ways",
+      paragraphs: [
+        "Illustration with assumed inputs: a 12% constant annual return over 10 years, no costs or taxes. These are not forecasts; real returns vary year to year.",
+      ],
+      table: {
+        caption: "₹12 lakh over 10 years at an assumed 12% a year",
+        columns: ["", "Lumpsum", "SIP"],
+        rows: [
+          ["How it is invested", "₹12,00,000 on day one", "₹10,000 a month for 120 months"],
+          ["Total invested", "₹12,00,000", "₹12,00,000"],
+          ["Value after 10 years", "about ₹37,27,018", "about ₹23,23,391"],
+          ["Average time each rupee is invested", "10 years", "about 5 years"],
+        ],
+      },
+    },
+    {
+      heading: "Why the lumpsum looks so much bigger",
+      paragraphs: [
+        "In the SIP, the first instalment compounds for 10 years but the last one for only a month, so on average the money is invested for about half the period. That, not any flaw in SIPs, explains most of the gap.",
+        "The comparison is only fair when you actually have the full amount today. If the ₹12 lakh will come from your salary over 10 years, a lumpsum is not an option, and the real choice is between a SIP and not investing.",
+      ],
+    },
+    {
+      heading: "What the constant-return example hides",
+      list: [
+        "Timing risk: a lumpsum invested just before a market fall takes the full fall on all of the money. A SIP spreads purchases across many prices.",
+        "Rupee cost averaging: a fixed SIP buys more units when prices are low and fewer when they are high. It lowers the risk of buying everything at a peak; it does not guarantee a higher return.",
+        "Behaviour: a monthly SIP is easier to keep going through a downturn than a decision to put a large sum in at once.",
+      ],
+    },
+    {
+      heading: "SIP vs lumpsum at a glance",
+      table: {
+        columns: ["Question", "Lumpsum", "SIP"],
+        rows: [
+          ["Best when", "You already hold the full amount", "You invest from regular income"],
+          ["Higher value if returns are steady", "Yes", "No"],
+          ["Exposure to a fall right after investing", "All of the money", "Only what is invested so far"],
+          ["Middle path", "Park the amount in a liquid fund and move it in monthly (a systematic transfer plan)", "Raise the SIP every year (a step-up SIP)"],
+        ],
+      },
+    },
+    {
+      heading: "Try your own numbers",
+      paragraphs: [
+        "Use the Fistotex SIP calculator and lumpsum calculator with the same total amount and several return rates, including low ones. The step-up SIP calculator shows how raising the SIP each year narrows the gap.",
+        "This article is educational, is not investment, tax or legal advice, and does not recommend any fund or strategy. Mutual fund investments are subject to market risks.",
+      ],
+    },
+  ],
+  sources: [
+    { label: "AMFI (Mutual Funds Sahi Hai): SIP calculator and investor education", url: "https://www.mutualfundssahihai.com/en/calculators/sip-calculator" },
+  ],
+},
+{
+  slug: "xirr-vs-cagr-difference",
+  title: "XIRR vs CAGR: which return figure to trust for your SIP",
+  description:
+    "CAGR measures one investment from a start value to an end value. XIRR handles money added or withdrawn on different dates, which is why mutual fund statements report SIP returns as XIRR. Worked examples in rupees.",
+  category: "Investing basics",
+  tags: ["XIRR", "CAGR", "SIP returns", "mutual funds", "comparison"],
+  datePublished: "2026-10-31",
+  status: "published",
+  sections: [
+    {
+      paragraphs: [
+        "Use CAGR when one amount goes in and one value comes out. Use XIRR whenever money goes in or out on more than one date, as in a SIP. For a single investment held for whole years the two give the same answer; with several cash flows only XIRR is right.",
+      ],
+    },
+    {
+      heading: "CAGR: one start, one end",
+      paragraphs: [
+        "CAGR (compound annual growth rate) is the constant yearly rate that turns a starting value into an ending value over a number of years: (end ÷ start) ^ (1 ÷ years) − 1.",
+        "Example: ₹1,00,000 that grows to ₹1,50,000 in 3 years has a CAGR of about 14.47% a year.",
+      ],
+    },
+    {
+      heading: "XIRR: many cash flows, each with its own date",
+      paragraphs: [
+        "XIRR (extended internal rate of return) finds the single annual rate at which all your dated investments and withdrawals balance out. It gives each rupee credit only for the time it was actually invested, which is why fund statements and the Excel XIRR function use it for irregular cash flows.",
+      ],
+    },
+    {
+      heading: "Worked example: why CAGR misleads with two investments",
+      paragraphs: ["Illustration with assumed figures, not a real fund."],
+      table: {
+        columns: ["Date", "Cash flow"],
+        rows: [
+          ["1 Jan 2021", "Invest ₹1,00,000"],
+          ["1 Jan 2023", "Invest ₹1,00,000"],
+          ["1 Jan 2026", "Portfolio worth ₹2,80,000"],
+        ],
+      },
+    },
+    {
+      paragraphs: [
+        "XIRR on these dates is about 8.68% a year. A CAGR that treats the full ₹2,00,000 as invested on 1 Jan 2021 gives only about 6.96%, because it ignores that the second ₹1,00,000 was invested for 3 years, not 5. The more often you invest, the bigger this error gets.",
+      ],
+    },
+    {
+      heading: "XIRR vs CAGR at a glance",
+      table: {
+        columns: ["", "CAGR", "XIRR"],
+        rows: [
+          ["Cash flows", "One in, one out", "Any number, on any dates"],
+          ["Right for", "Lumpsum, a stock held for years, index growth", "SIP, SIP plus top-ups, partial withdrawals"],
+          ["Needs dates?", "Only the number of years", "The date of every cash flow"],
+          ["Same answer when", "One investment held for whole years", "One investment held for whole years"],
+        ],
+      },
+    },
+    {
+      heading: "Calculate both",
+      paragraphs: [
+        "The Fistotex CAGR calculator needs a start value, an end value and years. The XIRR calculator takes each dated cash flow, the way your mutual fund statement lists them.",
+        "This article is educational and is not investment, tax or legal advice. Past returns do not indicate future returns.",
+      ],
+    },
+  ],
+  sources: [
+    { label: "Microsoft Support: XIRR function (internal rate of return for cash flows that are not necessarily periodic)", url: "https://support.microsoft.com/en-us/office/xirr-function-de1242ec-6477-445b-b11b-a303ad9adc9d" },
+  ],
+},
+{
   "slug": "india-fiscal-deficit-april-september-2026-h1-cga-accounts",
   "title": "India fiscal deficit, April-September 2026: 42.1% of the full-year target",
   "description": "A guide to the CGA's September 2026 union government accounts: half-year receipts and spending, the 42.1% fiscal-deficit reading, financing and major subsidies.",

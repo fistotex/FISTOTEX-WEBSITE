@@ -37,6 +37,8 @@ export const siteConfig = {
       "/disclaimer",
       "/toolkit/companies",
       "/toolkit/results-calendar",
+      // Calculators framed on other sites: ads inside someone else's page break AdSense policy.
+      "/embed",
     ],
     /** Slot IDs from AdSense → Ads → By ad unit. Empty = not yet created. */
     slots: {
