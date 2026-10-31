@@ -32,7 +32,7 @@ const toolkitItems = [
   {
     href: "/calculators",
     label: "Calculators",
-    desc: "All 14 RBI-grade financial calculators",
+    desc: "Every calculator, with the formula shown",
     icon: Calculator,
     match: (p: string) => p.startsWith("/calculators"),
   },

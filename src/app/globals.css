@@ -457,3 +457,7 @@ body {
 
 /* FAQ disclosure */
 details > summary::-webkit-details-marker { display: none; }
+
+/* Embedded calculators (/embed/[id]): show only the calculator, no site chrome. */
+body:has([data-embed]) > :not(main):not(script) { display: none; }
+body:has([data-embed]) { background: transparent; }

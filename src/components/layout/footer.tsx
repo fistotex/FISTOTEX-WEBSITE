@@ -8,6 +8,7 @@ const columns = [
     title: "Investing tools",
     links: [
       { href: "/calculators/sip", label: "SIP calculator" },
+      { href: "/calculators/step-up-sip", label: "Step-up SIP" },
       { href: "/calculators/lumpsum", label: "Lumpsum compound" },
       { href: "/calculators/mutual-fund", label: "Mutual fund returns" },
       { href: "/calculators/cagr", label: "CAGR calculator" },
@@ -29,6 +30,7 @@ const columns = [
     links: [
       { href: "/about", label: "Formulas & method" },
       { href: "/blog", label: "Blog & guides" },
+      { href: "/embed", label: "Embed a calculator" },
       { href: "/news", label: "Syndicated wire" },
       { href: "/privacy-policy", label: "Privacy by design" },
       { href: "/disclaimer", label: "Statutory disclaimers" },

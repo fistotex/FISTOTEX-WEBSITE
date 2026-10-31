@@ -45,3 +45,16 @@ test("zero and negative inputs return zeros, never NaN", () => {
   assert.equal(c.calculateEMI({ loanAmount: 100000, interestRate: 10, tenureYears: 0 }).monthlyEMI, 0);
   assert.equal(c.calculateEMI({ loanAmount: 120000, interestRate: 0, tenureYears: 1 }).monthlyEMI, 10000);
 });
+
+test("Step-up SIP: 0% step-up equals the plain SIP exactly", () => {
+  const up = c.calculateStepUpSIP({ monthlyInvestment: 10000, stepUpPercent: 0, annualReturn: 12, years: 10 });
+  const plain = c.calculateSIP({ monthlyInvestment: 10000, annualReturn: 12, years: 10 });
+  assert.ok(Math.abs(up.futureValue - plain.futureValue) < 1e-6);
+});
+
+test("Step-up SIP: Rs 10,000/month, 10% step-up, 12%, 10 years", () => {
+  const r = c.calculateStepUpSIP({ monthlyInvestment: 10000, stepUpPercent: 10, annualReturn: 12, years: 10 });
+  assert.equal(rupees(r.futureValue), 3374326);
+  assert.equal(rupees(r.totalInvested), 1912491);
+  assert.equal(r.yearly.length, 11);
+});
