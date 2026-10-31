@@ -45,9 +45,7 @@ export default function CompaniesPage() {
             script and loaded once into your browser - searching never leaves your device. It
             covers the source&rsquo;s full universe, which is wider than the actively trading
             NSE/BSE list, so some entries may be thinly traded, suspended or delisted; the linked
-            page shows the current status. Sector labels are the source&rsquo;s own. The
-            &ldquo;Reported figures&rdquo; panels show a limited set of figures exactly as published
-            by Moneycontrol, for the companies collected so far; we calculate nothing, add no
+            page shows the current status. Sector labels are the source&rsquo;s own. We add no
             ratings, and none of this is a recommendation.
           </p>
         </div>

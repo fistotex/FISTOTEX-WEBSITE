@@ -9,6 +9,7 @@ import {
   categoryPath,
   calculatorsPath,
 } from "@/lib/calculators/registry";
+import { RESULTS_FIGURES_REVIEWED_ON } from "@/lib/toolkit/results-figures";
 
 export const revalidate = 86400;
 
@@ -16,15 +17,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // lastmod must reflect real content changes, not build time, or search
   // engines learn to ignore it. News is the only page that changes daily.
   const reviewed = new Date(siteConfig.contentReviewed);
+  const articles = publishedArticles();
   const legalUpdated = new Date("2026-09-26");
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: reviewed, changeFrequency: "daily", priority: 1.0 },
     { url: `${baseUrl}${calculatorsPath}`, lastModified: reviewed, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: "hourly", priority: 0.8 },
-    { url: `${baseUrl}${blogPath}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}${blogPath}`, lastModified: new Date(articles[0]?.datePublished ?? siteConfig.contentReviewed), changeFrequency: "weekly", priority: 0.7 },
+    // The calendar is computed relative to today, so it genuinely changes daily.
     { url: `${baseUrl}/toolkit/market-calendar`, lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
-    { url: `${baseUrl}/toolkit/results`, lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
+    { url: `${baseUrl}/toolkit/results`, lastModified: new Date(RESULTS_FIGURES_REVIEWED_ON), changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/about`, lastModified: reviewed, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: reviewed, changeFrequency: "yearly", priority: 0.5 },
     { url: `${baseUrl}/privacy-policy`, lastModified: legalUpdated, changeFrequency: "yearly", priority: 0.3 },
@@ -46,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const articleUrls: MetadataRoute.Sitemap = publishedArticles().map((a) => ({
+  const articleUrls: MetadataRoute.Sitemap = articles.map((a) => ({
     url: `${baseUrl}${articlePath(a.slug)}`,
     lastModified: new Date(a.dateUpdated ?? a.datePublished),
     changeFrequency: "monthly",

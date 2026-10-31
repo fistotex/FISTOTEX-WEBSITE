@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { ExternalLink } from "lucide-react";
 
 export type CalendarRow = {
@@ -51,25 +51,20 @@ function todayLabelIST(): string {
 
 type Mode = "today" | "chrono";
 
+function everyMinute(onTick: () => void) {
+  const t = setInterval(onTick, 60000);
+  return () => clearInterval(t);
+}
+
 export function ResultsCalendar({ rows }: { rows: CalendarRow[] }) {
   // "mounted" keeps the server HTML and first client render identical
   // (chronological); the priority ordering applies right after mount, so the
   // "today" anchor is always computed on the user's clock and survives
   // midnight rollovers without a redeploy.
-  const [mounted, setMounted] = useState(false);
   const [mode, setMode] = useState<Mode>("today");
-  const [todayLabel, setTodayLabel] = useState("");
-
-  useEffect(() => {
-    setMounted(true);
-    setTodayLabel(todayLabelIST());
-    // Re-anchor "today" for tabs held open across IST midnight.
-    const timer = setInterval(() => {
-      const label = todayLabelIST();
-      setTodayLabel((prev) => (prev === label ? prev : label));
-    }, 60000);
-    return () => clearInterval(timer);
-  }, []);
+  // Re-checked every minute so tabs held open across IST midnight re-anchor.
+  const todayLabel = useSyncExternalStore(everyMinute, todayLabelIST, () => "");
+  const mounted = todayLabel !== "";
 
   const groups = useMemo(() => {
     const map = new Map<string, CalendarRow[]>();

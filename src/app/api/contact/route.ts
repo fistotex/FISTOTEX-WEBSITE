@@ -1,15 +1,10 @@
 import { z } from "zod";
 import { siteConfig } from "@/config/site";
+import { escapeHtml, rateLimited, sendEmail } from "@/lib/email";
 
 /**
- * Contact form endpoint. Delivers messages by email through Resend's REST API
- * (https://resend.com) — no SDK needed.
- *
- * Required env on Vercel:
- *   RESEND_API_KEY      — API key from resend.com
- * Optional:
- *   CONTACT_TO_EMAIL    — inbox that receives messages (defaults to CONTACT_EMAIL)
- *   CONTACT_FROM_EMAIL  — verified sender, e.g. "Fistotex <hello@fistotex.com>"
+ * Contact form endpoint. Emails the message via Resend (see src/lib/email.ts).
+ * Optional env: CONTACT_TO_EMAIL - inbox that receives messages (defaults to CONTACT_EMAIL).
  *
  * Without RESEND_API_KEY this returns 503 and the form falls back to the
  * visitor's email app, so a message is never silently dropped.
@@ -25,22 +20,6 @@ const schema = z.object({
   // Honeypot: real visitors never see or fill this field
   company: z.string().max(0).optional().or(z.literal("")),
 });
-
-// Best-effort per-instance rate limit: 5 messages per IP per 10 minutes
-const WINDOW_MS = 10 * 60 * 1000;
-const LIMIT = 5;
-const hits = new Map<string, number[]>();
-
-function rateLimited(ip: string) {
-  const now = Date.now();
-  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
-  recent.push(now);
-  hits.set(ip, recent);
-  return recent.length > LIMIT;
-}
-
-const escapeHtml = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -60,38 +39,16 @@ export async function POST(request: Request) {
     );
   }
 
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  if (rateLimited(ip)) {
+  if (rateLimited(request)) {
     return Response.json({ error: "rate_limited" }, { status: 429 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return Response.json({ error: "not_configured" }, { status: 503 });
-  }
-
   const { name, email, subject, message } = parsed.data;
-  const to = process.env.CONTACT_TO_EMAIL || siteConfig.contactEmail;
-  const from = process.env.CONTACT_FROM_EMAIL || `${siteConfig.name} <onboarding@resend.dev>`;
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: email,
-      subject: `[${siteConfig.name} contact] ${subject} — ${name}`,
-      text: `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
-      html: `<p><strong>From:</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;<br/><strong>Subject:</strong> ${escapeHtml(subject)}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
-    }),
-    signal: AbortSignal.timeout(10000),
-  }).catch(() => null);
-
-  if (!res || !res.ok) {
-    console.error("[contact] email delivery failed", res?.status, res ? await res.text().catch(() => "") : "network");
-    return Response.json({ error: "delivery_failed" }, { status: 502 });
-  }
-
-  return Response.json({ ok: true });
+  return sendEmail("contact", {
+    to: process.env.CONTACT_TO_EMAIL || siteConfig.contactEmail,
+    replyTo: email,
+    subject: `[${siteConfig.name} contact] ${subject} — ${name}`,
+    text: `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
+    html: `<p><strong>From:</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;<br/><strong>Subject:</strong> ${escapeHtml(subject)}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
+  });
 }

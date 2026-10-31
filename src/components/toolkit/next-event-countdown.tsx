@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 export interface CountdownEvent {
   title: string;
@@ -10,6 +10,11 @@ export interface CountdownEvent {
   timeLabelIST: string;
   /** "28 Oct", precomputed in IST on the server. */
   dateLabelIST: string;
+}
+
+function everySecond(onTick: () => void) {
+  const t = setInterval(onTick, 1000);
+  return () => clearInterval(t);
 }
 
 function pad(n: number): string {
@@ -27,12 +32,9 @@ export function NextEventCountdown({
   events: CountdownEvent[];
   serverNow: number;
 }) {
-  const [now, setNow] = useState<number | null>(null);
-  useEffect(() => {
-    setNow(Date.now());
-    const t = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(t);
-  }, []);
+  // Server snapshot is null, so the server HTML and first client render match;
+  // whole seconds keep the client snapshot stable between ticks.
+  const now = useSyncExternalStore(everySecond, () => Math.floor(Date.now() / 1000) * 1000, () => null);
 
   const ref = now ?? serverNow;
   const next = events.find((e) => Date.parse(e.instantUTC) > ref);
